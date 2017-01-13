@@ -120,9 +120,9 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
    - curly braces (`{`, `}`).
 
    This covers most LaTeX needs.
-   However, **commas (`,`) and square brackets (`[`, `]`) are not allowed**, not even if they are contained within curly braces.
+   However, **commas (`,`), semicolons (`;`) and square brackets (`[`, `]`) are not allowed**, not even if they are contained within curly braces.
    If you need those, use equivalent LaTeX commands instead (`\lbrack`, `\rbrack`).
-   For the comma, define your own macro with `\newcommand{\comma}{,}`.
+   For the others, define your own macro with `\newcommand{\comma}{,}` and `\newcommand{\semicolon}{;}`.
 
 1. Node names may only contain
    - alphanumeric unicode characters,
