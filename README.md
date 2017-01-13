@@ -14,7 +14,7 @@ A number of subsequent works have successfully used this parser to make predicti
 Fixme: references to literature
 
 
-Quick Usage Guide
+Quick Start Guide
 -----------------
 
 With mgproc you can easily compare MG derivation trees with respect to thousands of complexity metrics for sentence processing.
