@@ -128,6 +128,7 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
    - alphanumeric unicode characters,
    - ASCII apostrophes (`'`),
    - hyphens (`-`),
+
    This covers the full range of recommended tikz names.
 
 1. When specifying a node as `empty`, it must be preceded by a comma, possibly with whitespace inbetween.
