@@ -79,7 +79,7 @@ Just copy-paste the following commands into the preamble of your document.
 ```
 
 To typeset a tree with forest, use `\input` to load the relevant files.
-Here is an example where all relevant files are stored in a subfolder `trees`:
+Here is an example where all files are stored in a subfolder `trees`:
 
 ```latex
 \begin{forest}
@@ -93,6 +93,7 @@ Here is an example where all relevant files are stored in a subfolder `trees`:
 ```
 
 Note that there must not be any empty lines anywhere within the forest environment.
+This also holds for the files you load with `\input`.
 
 
 Limitations and Known Bugs
