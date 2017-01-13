@@ -22,7 +22,7 @@ The scripts integrate well with a LaTeX-centric workflow, following the ideal of
 Usually a parsed derivation tree is specified by four files.
 Assuming the tree is called `foo`, we have:
 
-1. `foo.forest`: the actual tree, specified as labeled bracketing using the syntactic conventions of the [forest package for LaTeX](https://www.ctan.org/pkg/forest?lang=en).
+1. `foo.forest`: the tree specification, given as labeled bracketing using the syntactic conventions of the [forest package for LaTeX](https://www.ctan.org/pkg/forest?lang=en).
 1. `foo_move.forest`: all movement paths, expressed with the typical [tikz](https://www.ctan.org/pkg/pgf?lang=en) syntax for path drawing
 1. `foo.linear`: the linear order of all leaf nodes; this is necessary because MG derivation trees encode linear order only indirectly
 1. `foo_io.forest`: automatically created by mgproc, this file provides an overlay of the index/outdex annotation to be used in publications
@@ -63,6 +63,19 @@ To effectively use mgproc with LaTeX, you have to specify a few macros and tikz 
 Just copy-paste the following commands into the preamble of your document.
 
 ```latex
+% load tikz and forest with more visible arrows
+\usepackage{tikz}
+\usepackage{forest}
+\usetikzlibrary{arrows.meta}
+
+% define move style
+\tikzset{move/.style = {-{Latex[length=.5em]},dashed,blue}}
+
+% indexed node labels in trees;
+% these macros are only needed if you want to use the output of the .fprint method
+\newcommand{\Lab}[3]{\tsp{#2}#1\tsb{#3}} % for normal nodes
+\newcommand{\BLab}[3]{\tsp{#2}#1{\setlength{\fboxsep}{.25\fboxsep}\boxed{\tsb{#3}}}} % for boxed leaves
+\newcommand{\IBLab}[3]{\tsp{#2}#1{\setlength{\fboxsep}{.25\fboxsep}\boxed{\tsb{#3}}}} % for boxed interior nodes
 ```
 
 To typeset a tree with forest, use `\input` to load the relevant files.
@@ -73,9 +86,9 @@ Here is an example where all relevant files are stored in a subfolder `trees`:
     % load derivation tree
     \input{./trees/foo.forest}
     % add movement arrows
-    \input{./trees/foo.forest}
+    \input{./trees/foo_move.forest}
     % add index/outdex annotation for each node
-    \input{./trees/foo.forest}
+    \input{./trees/foo_io.forest}
 \end{forest}
 ```
 
@@ -84,6 +97,8 @@ Note that there must not be any empty lines anywhere within the forest environme
 
 Limitations and Known Bugs
 --------------------------
+
+### Naming Conventions for Node Information
 
 Since mgproc uses regular expressions instead of a proper text parser, there is a risk of it breaking down if you deviate from the intended naming conventions:
 
@@ -95,6 +110,7 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
    - the dollar sign (`$`), 
    - backslash (`\ `),
    - curly braces (`{`, `}`).
+
    This covers most LaTeX needs.
    However, **commas (`,`) and square brackets (`[`, `]`) are not allowed**, not even if they are contained within curly braces.
    If you need those, use equivalent LaTeX commands instead (`\lbrack`, `\rbrack`).
@@ -110,9 +126,23 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
    So `[S, name=root,empty` and `S, name=root,   empty` are both fine, but `S, name=root empty` is not.
    But the latter would not be allowed by forest anyways.
 
+1. Feature names given via `move={<name>}` may consist of just about anything.
+   But I suggest sticking with simple alphanumeric characters and doing any typesetting by redefining the move style.
+
 1. Line breaks are ignored by mgproc (see `ugly.forest` for a working but, well, ugly example).
    Nonetheless it is recommended that you write your forest files with proper line breaks and indentation for improved readability.
+
+
+### Linearization
 
 Unexpected things may happen if the forest files are not well-formed.
 An incorrect `.linear` file may lead to obvious breakage or just an incorrectly computed index/outdex annotation without any warning messages.
 Always double- and triple-check that the linear order of leaf nodes is specified correctly!
+
+
+### File Names
+
+While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `_move` or `_io`.
+Each remaining file should be of the form `foo.forest` and thus work with `tree_from_file()` as intended.
+Of course this strategy will fail whenever a tree specification file has been given a name that ends in `_move`, e.g.\ `relative_clause_with_move`.
+So avoid giving trees names that end in `_move` or `_io`.
