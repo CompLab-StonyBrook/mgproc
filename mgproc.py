@@ -95,7 +95,7 @@ def move_from_file(inputfile) -> list:
     with open(inputfile, 'r') as movefile:
         for line in movefile.readlines():
             move = re.findall(r'\((.*?)\)', line)
-            feat = re.match(r'.*move{(\w*)}.*', line)
+            feat = re.match(r'.*move\s*=\s*{([^}]*)}.*', line)
             movement.append((move[0], move[-1], feat.group(1)))
     movefile.close()
     return movement
