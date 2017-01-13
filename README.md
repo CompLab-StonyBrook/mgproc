@@ -38,7 +38,7 @@ The general workflow is as follows:
      If you notice any problems, please open an issue here on github.
 
 1. If the derivation tree contains movement dependencies, create `foo_move.forest` and specify them there.
-   The general syntax is `\draw[move{f}] (source) to (target);`, where `source` and `target` are the names of the nodes and `f` is the feature triggering movement (e.g. nom, wh, top).
+   The general syntax is `\draw[move={f}] (source) to (target);`, where `source` and `target` are the names of the nodes and `f` is the feature triggering movement (e.g. nom, wh, top).
    You can use more complicated tikz constructs as you see fit.
 
 1. Specifying `foo.linear` by hand can be difficult, but `mgproc` provides a helper for this, too.
