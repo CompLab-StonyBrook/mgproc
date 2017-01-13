@@ -77,15 +77,15 @@ def ioprint(tree: 'IOTree',
         node_outdex = node.outdex()
 
         # draw a tikz node for index
-        index_string = \
-            '\\node[index]\t {{{1}}}\t at ({0});\n'.format(
-                node_name, node_index)
+        index_string = '\\node[index]'.ljust(24)
+        index_node = ('{' + str(node_index) + '}').ljust(8)
+        index_string += '{1} at ({0});\n'.format(node_name, index_node)
 
         # draw a tikz node for outdex
-        outdex_string = \
-            '\\node[outdex]\t {{{1}}}\t at ({0});\n'.format(
-                node_name, node_outdex)
-
+        node_option = ', boxed]' if node_outdex - node_index > 2 else ']'
+        outdex_string = '\\node[outdex{0}'.format(node_option).ljust(24)
+        outdex_node = ('{' + str(node_outdex) + '}').ljust(8)
+        outdex_string += '{1} at ({0});\n'.format(node_name, outdex_node)
         string += index_string + outdex_string + '%\n'
 
     # forest chokes on empty lines,
