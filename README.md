@@ -102,6 +102,10 @@ Limitations and Known Bugs
 
 Since mgproc uses regular expressions instead of a proper text parser, there is a risk of it breaking down if you deviate from the intended naming conventions:
 
+1. The most important rule: do not use `%` for anything except LaTeX comments!
+   Everything after `%` will be considered a comment and be removed from the file.
+   So if your node label is `10\% of people`, it will be truncated to `10`.
+
 1. Node labels are allowed to contain
    - alphanumeric unicode characters,
    - ASCII apostrophes (`'`),
@@ -146,3 +150,12 @@ While batch processing has not been implemented yet, the plan is to simply colle
 Each remaining file should be of the form `foo.forest` and thus work with `tree_from_file()` as intended.
 Of course this strategy will fail whenever a tree specification file has been given a name that ends in `_move`, e.g.\ `relative_clause_with_move`.
 So avoid giving trees names that end in `_move` or `_io`.
+
+
+To Do
+-----
+
+- Better documentation of code (in particular docstrings)
+- Batch processing
+- Rewrite metric evaluation from scratch
+- Bach comparison of metrics
