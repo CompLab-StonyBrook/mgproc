@@ -70,6 +70,9 @@ Just copy-paste the following commands into the preamble of your document.
 
 % define move style
 \tikzset{move/.style = {-{Latex[length=.5em]},dashed,blue}}
+\tikzset{index/.style = {font={\footnotesize}}}
+\tikzset{outdex/.style = {font={\footnotesize}}}
+\tikzset{boxed/.style = {draw}}
 
 % indexed node labels in trees;
 % these macros are only needed if you want to use the output of the .fprint method
@@ -160,3 +163,5 @@ To Do
 - Batch processing
 - Rewrite metric evaluation from scratch
 - Bach comparison of metrics
+- Unit tests
+- Tons of bug testing
