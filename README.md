@@ -153,7 +153,7 @@ Always double- and triple-check that the linear order of leaf nodes is specified
 
 While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `_move` or `_io`.
 Each remaining file should be of the form `foo.forest` and thus work with `tree_from_file()` as intended.
-Of course this strategy will fail whenever a tree specification file has been given a name that ends in `_move`, e.g.\ `relative_clause_with_move`.
+Of course this strategy will fail whenever a tree specification file has been given a name that ends in `_move`, e.g. `relative_clause_with_move`.
 So avoid giving trees names that end in `_move` or `_io`.
 
 
