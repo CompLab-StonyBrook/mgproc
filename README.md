@@ -74,8 +74,10 @@ Just copy-paste the following commands into the preamble of your document.
 
 % define move style
 \tikzset{move/.style = {-{Latex[length=.5em]},dashed,blue}}
-\tikzset{index/.style = {font={\footnotesize}, anchor=south.east}}
-\tikzset{outdex/.style = {font={\footnotesize}, anchor=north.west}}
+\tikzset{rightward/.style = {dotted}}
+\tikzset{annotation/.style = {font={\footnotesize}}
+\tikzset{index/.style = {annotation, anchor=south.east}}
+\tikzset{outdex/.style = {annotation, anchor=north.west}}
 \tikzset{boxed/.style = {draw}}
 
 % indexed node labels in trees;
