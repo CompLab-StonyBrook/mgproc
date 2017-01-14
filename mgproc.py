@@ -102,20 +102,20 @@ def move_from_file(inputfile) -> list:
 
 
 def tree_from_file(inputfile: str=None,
-                   extension: str='forest',
+                   extension: str='.tree.forest',
                    autolinearize: bool=False) -> 'IOTree':
     # ask for input file if necessary
     if not inputfile:
-        inputfile = input("File to read in (without forest extension): ")
+        inputfile = input("File to read in (without .tree.forest extension): ")
 
     # read in specification file
-    with open(inputfile + '.' + extension, 'r') as treefile:
+    with open(inputfile + extension, 'r') as treefile:
         tree = treefile.read()
         treefile.close()
 
     # and set auxiliary files
     linear_file = inputfile + '.linear'
-    move_file = inputfile + '_move.forest'
+    move_file = inputfile + '.move.forest'
 
     # linearize automatically or...
     if autolinearize or not file_accessible(linear_file, 'r'):

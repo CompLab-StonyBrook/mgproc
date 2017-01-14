@@ -22,14 +22,14 @@ The scripts integrate well with a LaTeX-centric workflow, following the ideal of
 Usually a parsed derivation tree is specified by four files.
 Assuming the tree is called `foo`, we have:
 
-1. `foo.forest`: the tree specification, given as labeled bracketing using the syntactic conventions of the [forest package for LaTeX](https://www.ctan.org/pkg/forest?lang=en).
-1. `foo_move.forest`: all movement paths, expressed with the typical [tikz](https://www.ctan.org/pkg/pgf?lang=en) syntax for path drawing
+1. `foo.tree.forest`: the tree specification, given as labeled bracketing using the syntactic conventions of the [forest package for LaTeX](https://www.ctan.org/pkg/forest?lang=en).
+1. `foo.move.forest`: all movement paths, expressed with the typical [tikz](https://www.ctan.org/pkg/pgf?lang=en) syntax for path drawing
 1. `foo.linear`: the linear order of all leaf nodes; this is necessary because MG derivation trees encode linear order only indirectly
-1. `foo_io.forest`: automatically created by mgproc, this file provides an overlay of the index/outdex annotation to be used in publications
+1. `foo.io.forest`: automatically created by mgproc, this file provides an overlay of the index/outdex annotation to be used in publications
 
 The general workflow is as follows:
 
-1. Create `foo.forest` and write tree exactly the same way you always do in forest.
+1. Create `foo.tree.forest` and write the tree exactly the same way you always do in forest.
    - As in forest, nodes can be given a name by adding `, name=` after the label.
      If you do not provide a name, mgproc will refer to the node as `t<gorn>`, where `<gorn>` is the [Gorn address](https://en.wikipedia.org/wiki/Gorn_address) of the node.
    - For empty (= unpronounced) leaf nodes, add the attribute `, empty`.
@@ -37,14 +37,14 @@ The general workflow is as follows:
    - Usage of other forest options should not interfere with mgproc.
      If you notice any problems, please open an issue here on github.
 
-1. If the derivation tree contains movement dependencies, create `foo_move.forest` and specify them there.
+1. If the derivation tree contains movement dependencies, create `foo.move.forest` and specify them there.
    The general syntax is `\draw[move={f}] (source) to (target);`, where `source` and `target` are the names of the nodes and `f` is the feature triggering movement (e.g. nom, wh, top).
    You can use more complicated tikz constructs as you see fit.
 
 1. Specifying `foo.linear` by hand can be difficult, but `mgproc` provides a helper for this, too.
    Open a shell and run `python3 -i mgproc.py`.
    In the shell, execute `mytree = tree_from_file('path/to/foo')`.
-   This creates a tree from `foo.forest` and (if it exists) `foo_move.forest`.
+   This creates a tree from `foo.tree.forest` and (if it exists) `foo.move.forest`.
    Then run `mytree.show_leaves()` to get a list of all the leaf nodes.
    Each line contains a node, specified in the form `<label>; <gorn>`.
    Copy this list into your text editor and reorder the lines so that their order in the file from top-to-bottom mirrors their linear order in the sentence from left to right.
@@ -53,7 +53,7 @@ The general workflow is as follows:
 1. In the Python3 shell, rerun `mytree = tree_from_file('path/to/foo')`.
    You now have a fully index/outdex annotated derivation tree.
    You can inspect the tree more carefully with `mytree.show()` and `mytree.fprint()`.
-   Run `ioprint(mytree, filename='foo')` to have mgproc produce a forest file with the annotations for each node.
+   Run `ioprint(mytree, filename='foo')` to have mgproc produce a forest file `foo.io.forest` with the annotations for each node.
 
 
 LaTeX Integration 
@@ -89,9 +89,9 @@ Here is an example where all files are stored in a subfolder `trees`:
     % load derivation tree
     \input{./trees/foo.forest}
     % add movement arrows
-    \input{./trees/foo_move.forest}
+    \input{./trees/foo.move.forest}
     % add index/outdex annotation for each node
-    \input{./trees/foo_io.forest}
+    \input{./trees/foo.io.forest}
 \end{forest}
 ```
 
@@ -151,10 +151,10 @@ Always double- and triple-check that the linear order of leaf nodes is specified
 
 ### File Names
 
-While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `_move` or `_io`.
-Each remaining file should be of the form `foo.forest` and thus work with `tree_from_file()` as intended.
-Of course this strategy will fail whenever a tree specification file has been given a name that ends in `_move`, e.g. `relative_clause_with_move`.
-So avoid giving trees names that end in `_move` or `_io`.
+While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `.move.forest` or `.io.forest`.
+Each remaining file should be of the form `foo.tree.forest` and thus work with `tree_from_file()` as intended.
+Of course this strategy will fail whenever a tree specification file has been given a name that ends in `.move.forest`, e.g. `relative.clause.with.move.forest`.
+So avoid giving trees names that end in `.move.forest` or `.io.forest`.
 
 
 To Do

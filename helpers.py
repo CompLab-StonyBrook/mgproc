@@ -71,20 +71,23 @@ def ioprint(tree: 'IOTree',
             filename: str=None, directory: str=None) -> str:
     """Prints index/outdex annotation as tikz nodes."""
     string = ''
+    command_padding = 24
+    label_padding = 8
+
     for node in tree.struct.values():
         node_name = node.name()
         node_index = node.index()
         node_outdex = node.outdex()
 
         # draw a tikz node for index
-        index_string = '\\node[index]'.ljust(24)
-        index_node = ('{' + str(node_index) + '}').ljust(8)
+        index_string = '\\node[index]'.ljust(command_padding)
+        index_node = ('{' + str(node_index) + '}').ljust(label_padding)
         index_string += '{1} at ({0});\n'.format(node_name, index_node)
 
         # draw a tikz node for outdex
         node_option = ', boxed]' if node_outdex - node_index > 2 else ']'
-        outdex_string = '\\node[outdex{0}'.format(node_option).ljust(24)
-        outdex_node = ('{' + str(node_outdex) + '}').ljust(8)
+        outdex_string = ('\\node[outdex' + node_option).ljust(command_padding)
+        outdex_node = ('{' + str(node_outdex) + '}').ljust(label_padding)
         outdex_string += '{1} at ({0});\n'.format(node_name, outdex_node)
         string += index_string + outdex_string + '%\n'
 
@@ -99,6 +102,6 @@ def ioprint(tree: 'IOTree',
             directory = ''
         else:
             directory += '/'
-        filename = directory + filename + '_io.forest'
+        filename = directory + filename + '.io.forest'
         with open(filename, "w") as text_file:
             print(string, file=text_file)
