@@ -108,7 +108,7 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
 
 1. The most important rule: do not use `%` for anything except LaTeX comments!
    Everything after `%` will be considered a comment and be removed from the file.
-   So if your node label is `10\% of people`, it will be truncated to `10`.
+   So if your node label is `10\% of people`, it will be truncated to `10\ `.
 
 1. Node labels are allowed to contain
    - alphanumeric unicode characters,
