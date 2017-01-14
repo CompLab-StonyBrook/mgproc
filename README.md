@@ -8,10 +8,14 @@ Background
 ----------
 
 MGs were developed in Stabler (1997) as a formalization of Chomsky's Minimalist program.
-A top-down parser for MGs is defined in Stabler (2012) and has been [implemented in a number of languages](https://github.com/epstabler/mgtdb).
+A top-down parser for MGs is defined in Stabler (2013) and has been [implemented in a number of languages](https://github.com/epstabler/mgtdb).
 A number of subsequent works have successfully used this parser to make predictions about relative difficulty in sentence processing.
+Good starting points with a review of the previous literature are Gerth (2015) and Graf et al. (to appear).
 
-Fixme: references to literature
+- Gerth, Sabrina: [Memory Limitations in Sentence Comprehension](https://publishup.uni-potsdam.de/opus4-ubp/frontdoor/index/index/docId/7155)
+- Graf, Thomas, James Monette, and Chong Zhang (to appear): Relative Clauses as a Benchmark for Minimalist Parsing (link to be added soon)
+- Stabler, Edward (1997): [Derivational Minimalism](http://www.linguistics.ucla.edu/people/stabler/eps-lacl.pdf)
+- Stabler, Edward (2013): [Two Models of Minimalist, Incremental Syntactic Analysis](http://www.linguistics.ucla.edu/people/stabler/Stabler12-2models.pdf)
 
 
 Quick Start Guide
