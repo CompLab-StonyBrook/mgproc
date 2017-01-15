@@ -156,11 +156,8 @@ def io_process_folder(path: 'string'=None):
     for tree_file in os.listdir(path):
         # only work on files that end in .tree.forest
         if tree_file.endswith('.tree.forest'):
-            print(tree_file)
             basename = tree_file[:-12]
-            print(basename)
             current_file = os.path.join(path, basename)
-            print(current_file)
             current_tree = tree_from_file(inputfile=current_file,
                                           autolinearize=False)
             current_tree.show()
