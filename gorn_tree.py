@@ -14,14 +14,18 @@ class GornNode:
     def __init__(self,
                  address='', label='', name=None,
                  empty: bool=None, leaf: bool=None,
-                 movement: 'OrderedDict'=OrderedDict([])):
+                 movement: list=[]):
         self.address = str(address)
         self._label = str(label)
         if name:
             self._name = str(name)
         else:
             self._name = 't' + self.address
-        self.movement = movement.copy()  # don't share dict between nodes
+        self.movement = OrderedDict()
+        for target, feature in movement:
+            self.movement[target] = feature
+
+        # self.movement = movement.copy()  # don't share dict between nodes
         self.empty = empty
         self.leaf = leaf
 
