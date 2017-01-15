@@ -160,12 +160,6 @@ An incorrect `.linear` file may lead to obvious breakage or just an incorrectly 
 Always double- and triple-check that the linear order of leaf nodes is specified correctly!
 
 
-### Movement Order
-
-Even though mgproc keeps track of the order of movements steps, inspecting a tree with the `.show()` method does not indicate this internal order.
-This is because the output is formatted with `pprint`, which automatically reorders the movement steps by the lexicographic order of the addresses of the landing sites.
-
-
 ### File Names
 
 While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `.move.forest` or `.io.forest`.
