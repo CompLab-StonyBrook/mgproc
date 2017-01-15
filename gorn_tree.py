@@ -24,8 +24,6 @@ class GornNode:
         self.movement = OrderedDict()
         for target, feature in movement:
             self.movement[target] = feature
-
-        # self.movement = movement.copy()  # don't share dict between nodes
         self.empty = empty
         self.leaf = leaf
 
