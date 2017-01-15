@@ -1,27 +1,31 @@
-[S, name=root % tree starts here
-    [NP [the] [man, name=test] % more comments
-    ]
-    [V\emph{P}
-        [A\textbf{dv}P
-            [really]
+[S$'$, name=top
+    [S, name=root % tree starts here
+        [NP [the] [man, name=test] % more comments
         ]
-        [VP
-            [V$'$
-                [V [showed]]
-                [NP [Art [his] ]
-                    [N [dog]]
-                ]
-                [Part [around]]
+        [V\emph{P}
+            [A\textbf{dv}P
+                [really]
             ]
-            [PP
-                [P [to]]
-                [NP
-                    [all]
-                    [the]
-                    [people]
+            [VP, name=acc-case-checking
+                [VP
+                    [V$'$
+                        [V [showed]]
+                        [NP, name=obj [Art [his] ]
+                            [N [dog]]
+                        ]
+                        [Part [around]]
+                    ]
+                    [PP
+                        [P [to]]
+                        [NP
+                            [all]
+                            [the]
+                            [people]
+                        ]
+                    ]
                 ]
+                [AdvP [yesterday]]
             ]
         ]
-        [AdvP [yesterday]]
     ]
 ]

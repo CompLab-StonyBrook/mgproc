@@ -80,6 +80,7 @@ Just copy-paste the following commands into the preamble of your document.
 \tikzset{outdex/.style = {annotation, anchor=north.west}}
 \tikzset{boxed/.style = {draw}}
 \tikzset{empty/.style = {}}
+\tikzset{non-final/.style = {}}
 
 % indexed node labels in trees;
 % these macros are only needed if you want to use the output of the .fprint method

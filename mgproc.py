@@ -96,8 +96,11 @@ def move_from_file(inputfile) -> list:
     movement = []
     with open(inputfile, 'r') as movefile:
         for line in movefile.readlines():
+            # match all (...) in line
             move = re.findall(r'\((.*?)\)', line)
+            # feature as specified by move={f}
             feat = re.match(r'.*move\s*=\s*{([^}]*)}.*', line)
+            # append first (...), last (...), and feature type
             movement.append((move[0], move[-1], feat.group(1)))
     movefile.close()
     return movement

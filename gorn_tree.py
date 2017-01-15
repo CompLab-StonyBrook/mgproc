@@ -24,9 +24,10 @@ class GornNode:
         self.empty = empty
         self.leaf = leaf
 
-    def moves_to(self, address: str=None, feature: str=None):
+    def moves_to(self, address: str=None, feature: str=None, final: bool=True):
+        final = 'final' if final else 'non-final'
         if address:
-            self.movement[address] = feature
+            self.movement[address] = (feature, final)
         else:
             return self.movement
 
@@ -173,13 +174,13 @@ class GornTree:
 
     @int2str
     def add_mover(self, source: str, target: str, feature: str,
-                  update_tree: bool=True):
+                  final: bool=True, update_tree: bool=True):
         """Add movement information to a node"""
         # convert name to address if necessary
         source = self.produce_address(source)
         target = self.produce_address(target)
 
-        self.struct[source].moves_to(target, feature)
+        self.struct[source].moves_to(target, feature, final)
         if update_tree:
             self.update_movers
 
@@ -189,7 +190,7 @@ class GornTree:
                 self.movement[node.address] = node.movement
 
     def add_movers(self, movement: list):
-        for source, target, feature in movement:
+        for source, target, feature, final in movement:
             self.add_mover(source, target, feature, update_tree=False)
         self.update_movers()
 
