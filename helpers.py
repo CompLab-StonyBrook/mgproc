@@ -100,7 +100,7 @@ def ioprint(tree: 'IOTree',
     else:
         if not directory:
             directory = ''
-        else:
+        elif directory[-1] != '/':
             directory += '/'
         filename = directory + filename + '.io.forest'
         with open(filename, "w") as text_file:
