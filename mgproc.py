@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
 import re
 from pprint import pprint
 from io_tree import *
@@ -72,7 +73,7 @@ def parse(string: str) -> list:
     return tree
 
 
-def file_accessible(filepath, mode):
+def file_accessible(filepath, mode) -> bool:
     """Check that file exists and is accessible."""
     try:
         f = open(filepath, mode)
@@ -135,7 +136,7 @@ def tree_from_file(inputfile: str=None,
     return tree
 
 
-def check_order(tree: IOTree, specification: 'linearization file'):
+def check_order(tree: IOTree, specification: 'linearization file') -> bool:
     for label, address in linearization_from_file(specification + '.linear'):
         # sanitize address (remove \n, whitespace)
         address = str(int(address))
@@ -143,3 +144,23 @@ def check_order(tree: IOTree, specification: 'linearization file'):
         if label != label_in_tree:
             print('Label mismatch: address {1} has label {2}, not {0}'.format(
                 label, address, label_in_tree))
+            return False
+        return True
+
+
+def io_process_folder(path: 'string'=None):
+    if not path:
+        path = input("Enter folder to be processed (relative to current working directory):\n")
+
+    for tree_file in os.listdir(path):
+        # only work on files that end in .tree.forest
+        if tree_file.endswith('.tree.forest'):
+            print(tree_file)
+            basename = tree_file[:-12]
+            print(basename)
+            current_file = os.path.join(path, basename)
+            print(current_file)
+            current_tree = tree_from_file(inputfile=current_file,
+                                          autolinearize=False)
+            current_tree.show()
+            ioprint(current_tree, filename=basename, directory=path)
