@@ -3,6 +3,7 @@
 
 import re
 import pprint
+from collections import OrderedDict
 from helpers import int2str, ascii
 
 
@@ -13,7 +14,7 @@ class GornNode:
     def __init__(self,
                  address='', label='', name=None,
                  empty: bool=None, leaf: bool=None,
-                 movement: dict={}):
+                 movement: 'OrderedDict'=OrderedDict([])):
         self.address = str(address)
         self._label = str(label)
         if name:
@@ -24,10 +25,9 @@ class GornNode:
         self.empty = empty
         self.leaf = leaf
 
-    def moves_to(self, address: str=None, feature: str=None, final: bool=True):
-        final = 'final' if final else 'non-final'
+    def moves_to(self, address: str=None, feature: str=None):
         if address:
-            self.movement[address] = (feature, final)
+            self.movement[address] = feature
         else:
             return self.movement
 
@@ -174,13 +174,13 @@ class GornTree:
 
     @int2str
     def add_mover(self, source: str, target: str, feature: str,
-                  final: bool=True, update_tree: bool=True):
+                  update_tree: bool=True):
         """Add movement information to a node"""
         # convert name to address if necessary
         source = self.produce_address(source)
         target = self.produce_address(target)
 
-        self.struct[source].moves_to(target, feature, final)
+        self.struct[source].moves_to(target, feature)
         if update_tree:
             self.update_movers
 
@@ -190,7 +190,7 @@ class GornTree:
                 self.movement[node.address] = node.movement
 
     def add_movers(self, movement: list):
-        for source, target, feature, final in movement:
+        for source, target, feature in movement:
             self.add_mover(source, target, feature, update_tree=False)
         self.update_movers()
 
@@ -406,7 +406,7 @@ class GornTree:
         leaves = sorted(
             [(leaf[1][1], leaf[0][1])  # address and label of leaf nodes
              for leaf in self.parts(leaves_only=True).values()],
-            key=lambda x: int(x[1]))
+            key=lambda x: x[1])
 
         if not listing:
             return leaves
