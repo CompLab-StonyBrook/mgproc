@@ -150,7 +150,8 @@ def check_order(tree: IOTree, specification: 'linearization file') -> bool:
 
 def io_process_folder(path: 'string'=None):
     if not path:
-        path = input("Enter folder to be processed (relative to current working directory):\n")
+        path = input("Enter folder to be processed \
+(relative to current working directory):\n")
 
     for tree_file in os.listdir(path):
         # only work on files that end in .tree.forest
