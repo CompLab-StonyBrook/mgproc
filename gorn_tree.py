@@ -26,7 +26,7 @@ class GornNode:
         self.leaf = leaf
 
     def moves_to(self, address: str=None, feature: str=None):
-        if address:
+        if address is not None:
             self.movement[address] = feature
         else:
             return self.movement
