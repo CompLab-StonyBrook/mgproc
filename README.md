@@ -44,6 +44,7 @@ The general workflow is as follows:
 1. If the derivation tree contains movement dependencies, create `foo.move.forest` and specify them there.
    The general syntax is `\draw[move={f}] (source) to (target);`, where `source` and `target` are the names of the nodes and `f` is the feature triggering movement (e.g. nom, wh, top).
    You can use more complicated tikz constructs as you see fit.
+   For movement to intermediate landing sites, you can add `non-final` as a parameter for the draw command.
 
 1. Specifying `foo.linear` by hand can be difficult, but `mgproc` provides a helper for this, too.
    Open a shell and run `python3 -i mgproc.py`.
@@ -80,7 +81,7 @@ Just copy-paste the following commands into the preamble of your document.
 \tikzset{outdex/.style = {annotation, anchor=north.west}}
 \tikzset{boxed/.style = {draw}}
 \tikzset{empty/.style = {}}
-\tikzset{non-final/.style = {}}
+\tikzset{non-final/.style = {opacity=70}}
 
 % indexed node labels in trees;
 % these macros are only needed if you want to use the output of the .fprint method
