@@ -45,6 +45,8 @@ The general workflow is as follows:
    The general syntax is `\draw[move={f}] (source) to (target);`, where `source` and `target` are the names of the nodes and `f` is the feature triggering movement (e.g. nom, wh, top).
    You can use more complicated tikz constructs as you see fit.
    For movement to intermediate landing sites, you can add `non-final` as a parameter for the draw command.
+   If a subtree undergoes multiple movement steps, the draw commands should be ordered according to the timing of movement.
+   So the first movement step is listed first, then the second, then the third, and so on.
 
 1. Specifying `foo.linear` by hand can be difficult, but `mgproc` provides a helper for this, too.
    Open a shell and run `python3 -i mgproc.py`.
@@ -156,6 +158,12 @@ Since mgproc uses regular expressions instead of a proper text parser, there is 
 Unexpected things may happen if the forest files are not well-formed.
 An incorrect `.linear` file may lead to obvious breakage or just an incorrectly computed index/outdex annotation without any warning messages.
 Always double- and triple-check that the linear order of leaf nodes is specified correctly!
+
+
+### Movement Order
+
+Even though mgproc keeps track of the order of movements steps, inspecting a tree with the `.show()` method does not indicate this internal order.
+This is because the output is formatted with `pprint`, which automatically reorders the movement steps by the lexicographic order of the addresses of the landing sites.
 
 
 ### File Names
