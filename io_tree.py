@@ -36,13 +36,13 @@ class IONode(GornNode):
             return self._outdex
 
     def tenure(self):
-        if self.outdex and self.index:
-            return self.outdex - self.index
+        if self.outdex() and self.index():
+            return self.outdex() - self.index()
 
     def parts(self):
         return super(IONode, self).parts() +\
-            (('index', self._index),
-             ('outdex', self._outdex))
+            (('index', self.index()),
+             ('outdex', self.outdex()))
 
 
 class IOTree(GornTree):
