@@ -4,7 +4,7 @@
 import re
 import pprint
 from collections import OrderedDict
-from helpers import int2str, ascii
+from helpers import int2str, ascii, named
 
 
 class GornNode:
