@@ -2,7 +2,7 @@
 # name; LaTeX command; load_type; operator; trivial; filter; function
 #
 #
-# tenure based, trivial memory load is ignored
+# tenure based, trivial memory load is ignored, all filter variants are constructed
 #
 MaxT ;    ; tenure; safemax; ; I, U, P, *
 SumT ;    ; tenure; sum    ; ; I, U, P, *
@@ -11,7 +11,7 @@ AvgT ;    ; tenure; avg    ; ; I, U, P, *
 MaxTR;    ; tenure; sorted ; ; I, U, P, *
 #
 #
-# tenure based, trivial memory load is not ignored
+# tenure based, trivial memory load is not ignored, all filter variants are constructed
 #
 MaxT' ;   ; tenure; safemax; trivial; I, U, P, *
 SumT' ;   ; tenure; sum    ; trivial; I, U, P, *
@@ -22,11 +22,11 @@ MaxTR';   ; tenure; sorted ; trivial; I, U, P, *
 #
 # size based, trivial memory load is ignored
 #
-MaxS  ;   ; size  ; safemax;
-SumS  ;   ; size  ; sum    ;
-Movers;   ; size  ; len    ;
-AvgS  ;   ; size  ; avg    ;
-MaxTR ;   ; size  ; sorted ;
+MaxS  ;   ; size  ; safemax
+SumS  ;   ; size  ; sum    
+Movers;   ; size  ; len    
+AvgS  ;   ; size  ; avg    
+MaxTR ;   ; size  ; sorted 
 #
 #
 # size based, trivial memory load is not ignored
