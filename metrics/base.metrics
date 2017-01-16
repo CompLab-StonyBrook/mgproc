@@ -4,35 +4,35 @@
 #
 # tenure based, trivial memory load is ignored
 #
-MaxT ;    ; tenure; safemax;
-SumT ;    ; tenure; sum    ;
-BoxT ;    ; tenure; len    ;
-AvgT ;    ; tenure; avg    ;
-MaxTR;    ; tenure; sorted ;
+MaxT ;    ; tenure; safemax
+SumT ;    ; tenure; sum
+BoxT ;    ; tenure; len
+AvgT ;    ; tenure; avg
+MaxTR;    ; tenure; sorted
 #
 #
 # tenure based, trivial memory load is not ignored
 #
-MaxT' ;   ; tenure; safemax; trivial;
-SumT' ;   ; tenure; sum    ; trivial;
-BoxT' ;   ; tenure; len    ; trivial;
-AvgT' ;   ; tenure; avg    ; trivial;
-MaxTR';   ; tenure; sorted ; trivial;
+MaxT' ;   ; tenure; safemax; trivial
+SumT' ;   ; tenure; sum    ; trivial
+BoxT' ;   ; tenure; len    ; trivial
+AvgT' ;   ; tenure; avg    ; trivial
+MaxTR';   ; tenure; sorted ; trivial
 #
 #
 # size based, trivial memory load is ignored
 #
-MaxS  ;   ; size  ; safemax;
-SumS  ;   ; size  ; sum    ;
-Movers;   ; size  ; len    ;
-AvgS  ;   ; size  ; avg    ;
-MaxTR ;   ; size  ; sorted ;
+MaxS  ;   ; size  ; safemax
+SumS  ;   ; size  ; sum
+Movers;   ; size  ; len
+AvgS  ;   ; size  ; avg
+MaxTR ;   ; size  ; sorted
 #
 #
 # size based, trivial memory load is not ignored
 #
-MaxT'  ;  ; size  ; safemax; trivial;
-SumT'  ;  ; size  ; sum    ; trivial;
-Movers';  ; size  ; len    ; trivial;
-AvgT'  ;  ; size  ; avg    ; trivial;
-MaxTR' ;  ; size  ; sorted ; trivial;
+MaxT'  ;  ; size  ; safemax; trivial
+SumT'  ;  ; size  ; sum    ; trivial
+Movers';  ; size  ; len    ; trivial
+AvgT'  ;  ; size  ; avg    ; trivial
+MaxTR' ;  ; size  ; sorted ; trivial
