@@ -26,7 +26,7 @@ def safediv(dividend: int, divisor: int) -> float:
 
 def avg(int_list: list) -> float:
     """Compute the average of a list of integers."""
-    return sum(int_list) / len(int_list)
+    return safediv(sum(int_list), len(int_list))
 
 
 ########################
