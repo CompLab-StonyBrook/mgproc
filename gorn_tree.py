@@ -14,6 +14,7 @@ class GornNode:
     def __init__(self,
                  address='', label='', name=None,
                  empty: bool=None, leaf: bool=None,
+                 content: bool=None,
                  movement: list=[]):
         self.address = str(address)
         self._label = str(label)
@@ -26,6 +27,7 @@ class GornNode:
             self.movement[target] = feature
         self.empty = empty
         self.leaf = leaf
+        self.content = content
 
     def moves_to(self, address: str=None, feature: str=None):
         if address is not None:
@@ -51,7 +53,8 @@ class GornNode:
                 ('name', self._name),
                 ('movement', self.movement),
                 ('empty', self.empty),
-                ('leaf', self.leaf))
+                ('leaf', self.leaf),
+                ('content', self.content))
 
 
 class GornTree:

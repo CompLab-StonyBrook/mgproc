@@ -1,17 +1,17 @@
 [S$'$, name=top
     [S, name=root % tree starts here
-        [NP [the] [man, name=test, content] % more comments
+        [NP, content [the] [man, name=test, content] % more comments
         ]
-        [V\emph{P}
-            [A\textbf{dv}P
+        [V\emph{P}, content
+            [A\textbf{dv}P, content
                 [really, content]
             ]
             [VP, name=acc-case-checking, content
                 [VP, content
                     [V$'$, content
-                        [V [showed, content], content]
+                        [V, content [showed, content]]
                         [NP, name=obj, content [Art [his] ]
-                            [N [dog, content], content]
+                            [N, content [dog, content]]
                         ]
                         [Part [around]]
                     ]

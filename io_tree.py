@@ -12,6 +12,7 @@ class IONode(GornNode):
     def __init__(self,
                  address='', label='', name=None,
                  empty: bool=None, leaf: bool=None,
+                 content: bool=None,
                  movement: dict={},
                  index: int=None, outdex: int=None):
         super().__init__(address=address,
@@ -19,7 +20,8 @@ class IONode(GornNode):
                          name=name,
                          empty=empty,
                          leaf=leaf,
-                         movement=movement)
+                         movement=movement,
+                         content=content)
         self._index = index
         self._outdex = outdex
 

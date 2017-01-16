@@ -27,7 +27,8 @@ def tokenize(string: str) -> list:
 
 def extract_properties(string: str, address: str) -> tuple:
     label = re.match(r'\s*([\w$\'\-\\{}\.]*)', string).group(1)
-    empty = True if re.search(r',\s*empty', string) else None
+    empty = True if re.search(r',\s*empty\W*', string) else None
+    content = True if re.search(r',\s*content\W*', string) else None
 
     name_match = re.search(r',\s*name\s*=\s*([\w\-\']*)', string)
     if name_match:
@@ -36,7 +37,7 @@ def extract_properties(string: str, address: str) -> tuple:
         name = None
 
     return {'address': address, 'label': label,
-            'name': name, 'empty': empty}
+            'name': name, 'empty': empty, 'content': content}
 
 
 def parse(string: str) -> list:
