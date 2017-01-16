@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
 
 def int2str(function) -> 'function':
     """Convert int-arguments of function to type str"""
@@ -67,7 +68,7 @@ def forest(tree: 'IOTree', address: str) -> str:
 
 
 @int2str
-def ioprint(tree: 'IOTree',
+def ioprint(tree: 'IOTree', extension: str='.io.forest',
             filename: str=None, directory: str=None) -> str:
     """Prints index/outdex annotation as tikz nodes."""
     string = ''
@@ -99,9 +100,8 @@ def ioprint(tree: 'IOTree',
         return string
     else:
         if not directory:
-            directory = ''
-        elif directory[-1] != '/':
-            directory += '/'
-        filename = directory + filename + '.io.forest'
+            directory = '.'
+        filename += extension
+        filename = os.path.join(directory, filename)
         with open(filename, "w") as text_file:
             print(string, file=text_file)

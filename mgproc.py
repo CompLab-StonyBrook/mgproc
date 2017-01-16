@@ -109,39 +109,36 @@ def move_from_file(inputfile) -> list:
 
 
 def tree_from_file(inputfile: str=None,
-                   directory: str=None,
                    extension: str='.tree.forest',
                    autolinearize: bool=False) -> 'MetricTree':
     # ask for input file if necessary
-    if not directory:
-        directory =\
-            input("Path to folder with the forest file:\n")
-    if directory[-1] != '/':
-        directory += '/'
     if not inputfile:
         inputfile =\
-            input("File to read in (without .tree.forest extension):\n")
+            input("File to read in\
+                  (without {0} extension):\n".format(extension))
 
-    basename = directory + inputfile
+    if inputfile.endswith(extension):
+        inputfile = inputfile.replace(extension, '')
+    basename = os.path.basename(inputfile)
 
     # read in specification file
-    with open(basename + extension, 'r') as treefile:
+    with open(inputfile + extension, 'r') as treefile:
         tree = treefile.read()
         treefile.close()
 
     # and set auxiliary files
-    linear_file = basename + '.linear'
-    move_file = basename + '.move.forest'
+    linear_file = inputfile + '.linear'
+    move_file = inputfile + '.move.forest'
 
     # linearize automatically or...
     if autolinearize or not file_accessible(linear_file, 'r'):
-        tree = MetricTree(*parse(tree), name=inputfile)
+        tree = MetricTree(*parse(tree), name=basename)
     # ... according to linearization file
     elif file_accessible(linear_file, 'r'):
         leaf_order = [int(address)
                       for label, address in
                       linearization_from_file(linear_file)]
-        tree = MetricTree(*parse(tree), leaf_order=leaf_order, name=inputfile)
+        tree = MetricTree(*parse(tree), leaf_order=leaf_order, name=basename)
 
     # then read in Move information
     if file_accessible(move_file, 'r'):

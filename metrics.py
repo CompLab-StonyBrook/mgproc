@@ -4,6 +4,8 @@
 from io_tree import *
 from tree_values import *
 import itertools
+import os
+import re
 
 
 class Metric:
@@ -68,9 +70,9 @@ class MetricTree(IOTree):
         self.profile[metric]['value'] = value if value else metric.eval(self)
 
 
-######################
-#  Building Metrics  #
-######################
+#####################################
+#  Metric Specifications from Text  #
+#####################################
 
 
 def construct_ranked_metric(metric_set: list=[], ranks: int=2) -> list:
@@ -82,32 +84,7 @@ def construct_ranked_metric(metric_set: list=[], ranks: int=2) -> list:
         return list(itertools.product(*[metric_set for _ in range(ranks)]))
 
 
-def construct_filtered_parameters(parameters: dict, filters: list=[]) -> list:
-    def insert_filter(parameters: dict, filters: list=[]) -> list:
-        filtered_metrics = []
-        for a_filter in filters:
-            new_filter = parameters.copy()
-            new_filter['filters'] = a_filter
-            filtered_metrics.append(new_filter)
-        return filtered_metrics
-
-    if not filters:
-        return parameters
-
-    if parameters['load_type'] == 'tenure':
-        if '*' in filters:
-            return insert_filter(parameters,
-                                 powerset(['I', 'U', 'P', 'F', 'C']))
-        else:
-            return insert_filter(parameters, filters)
-
-
-#####################################
-#  Metric Specifications from Text  #
-#####################################
-
-
-def filter_eval(filters: str):
+def filter_eval(filters: str) -> list:
     def powerset(iterable):
         "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
         s = list(iterable)
@@ -157,30 +134,26 @@ def construct_metrics_from_text(metric_text: list=[]):
 
 
 def metrics_from_file(inputfile: str=None,
-                      directory: str=None,
                       extension: str='.metrics',
-                      ranked: int=1):
+                      ranks: int=1):
     # ask for input file if necessary
-    if not directory:
-        directory =\
-            input("Path to folder with the metrics file:\n")
-    if directory[-1] != '/':
-        directory += '/'
     if not inputfile:
         inputfile =\
             input("File to read in (without .metrics extension):\n")
 
-    basename = directory + inputfile
+    if inputfile.endswith(extension):
+        inputfile = inputfile.replace(extension, '')
+    basename = os.path.basename(inputfile)
 
     # read in specification file
-    with open(basename + extension, 'r') as metricfile:
+    with open(inputfile + extension, 'r') as metricfile:
         metrics = [line.split(';')
                    for line in metricfile.readlines()
                    if not re.match(r'\s*#.*', line)]
         metricfile.close()
 
     return construct_ranked_metric(
-        [metric_variant
-         for metric in metrics
-         for metric_variant in construct_metrics_from_text(metric)],
-        ranked)
+        ranks=ranks,
+        metric_set=[metric_variant
+                    for metric in metrics
+                    for metric_variant in construct_metrics_from_text(metric)])
