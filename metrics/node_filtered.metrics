@@ -1,0 +1,38 @@
+# General format:
+# name; LaTeX command; load_type; operator; trivial; filter; function
+#
+#
+# tenure based, trivial memory load is ignored
+#
+MaxT ;    ; tenure; safemax; ; I, U, P, *
+SumT ;    ; tenure; sum    ; ; I, U, P, *
+BoxT ;    ; tenure; len    ; ; I, U, P, *
+AvgT ;    ; tenure; avg    ; ; I, U, P, *
+MaxTR;    ; tenure; sorted ; ; I, U, P, *
+#
+#
+# tenure based, trivial memory load is not ignored
+#
+MaxT' ;   ; tenure; safemax; trivial; I, U, P, *
+SumT' ;   ; tenure; sum    ; trivial; I, U, P, *
+BoxT' ;   ; tenure; len    ; trivial; I, U, P, *
+AvgT' ;   ; tenure; avg    ; trivial; I, U, P, *
+MaxTR';   ; tenure; sorted ; trivial; I, U, P, *
+#
+#
+# size based, trivial memory load is ignored
+#
+MaxS  ;   ; size  ; safemax; ; I, U, P, *
+SumS  ;   ; size  ; sum    ; ; I, U, P, *
+Movers;   ; size  ; len    ; ; I, U, P, *
+AvgS  ;   ; size  ; avg    ; ; I, U, P, *
+MaxTR ;   ; size  ; sorted ; ; I, U, P, *
+#
+#
+# size based, trivial memory load is not ignored
+#
+MaxT'  ;  ; size  ; safemax; trivial; I, U, P, *
+SumT'  ;  ; size  ; sum    ; trivial; I, U, P, *
+Movers';  ; size  ; len    ; trivial; I, U, P, *
+AvgT'  ;  ; size  ; avg    ; trivial; I, U, P, *
+MaxTR' ;  ; size  ; sorted ; trivial; I, U, P, *
