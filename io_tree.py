@@ -47,8 +47,8 @@ class IONode(GornNode):
 
 class IOTree(GornTree):
     def __init__(self, *args: tuple,
-                 leaf_order: list=None, movers: list=None, name: str=''):
-        super().__init__()
+                 leaf_order: list=None, movement: list=None, name: str=''):
+        super().__init__(name=name)
 
         # fill up self.struct with arguments, if specified
         for arg in args:
@@ -68,8 +68,8 @@ class IOTree(GornTree):
         if self.is_consistent():
             self.parse()
 
-        if movers:
-            self.add_movers(movers)
+        if movement:
+            self.add_movers(movement)
 
 
     ################
