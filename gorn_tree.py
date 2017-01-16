@@ -59,7 +59,10 @@ class GornTree:
     Constructs trees as flat dictionaries with Gorn-style addresses
     as key (of type str) to each node.
     """
-    def __init__(self, *args: tuple, leaf_order: list=None, movement: dict={}):
+    def __init__(self, *args: tuple,
+                 name: str='', leaf_order: list=None, movement: dict={}):
+        # name of tree
+        self.name = name
         # tree structure as flat dictionary
         self.struct = {}
     

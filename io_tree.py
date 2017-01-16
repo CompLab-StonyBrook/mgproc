@@ -46,7 +46,8 @@ class IONode(GornNode):
 
 
 class IOTree(GornTree):
-    def __init__(self, *args: tuple, leaf_order: list=None, movers: list=None):
+    def __init__(self, *args: tuple,
+                 leaf_order: list=None, movers: list=None, name: str=''):
         super().__init__()
 
         # fill up self.struct with arguments, if specified

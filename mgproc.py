@@ -6,6 +6,7 @@ import re
 from pprint import pprint
 from io_tree import *
 from tree_values import *
+from metrics import *
 
 
 def raw_tokenize(string: str) -> list:
@@ -108,7 +109,7 @@ def move_from_file(inputfile) -> list:
 
 def tree_from_file(inputfile: str=None,
                    extension: str='.tree.forest',
-                   autolinearize: bool=False) -> 'IOTree':
+                   autolinearize: bool=False) -> 'MetricTree':
     # ask for input file if necessary
     if not inputfile:
         inputfile = input("File to read in (without .tree.forest extension): ")
@@ -124,13 +125,13 @@ def tree_from_file(inputfile: str=None,
 
     # linearize automatically or...
     if autolinearize or not file_accessible(linear_file, 'r'):
-        tree = IOTree(*parse(tree))
+        tree = MetricTree(*parse(tree), name=inputfile)
     # ... according to linearization file
     elif file_accessible(linear_file, 'r'):
         leaf_order = [int(address)
                       for label, address in
                       linearization_from_file(linear_file)]
-        tree = IOTree(*parse(tree), leaf_order=leaf_order)
+        tree = MetricTree(*parse(tree), leaf_order=leaf_order, name=inputfile)
 
     # then read in Move information
     if file_accessible(move_file, 'r'):
