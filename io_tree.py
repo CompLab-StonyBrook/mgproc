@@ -44,7 +44,8 @@ class IONode(GornNode):
     def parts(self):
         return super(IONode, self).parts() +\
             (('index', self.index()),
-             ('outdex', self.outdex()))
+             ('outdex', self.outdex()),
+             ('tenure', self.tenure()))
 
 
 class IOTree(GornTree):
