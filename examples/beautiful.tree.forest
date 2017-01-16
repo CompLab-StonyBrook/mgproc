@@ -1,0 +1,46 @@
+[S$'$, name=top
+    [S, name=root
+        [NP
+            [the]
+            [man, name=test]
+        ]
+        [V\emph{P}
+            [AdvP
+                [really]
+            ]
+            [VP, name=acc-case-checking
+                [VP
+                    [V$'$
+                        [V
+                            [showed]
+                        ]
+                        [NP, name=obj
+                            [Art
+                                [his]
+                            ]
+                            [N
+                                [dog]
+                            ]
+                        ]
+                        [Part
+                            [around]
+                        ]
+                    ]
+                    [PP
+                        [P
+                            [to]
+                        ]
+                        [NP
+                            [all]
+                            [the]
+                            [people]
+                        ]
+                    ]
+                ]
+                [AdvP
+                    [yesterday]
+                ]
+            ]
+        ]
+    ]
+]
