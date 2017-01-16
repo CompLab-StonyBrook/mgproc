@@ -151,6 +151,23 @@ def tree_from_file(inputfile: str=None,
     return tree
 
 
+def trees_from_folder(directory: str=None,
+                      extension: str='.tree.forest',
+                      autolinearize: bool=False): 
+    if not directory:
+        directory = input("Enter folder to be processed \
+(relative to current working directory):\n")
+
+    files = [tree_file.replace(extension, '')
+             for tree_file in os.listdir(directory)
+             if tree_file.endswith(extension)]
+
+    return [tree_from_file(
+        inputfile=basename, directory=directory,
+        extension=extension, autolinearize=autolinearize)
+        for basename in files]
+
+
 def check_order(tree: IOTree, specification: 'linearization file') -> bool:
     for label, address in linearization_from_file(specification + '.linear'):
         # sanitize address (remove \n, whitespace)
@@ -163,15 +180,15 @@ def check_order(tree: IOTree, specification: 'linearization file') -> bool:
         return True
 
 
-def io_process_folder(path: 'string'=None):
+def io_process_folder(path: str=None, extension: str='.tree.forest'):
     if not path:
         path = input("Enter folder to be processed \
 (relative to current working directory):\n")
 
     for tree_file in os.listdir(path):
         # only work on files that end in .tree.forest
-        if tree_file.endswith('.tree.forest'):
-            basename = tree_file[:-12]
+        if tree_file.endswith(extension):
+            basename = tree_file.replace(extension, '')
             current_file = os.path.join(path, basename)
             current_tree = tree_from_file(inputfile=current_file,
                                           autolinearize=False)
