@@ -177,3 +177,6 @@ To Do
 - Bach comparison of metrics
 - Unit tests
 - Tons of bug testing
+- Generalize empty & content to arbitrary property system
+   - prop={empty, content, R-expression, discourse-salient}
+   - generalize filters accordingly to match any definable property
