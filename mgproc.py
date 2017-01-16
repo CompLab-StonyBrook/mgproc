@@ -108,20 +108,29 @@ def move_from_file(inputfile) -> list:
 
 
 def tree_from_file(inputfile: str=None,
+                   directory: str=None,
                    extension: str='.tree.forest',
                    autolinearize: bool=False) -> 'MetricTree':
     # ask for input file if necessary
+    if not directory:
+        directory =\
+            input("Path to folder with the forest file:\n")
+    if directory[-1] != '/':
+        directory += '/'
     if not inputfile:
-        inputfile = input("File to read in (without .tree.forest extension): ")
+        inputfile =\
+            input("File to read in (without .tree.forest extension):\n")
+
+    basename = directory + inputfile
 
     # read in specification file
-    with open(inputfile + extension, 'r') as treefile:
+    with open(basename + extension, 'r') as treefile:
         tree = treefile.read()
         treefile.close()
 
     # and set auxiliary files
-    linear_file = inputfile + '.linear'
-    move_file = inputfile + '.move.forest'
+    linear_file = basename + '.linear'
+    move_file = basename + '.move.forest'
 
     # linearize automatically or...
     if autolinearize or not file_accessible(linear_file, 'r'):
