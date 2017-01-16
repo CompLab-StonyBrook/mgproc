@@ -40,6 +40,8 @@ def typedict(IONode) -> dict:
     I: interior (= not a leaf node)
     U: unpronounced leaf (= empty head)
     P: pronounced leaf
+    F: part of functional projection (e.g. T')
+    C: part of content projection (e.g. V')
 
     The returned dictionary has exactly one of the three set to True.
 
@@ -56,16 +58,20 @@ def typedict(IONode) -> dict:
     >>> typedict(node)
     {'I': False, 'P': True, 'U': False}
     """
-    types = {'I': False, 'U': False, 'P': False}
+    types = {'I': False, 'U': False, 'P': False, 'F': False, 'C': False}
     if IONode.leaf == False:
         types['I'] = True
-        return types
     elif IONode.empty == True:
         types['U'] = True
-        return types
     else:
         types['P'] = True
-        return types
+
+    if IONode.content == True:
+        types['C'] = True
+    else:
+        types['F'] = True
+
+    return types
 
 
 def matches_types(IONode, node_types: list=None) -> bool:
@@ -75,6 +81,8 @@ def matches_types(IONode, node_types: list=None) -> bool:
     I: interior (= not a leaf node)
     U: unpronounced leaf (= empty head)
     P: pronounced leaf
+    F: part of functional projection
+    C: part of content projection
 
     If node_types contains any other entries, they are treated as if
     their value were False.
@@ -262,7 +270,8 @@ def memory_measure(IOTree,
     filters : list of str
         do not consider the values created by objects of a specific type;
         with load_type = tenure:
-            interior (I), lexical (L), pronounced (P), or unpronounced (U)
+            interior (I), lexical (L), pronounced (P), unpronounced (U),
+            functional (F), or content (C)
         with load_type = movement:
             names of features to ignore
     trivial : bool
