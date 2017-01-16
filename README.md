@@ -173,7 +173,6 @@ To Do
 
 - Better documentation of code (in particular docstrings)
 - Batch processing
-- Rewrite metric evaluation from scratch
 - Bach comparison of metrics
 - Unit tests
 - Tons of bug testing
