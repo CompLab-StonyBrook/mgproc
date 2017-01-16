@@ -153,7 +153,7 @@ def tree_from_file(inputfile: str=None,
 
 def trees_from_folder(directory: str=None,
                       extension: str='.tree.forest',
-                      autolinearize: bool=False): 
+                      autolinearize: bool=False):
     if not directory:
         directory = input("Enter folder to be processed \
 (relative to current working directory):\n")
