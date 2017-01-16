@@ -22,17 +22,17 @@ MaxTR';   ; tenure; sorted ; trivial; I, U, P, *
 #
 # size based, trivial memory load is ignored
 #
-MaxS  ;   ; size  ; safemax; ; I, U, P, *
-SumS  ;   ; size  ; sum    ; ; I, U, P, *
-Movers;   ; size  ; len    ; ; I, U, P, *
-AvgS  ;   ; size  ; avg    ; ; I, U, P, *
-MaxTR ;   ; size  ; sorted ; ; I, U, P, *
+MaxS  ;   ; size  ; safemax;
+SumS  ;   ; size  ; sum    ;
+Movers;   ; size  ; len    ;
+AvgS  ;   ; size  ; avg    ;
+MaxTR ;   ; size  ; sorted ;
 #
 #
 # size based, trivial memory load is not ignored
 #
-MaxT'  ;  ; size  ; safemax; trivial; I, U, P, *
-SumT'  ;  ; size  ; sum    ; trivial; I, U, P, *
-Movers';  ; size  ; len    ; trivial; I, U, P, *
-AvgT'  ;  ; size  ; avg    ; trivial; I, U, P, *
-MaxTR' ;  ; size  ; sorted ; trivial; I, U, P, *
+MaxT'  ;  ; size  ; safemax; trivial
+SumT'  ;  ; size  ; sum    ; trivial
+Movers';  ; size  ; len    ; trivial
+AvgT'  ;  ; size  ; avg    ; trivial
+MaxTR' ;  ; size  ; sorted ; trivial
