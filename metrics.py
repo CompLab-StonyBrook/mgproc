@@ -19,7 +19,7 @@ class Metric:
         self.trivial = trivial
         self.filters = filters
         self.profile = {}
-        self.viable = True
+        self.viable = (True, True)
         self.latex = latex
         self.function = function if function != '' else memory_measure
 
@@ -49,15 +49,19 @@ class Metric:
             return (False, False)
 
     def compare(self, name: str, tree1: 'IOTree', tree2: 'IOTree'):
+        def pair_and(pair1: (bool, bool), pair2: (bool, bool)):
+            return (pair1[0] and pair2[0], pair1[1] and pair2[1])
+
         tree1_value = self.get_or_set_value(tree1)
         tree2_value = self.get_or_set_value(tree2)
-        self.viable = self.captures(tree1_value, tree2_value)
+        viable = self.captures(tree1_value, tree2_value)
 
         contrast = {'name': name,
                     'desired winner': (tree1, tree1.name, tree1_value),
                     'desired loser': (tree2, tree2.name, tree2_value),
-                    'captured': self.viable}
+                    'captured': viable}
         self.profile[name] = contrast
+        self.viable = pair_and(self.viable, viable)
 
 
 class MetricTree(IOTree):
