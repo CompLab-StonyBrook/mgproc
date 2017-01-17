@@ -1,2 +1,0 @@
-\draw[move={acc}] (obj) to[out=west,in=south west] (acc-case-checking);
-\draw[move={top}] (obj) to[out=west,in=south west] (top);
