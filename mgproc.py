@@ -7,6 +7,7 @@ from pprint import pprint
 from io_tree import *
 from tree_values import *
 from metrics import *
+from comparisons import *
 
 
 def raw_tokenize(string: str) -> list:
