@@ -21,15 +21,15 @@ class Metric:
         self.profile = {}
         self.viable = True
         self.latex = latex
-        self.function = function
+        self.function = function if function != '' else memory_measure
 
     def eval(self, tree: 'IOTree'):
         """Compute memory value of tree with respect to metric"""
-        return function(tree,
-                        operator=self.operator,
-                        load_type=self.load_type,
-                        filters=self.filters,
-                        trivial=self.trivial)
+        return self.function(tree,
+                             operator=self.operator,
+                             load_type=self.load_type,
+                             filters=self.filters,
+                             trivial=self.trivial)
 
     def get_or_set_value(self, tree: 'MetricTree'):
         assert(isinstance(tree, MetricTree))
