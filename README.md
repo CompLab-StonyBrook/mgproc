@@ -168,6 +168,15 @@ Of course this strategy will fail whenever a tree specification file has been gi
 So avoid giving trees names that end in `.move.forest` or `.io.forest`.
 
 
+### Memory Usage
+
+Do not underestimate memory usage when defining many metrics.
+Each individual metric only consumes about 1 kilobit (not kilobyte!) of memory, but if you automatically create ranked metrics then number still rises fast enough to quickly consume multiple gigabytes.
+For instance, running `metrics = metrics_from_file(inputfile='metrics/node_filtered', ranks=4)` will take the base metrics, create all their possible variants with node filters, and then use this set M to construct M^4^, i.e. the set of ranked metrics with four components.
+This set has 65,610,000 members, so you better have 6GB of free memory to store all those metrics.
+Given the dubious empirical status of such complex metrics, there are currently no plans to redesign the code for more efficient memory usage.
+
+
 To Do
 -----
 
