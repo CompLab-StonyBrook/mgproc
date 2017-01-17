@@ -1,0 +1,52 @@
+\begin{forest}
+        [\Lab{CP}{1}{2}
+            [\Lab{C}{2}{3}]
+            [\Lab{TP}{2}{4}, name=TP1
+                [\Lab{T$'$}{4}{5}
+                    [\BLab{T}{5}{25}]
+                    [\Lab{$v$P}{5}{6}
+                        [\Lab{DP}{6}{7}, name=DP
+                            [\Lab{D}{7}{8}]
+                            [\Lab{RelP}{7}{9}, name=RelP
+                                [\Lab{Rel$'$}{9}{10}
+                                    [\BLab{who}{10}{22}]
+                                    [\Lab{CP}{10}{11}, name=CP
+                                        [\Lab{C$'$}{11}{12}
+                                            [\BLab{C}{12}{24}]
+                                            [\Lab{TP}{12}{13}, name=TP2
+                                                [\Lab{T$'$}{13}{14}
+                                                    [\BLab{T}{14}{17}]
+                                                    [\Lab{$v$P}{14}{15}, name=vP2
+                                                        [\Lab{mayor}{15}{16}, name=mayor]
+                                                        [\IBLab{$v'$}{15}{18}
+                                                            [\Lab{$v$}{18}{19}]
+                                                            [\Lab{VP}{18}{20}
+                                                                [\Lab{invite}{20}{21}]
+                                                                [\BLab{tycoon}{20}{23}, name=TP2obj]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]        
+                        ]    
+                        [\IBLab{$v'$}{6}{26}
+                            [\Lab{$v$}{26}{27}]
+                            [\Lab{VP}{26}{28} 
+                                [\Lab{likes}{28}{29}]
+                                [\Lab{wine}{28}{30}]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+%
+\draw[move] (TP2obj) .. controls +(65:12em) and +(190:2em) .. (CP.south);
+\draw[move] (mayor)  .. controls +(190:6em) and +(220:6em) .. (TP2);
+\draw[move] (TP2.west)  .. controls +(230:12em) and +(210:12em) .. (RelP);
+\draw[move] (DP)     .. controls +(120:4em) and +(220:4em) .. (TP1);
+\end{forest}

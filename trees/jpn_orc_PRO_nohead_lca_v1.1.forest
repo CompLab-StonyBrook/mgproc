@@ -1,0 +1,61 @@
+Japanese -- Object Relative Clause -- Pro Analysis -- No head movement -- LCA -- V1.1
+
+\begin{forest}
+        [\Lab{CP}{1}{2}
+            [\Lab{C}{2}{3}]
+            [\Lab{TP}{2}{4}, name=TP1
+                [\Lab{T$'$}{4}{5}
+                    [\BLab{T}{5}{28}]
+                    [\Lab{vp}{5}{6}, name=vP1
+                    		[\Lab{vP}{6}{7}
+                        [\Lab{DP}{7}{8}, name=TP1subj
+                        [\Lab{D}{8}{9}]
+                            [\Lab{RelP}{8}{10}, name=TP2target
+                                [\Lab{Rel$'$}{10}{11}
+                                    [\BLab{Rel}{11}{25}]
+                                    [\Lab{CP}{11}{12}, name=CP2
+                                    [\BLab{mayor}{12}{26}]
+                                        [\Lab{C$'$}{12}{13}
+                                            [\BLab{C}{13}{27}]
+                                            [\Lab{TP}{13}{14}, name=TP2
+                                                [\Lab{T$'$}{14}{15}
+                                                    [\BLab{T}{15}{19}]
+                                                    [\Lab{vP}{15}{16}, name=vP2
+                                                    [\Lab{vP}{16}{17}
+                                                        [\Lab{tycoon}{17}{18}, name=headNP]
+                                                        [\IBLab{v$'$}{17}{20}
+                                                        [\Lab{v}{20}{21}]
+                                                        [\Lab{VP}{20}{22}
+                                                            [\Lab{invited}{22}{23}]
+                                                            [\Lab{pro}{22}{24}]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                        [\IBLab{v$'$}{7}{29}
+                        	[\IBLab{v}{29}{32}] 
+                            [\Lab{VP}{29}{30} 
+                            	[\IBLab{loves}{30}{33}]
+                            	[\node(headNP3){\Lab{money}{30}{31}}; ] 
+                        ]
+                    ]
+                ]
+            ]												
+        ]
+    ]
+]
+%
+    \draw[dashed,bend left] (TP1subj) to (TP1);
+    \draw[dashed,bend left] (headNP to (TP2);
+    \draw[dashed,bend left] (TP2) to (TP2target);
+    \draw[move,bend left=90] (TP2Spec) to (TP2landing);
+    \draw[move,bend right=60] (headNP) to (vP2);
+\end{forest}
+    

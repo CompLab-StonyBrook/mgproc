@@ -1,0 +1,52 @@
+\begin{forest}
+        [\Lab{CP}{1}{2}
+            [\Lab{C}{2}{3}]
+            [\Lab{TP}{2}{4}, name=TP1Spec
+                [\Lab{T$'$}{4}{5}
+                    [\BLab{T}{5}{25}]
+                    [\Lab{$v$P}{5}{6}
+                        [\Lab{DP}{6}{7}, name=SSubj
+                            [\Lab{D}{7}{8}]
+                            [\Lab{RelP}{7}{9}, name=TP2landing
+                                [\Lab{Rel$'$}{9}{10}
+                                    [\BLab{who}{10}{22}]
+                                    [\Lab{CP}{10}{11}, name=CP2Spec
+                                        [\Lab{C$'$}{11}{12}
+                                            [\BLab{C}{12}{24}]
+                                            [\Lab{TP}{12}{13}, name=TP2Spec
+                                                [\Lab{T$'$}{13}{14}
+                                                    [\Lab{T}{14}{15}]
+                                                    [\Lab{$v$P}{14}{16}
+                                                        [\BLab{mayor}{16}{23}, name=headNP]
+                                                        [\Lab{$v'$}{16}{17}
+                                                            [\Lab{$v$}{17}{18}]
+                                                            [\Lab{VP}{17}{19}
+                                                                [\Lab{invite}{19}{20}]
+                                                                [\Lab{tycoon}{19}{21}] 
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]        
+                        ]    
+                        [\IBLab{$v'$}{6}{26}
+                            [\Lab{$v$}{26}{27}]
+                            [\Lab{VP}{26}{28} 
+                                [\Lab{likes}{28}{29}]
+                                [\Lab{wine}{28}{30}] 
+                            ]
+                        ]
+                    ]
+                ]												
+            ]
+        ]
+%
+\draw[move] (headNP.north west)   .. controls +(170:2em) and +(230:4em) .. (TP2Spec.west);
+\draw[move] (headNP.west)   .. controls +(170:8em) and +(220:7em) .. (CP2Spec);
+\draw[move] (TP2Spec)  .. controls +(220:8em) and +(200:10em) .. (TP2landing);
+\draw[move] (SSubj)    .. controls +(120:4em) and +(220:4em) .. (TP1Spec);
+\end{forest}

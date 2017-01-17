@@ -1,0 +1,79 @@
+\begin{forest}
+[\Lab{CP}{1}{2}
+    [\Lab{C}{2}{3} ]
+    [\Lab{TP}{2}{4}, name=TP1
+        [\Lab{T$'$}{4}{5}
+            [\BLab{T}{5}{41}]
+            [\Lab{$v$P}{5}{6}
+                [\Lab{DP}{6}{7}, name=TP1Subj
+                    [\Lab{the}{7}{8}]
+                    [\Lab{NP}{7}{9}
+                        [\Lab{fact}{9}{10} ] 
+                        [\Lab{CP}{9}{11}
+                            [\Lab{that}{11}{12} ]
+                            [\Lab{TP}{11}{13}, name=TP2
+                                [\Lab{T$'$}{13}{14}
+                                    [\BLab{T}{14}{35}]
+                                    [\Lab{$v$P}{14}{15}
+                                        [\Lab{DP}{15}{16}, name=TP2Subj
+                                            [\Lab{the}{16}{17}]
+                                            [\Lab{NP}{16}{18}
+                                                [\Lab{employee}{18}{19}]
+                                                [\Lab{CP}{18}{20}, name=RCtarget
+                                                    [\Lab{C'}{20}{21}
+                                                        [\BLab{C}{21}{28}]
+                                                        [\Lab{TP}{21}{22}, name=TP3
+                                                            [\Lab{T$'$}{22}{23}
+                                                                [\BLab{T}{23}{32}]
+                                                                [\Lab{$v$P}{23}{24}
+                                                                    [\IBLab{DP}{24}{29}, name=TP3Subj
+                                                                        [\Lab{the}{29}{30}]
+                                                                        [\Lab{manager}{29}{31}]
+                                                                    ]
+                                                                    [\Lab{$v'$}{24}{25}
+                                                                        [\BLab{$v$}{25}{33}]
+                                                                        [\Lab{VP}{25}{26}
+                                                                            [\BLab{hired}{26}{34}]
+                                                                            [\Lab{who}{26}{27}, name=RCsource]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        [\IBLab{$v'$}{15}{36}
+                                            [\Lab{$v$}{36}{37}]
+                                            [\Lab{VP}{36}{38}
+                                                [\Lab{stole}{38}{39}]
+                                                [\Lab{office supplies}{38}{40}]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [\IBLab{$v'$}{6}{42}
+                    [\Lab{$v$}{42}{43}]
+                    [\Lab{VP}{42}44{}
+                        [\Lab{worried}{44}{45}]
+                        [\Lab{DP}{44}{46}
+                            [\Lab{the}{46}{47}]
+                            [\Lab{executive}{46}{48}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+\draw[move,bend left] (TP1Subj) to (TP1);
+\draw[move,bend left] (TP2Subj) to (TP2);
+\draw[move,bend left=60] (TP3Subj) to (TP3);
+\draw[move,bend right=30] (RCsource.north) to (RCtarget);
+\end{forest}

@@ -1,0 +1,55 @@
+\begin{forest}
+[\Lab{CP}{1}{2}
+    [\Lab{C}{2}{3}]
+    [\Lab{TP}{2}{4}, name=TP1
+        [\Lab{T$'$}{4}{5}
+            [\BLab{T}{5}{26}]
+            [\Lab{$v$P}{5}{6}
+                [\Lab{DP}{6}{7}, name=TP1subj
+                    [\Lab{the}{7}{8}]
+                    [\Lab{NP}{7}{9}, name=RCtarget
+                        [\Lab{N$'$}{9}{10}
+                            [\BLab{who}{10}{19}]
+                            [\Lab{TP}{10}{11}, name=TP2
+                                [\Lab{T$'$}{11}{12}
+                                    [\BLab{T}{12}{23}]
+                                    [\Lab{$v$P}{12}{13}
+                                        [\BLab{DP}{13}{20}, name=TP2subj
+                                            [\Lab{the}{20}{21}]
+                                            [\Lab{senator}{20}{22}]
+                                        ]
+                                        [\Lab{$v'$}{13}{14}
+                                            [\BLab{$v$}{14}{24}]
+                                            [\Lab{VP}{14}{15}
+                                                [\BLab{attacked}{15}{25}]
+                                                [\Lab{DP}{15}{16}, name=RCsource
+                                                    [\Lab{D}{16}{17}]
+                                                    [\Lab{reporter}{16}{18}]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [\IBLab{$v'$}{6}{27}
+                    [\Lab{$v$}{27}{28}]
+                    [\Lab{VP}{27}{29}
+                        [\Lab{admitted}{29}{30}]
+                        [\Lab{DP}{29}{31}
+                            [\Lab{the}{31}{32}]
+                            [\Lab{error}{31}{33}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+\draw[move] (TP1subj) .. controls +(130:4em) and +(220:6em) .. (TP1);
+\draw[move] (TP2subj) .. controls +(130:4em) and +(220:6em) .. (TP2);
+\draw[move] (RCsource) .. controls +(75:10em) and +(190:4em) .. (RCtarget.south);
+\end{forest}

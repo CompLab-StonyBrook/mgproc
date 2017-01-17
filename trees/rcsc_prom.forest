@@ -1,0 +1,79 @@
+\begin{forest}
+[\Lab{CP}{1}{2}
+    [\Lab{C}{2}{3}]
+    [\Lab{TP}{2}{4}, name=TP1
+        [\Lab{T$'$}{4}{5}
+            [\BLab{T}{5}{41}]
+            [\Lab{$v$P}{5}{6}
+                [\Lab{DP}{6}{7}, name=TP1Subj
+                    [\Lab{the}{7}{8}]
+                    [\Lab{NP}{7}{9}, name=RCtarget
+                        [\Lab{N$'$}{9}{10}
+                            [\BLab{who}{10}{19}]
+                            [\Lab{TP}{10}{11}, name=TP2
+                                [\Lab{T$'$}{11}{12}
+                                    [\BLab{T}{12}{38}]
+                                    [\Lab{$v$P}{12}{13}
+                                        [\IBLab{DP}{13}{20}, name=TP2Subj
+                                            [\Lab{the}{20}{21}]
+                                            [\Lab{NP}{20}{22}
+                                                [\Lab{fact}{22}{23}]
+                                                [\Lab{CP}{22}{24}
+                                                    [\Lab{that}{24}{25}]
+                                                    [\Lab{TP}{25}{26}, name=TP3
+                                                        [\Lab{T$'$}{26}{27}
+                                                            [\BLab{T}{27}{32}]
+                                                            [\Lab{$v$P}{27}{28}
+                                                                [\Lab{DP}{28}{29}, name=TP3Subj
+                                                                    [\Lab{the}{29}{30}]
+                                                                    [\Lab{employee}{29}{31}]
+                                                                ]
+                                                                [\BLab{$v'$}{28}{33}
+                                                                    [\Lab{$v$}{33}{34}]
+                                                                    [\Lab{VP}{33}{35}
+                                                                        [\Lab{stole}{35}{36}]
+                                                                        [\Lab{office supplies}{35}{37}]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        [\Lab{$v'$}{13}{14}
+                                            [\BLab{$v$}{14}{39}]
+                                            [\Lab{VP}{14}{15}
+                                                [\BLab{worried}{15}{40}]
+                                                [\Lab{DP}{15}{16}, name=RCsource
+                                                    [\Lab{D}{16}{17}]
+                                                    [\Lab{executive}{16}{18}]
+                                                ]    
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [\IBLab{$v'$}{6}{42}
+                    [\Lab{$v$}{42}{43}]
+                    [\Lab{VP}{42}{44}
+                        [\Lab{hired}{44}{45}]
+                        [\Lab{DP}{44}{46}
+                            [\Lab{the}{46}{47}]
+                            [\Lab{manager}{46}{48}]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+\draw[move] (TP1Subj) .. controls +(130:4em) and +(220:2em) .. (TP1);
+\draw[move] (TP2Subj) .. controls +(130:4em) and +(220:2em) .. (TP2);
+\draw[move] (TP3Subj) .. controls +(130:4em) and +(220:2em) .. (TP3);
+\draw[move] (RCsource.north) .. controls +(110:10em) and +(220:2em) .. (RCtarget);
+\end{forest}

@@ -1,0 +1,58 @@
+% SRC_Eng_wh
+\begin{forest}
+[\Lab{CP}{1}{2}, name=CP1
+    [\Lab{C$'$}{2}{3}
+       [\Lab{C}{3}{4}]
+       [\Lab{TP}{3}{5}, name=TP1
+            [\Lab{T$'$}{5}{6}
+                [\BLab{T}{6}{27}]
+                [\Lab{$v$P}{6}{7}
+                    [\Lab{DP}{7}{8}, name=DP1
+                        [\Lab{the}{8}{9}]
+                        [\Lab{NP}{8}{10}
+                            [\Lab{reporter}{10}{11}]
+                            [\Lab{CP}{10}{12}, name=CP2
+                                [\Lab{C$'$}{12}{13}
+                                    [\BLab{C}{13}{18}]
+                                    [\Lab{TP}{13}{14}, name=TP2
+                                        [\Lab{T$'$}{14}{15}
+                                            [\BLab{T}{15}{19}]
+                                            [\Lab{$v$P}{15}{16}
+                                                [\Lab{who}{16}{17}, name=who]
+                                                [\IBLab{$v'$}{16}{20}
+                                                    [\Lab{$v$}{20}{21}]
+                                                    [\Lab{VP}{20}{22}
+                                                        [\Lab{attacked}{22}{23}]
+                                                        [\Lab{DP}{22}{24}
+                                                            [\Lab{the}{24}{25}]
+                                                            [\Lab{senator}{24}{26}]
+                                                        ]
+                                                    ]      
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    [\IBLab{$v'$}{7}{28}
+                        [\Lab{$v$}{28}{29}]
+                        [\Lab{VP}{28}{30}
+                            [\Lab{admitted}{30}{31}]
+                            [\Lab{DP}{30}{32}, name=DP3
+                                [\Lab{the}{32}{33}]
+                                [\Lab{error}{32}{34}]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+\draw[move] (DP1) .. controls +(120:3em) and +(220:4em) .. (TP1);
+\draw[move] (who) .. controls +(155:5em) and +(220:4em) .. (TP2);
+\draw[move] (who) .. controls +(160:10em) and +(220:4em) .. (CP2);
+\end{forest}
