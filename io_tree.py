@@ -56,10 +56,10 @@ class IOTree(GornTree):
         # fill up self.struct with arguments, if specified
         for arg in args:
                 try:
-                    if type(arg) == tuple:
-                        self.add(IONode(*arg))
-                    elif type(arg) == dict:
+                    if type(arg) == dict:
                         self.add(IONode(**arg))
+                    elif type(arg) == tuple:
+                        self.add(IONode(*arg))
                 except:
                     print('Node specification of ' + arg + ' is illicit')
 
