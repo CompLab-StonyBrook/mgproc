@@ -171,13 +171,13 @@ So avoid giving trees names that end in `.move.forest` or `.io.forest`.
 To Do
 -----
 
+- convert all our current trees to the new format
+- add useful examples of comparison files
 - Better documentation of code (in particular docstrings)
-- Batch processing
-- Bach comparison of metrics
-- Unit tests
-- Tons of bug testing
+- factorize file reading and writing to avoid code duplication
+- some lists should be sets (e.g. filters)
 - Generalize empty & content to arbitrary property system
    - prop={empty, content, R-expression, discourse-salient}
    - generalize filters accordingly to match any definable property
-- factorize file reading and writing to avoid code duplication
-- some lists should be sets (e.g. filters)
+- Unit tests
+- Tons of bug testing
