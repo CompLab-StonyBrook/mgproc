@@ -180,3 +180,4 @@ To Do
    - prop={empty, content, R-expression, discourse-salient}
    - generalize filters accordingly to match any definable property
 - factorize file reading and writing to avoid code duplication
+- some lists should be sets (e.g. filters)
