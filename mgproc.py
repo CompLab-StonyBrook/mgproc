@@ -10,27 +10,58 @@ from metrics import *
 from comparisons import *
 
 
-def raw_tokenize(string: str) -> list:
-    # break string after [ and ]
+def _raw_tokenize(string: str) -> list:
+    """Convert string to list of tokens, breaking after [ and ]"""
     return re.split('([\[\]])', string)
 
 
-def strip_comments(string: str, sep='%') -> str:
-    # everything after first separator is removed
+def _strip_comments(string: str, sep='%') -> str:
+    """Delete string suffix after first comment marker"""
     return string.split(sep, 1)[0]
 
 
-def tokenize(string: str) -> list:
-    return [strip_comments(item)
-            for item in map(str.strip, raw_tokenize(string))
-            if strip_comments(item) != '']
+def _tokenize(string: str) -> list:
+    """Tokenizer for forest files"""
+    return [_strip_comments(item)
+            for item in map(str.strip, _raw_tokenize(string))
+            if _strip_comments(item) != '']
 
 
-def extract_properties(string: str, address: str) -> tuple:
+def _extract_properties(string: str, address: str) -> tuple:
+    """
+    Convert forest string to Gorn node specification.
+
+    Parameters
+    ----------
+    string: str
+        line from forest file to be processed
+    address: str
+        Gorn address of Gorn node to be constructed
+
+    Output
+    ------
+    Dictionary of the form
+
+    {'address': str, Gorn address
+     'label': str, label of node
+     'name': str, tikz name of node
+     'empty': bool, (un)pronounced node
+     'content': bool, (non)content node
+    }
+
+    Examples
+    --------
+    >>> extract_properties('[Aux, empty, name=embedded', '201')
+    {'address': '201', 'label': Aux, 'name': 'embedded',
+     'empty': True, 'content': }
+    """
+    # label is string of word characters, including -, \, {, }, and .
     label = re.match(r'\s*([\w$\'\-\\{}\.]*)', string).group(1)
+    # do we have "empty" after a comma somewhere in the string?
     empty = True if re.search(r',\s*empty\W*', string) else None
+    # do we have "content" after a comma somewhere in the string?
     content = True if re.search(r',\s*content\W*', string) else None
-
+    # do we have a string immedidately preceded by "name = "?
     name_match = re.search(r',\s*name\s*=\s*([\w\-\']*)', string)
     if name_match:
         name = name_match.group(1)
@@ -57,7 +88,8 @@ def parse(string: str) -> list:
      ('2', 'Aux', None, True), ('3', 'VP'), ('31', 'slept', 'verb')]
     """
     tree = []
-    tokens = tokenize(string)
+    tokens = _tokenize(string)
+    # infer Gorn address of node in token from bracketing
     for pos in range(len(tokens)):
         # root node
         if tokens[pos] == '[' and pos == 0:
@@ -73,11 +105,11 @@ def parse(string: str) -> list:
             address = address[:-1]
         # looking at a node
         elif tokens[pos] != ']':
-            tree.append(extract_properties(tokens[pos], address))
+            tree.append(_extract_properties(tokens[pos], address))
     return tree
 
 
-def file_accessible(filepath, mode) -> bool:
+def _file_accessible(filepath, mode) -> bool:
     """Check that file exists and is accessible."""
     try:
         f = open(filepath, mode)
@@ -87,7 +119,8 @@ def file_accessible(filepath, mode) -> bool:
     return True
 
 
-def linearization_from_file(inputfile) -> list:
+def _linearization_from_file(inputfile) -> list:
+    """Convert *.linear file to linearization specification"""
     with open(inputfile, 'r') as linearization:
         leaf_order = [line.split(';')
                       for line in linearization.readlines()]
@@ -95,11 +128,13 @@ def linearization_from_file(inputfile) -> list:
     return leaf_order
 
 
-def move_from_file(inputfile) -> list:
+def _move_from_file(inputfile) -> list:
+    """Convert *.move.forest file to movevement specification"""
     movement = []
     with open(inputfile, 'r') as movefile:
         for line in movefile.readlines():
             # match all (...) in line
+            # fixme: ignore stuff after last . so that we can use anchors like .south
             move = re.findall(r'\((.*?)\)', line)
             # feature as specified by move={f}
             feat = re.match(r'.*move\s*=\s*{([^}]*)}.*', line)
@@ -112,12 +147,35 @@ def move_from_file(inputfile) -> list:
 def tree_from_file(inputfile: str=None,
                    extension: str='.tree.forest',
                    autolinearize: bool=False) -> 'MetricTree':
+    """
+    Construct MetricTree from forest & linearization files.
+
+    This function presupposes that a tree *foo* has already been specified via
+    three files:
+
+    - foo.tree.forest: forest file for foo, without any movement
+    - foo.move.forest: move arcs for foo as tikz draw commands
+    - foo.linear: linearly ordered list of leaf nodes;
+                  one line per "node; Gorn address" pair
+
+    Parameters
+    ----------
+    inputfile: str
+        path to foo.tree.forest (file extension can be omitted);
+        if none is specified, we explicitly ask the user
+    extension: str
+        default file extension for forest files
+    autolinearize: str
+        should the linearization of leaf nodes be computed automatically?
+        if false, make sure a linearization file exists
+    """
     # ask for input file if necessary
     if not inputfile:
         inputfile =\
             input("File to read in\
                   (without {0} extension):\n".format(extension))
 
+    # remove extension if user included it in path
     if inputfile.endswith(extension):
         inputfile = inputfile.replace(extension, '')
     basename = os.path.basename(inputfile)
@@ -132,18 +190,18 @@ def tree_from_file(inputfile: str=None,
     move_file = inputfile + '.move.forest'
 
     # linearize automatically or...
-    if autolinearize or not file_accessible(linear_file, 'r'):
+    if autolinearize or not _file_accessible(linear_file, 'r'):
         tree = MetricTree(*parse(tree), name=basename)
     # ... according to linearization file
-    elif file_accessible(linear_file, 'r'):
+    elif _file_accessible(linear_file, 'r'):
         leaf_order = [int(address)
                       for label, address in
-                      linearization_from_file(linear_file)]
+                      _linearization_from_file(linear_file)]
         tree = MetricTree(*parse(tree), leaf_order=leaf_order, name=basename)
 
     # then read in Move information
-    if file_accessible(move_file, 'r'):
-        tree.add_movers(move_from_file(move_file))
+    if _file_accessible(move_file, 'r'):
+        tree.add_movers(_move_from_file(move_file))
 
     # and return fully built tree
     return tree
@@ -152,23 +210,62 @@ def tree_from_file(inputfile: str=None,
 def trees_from_folder(directory: str=None,
                       extension: str='.tree.forest',
                       autolinearize: bool=False):
+    """
+    Batch create trees from files in a folder.
+
+    Given a path to a directory, run tree_from_file for each tree specified in
+    the folder.  As in tree_from_file, we presuppose that a tree *foo* has
+    already been specified via three files:
+
+    - foo.tree.forest: forest file for foo, without any movement
+    - foo.move.forest: move arcs for foo as tikz draw commands
+    - foo.linear: linearly ordered list of leaf nodes;
+                  one line per "node; Gorn address" pair
+
+    Parameters
+    ----------
+    inputfile: str
+        path to folder containing the .tree.forest-files; 
+        if none is specified, we explicitly ask the user
+    extension: str
+        default file extension for forest files
+    autolinearize: str
+        should the linearization of leaf nodes be computed automatically?
+        if false, make sure a linearization file exists for each tree
+    """
     if not directory:
         directory = input("Enter folder to be processed \
 (relative to current working directory):\n")
 
+    # list of trees (= list of *.tree.forest with extension stripped)
     files = [tree_file.replace(extension, '')
              for tree_file in os.listdir(directory)
              if tree_file.endswith(extension)]
 
     return [tree_from_file(
-        inputfile=basename, directory=directory,
-        extension=extension, autolinearize=autolinearize)
+        inputfile=basename, extension=extension,
+        autolinearize=autolinearize)
         for basename in files]
 
 
 def check_order(tree: IOTree, specification: 'linearization file') -> bool:
+    """
+    Check *.linear files for consistency with *.tree.forest
+
+    Since *.linear files are created semi-automatically, there is a risk of
+    user error. This function checks for each address in *.linear that it
+    has the same label in the tree as specified in *.linear.
+
+    Parameters
+    ----------
+    tree: IOTree
+        IOTree which we should compare the *.linear file against
+    specification: str
+        path to *.linear file
+    """
     for label, address in linearization_from_file(specification + '.linear'):
-        # sanitize address (remove \n, whitespace)
+        # sanitize address (remove \n, whitespace);
+        # fails for address '', but root should never be leaf anyways
         address = str(int(address))
         label_in_tree = tree.struct[address].label()
         if label != label_in_tree:
@@ -179,6 +276,12 @@ def check_order(tree: IOTree, specification: 'linearization file') -> bool:
 
 
 def io_process_folder(path: str=None, extension: str='.tree.forest'):
+    """
+    Batch create trees from files in a folder and print their IO specification.
+
+    This function allows you to i/o-annotate every tree in a folder and print
+    all the information about each tree to the Python shell.
+    """
     if not path:
         path = input("Enter folder to be processed \
 (relative to current working directory):\n")
