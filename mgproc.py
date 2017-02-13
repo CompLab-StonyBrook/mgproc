@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# This is the main file for mgproc
+#
+# Besides loading all helper modules, it only defines some functions
+# for working with tree text files.
+#
+# The overall structure of the package is as follows:
+#
+# mgproc
+#   metrics
+#       io_tree
+#           gorn_tree
+#           helpers
+#       tree_values
+#   comparisons
+
+
 import os
 import re
 from pprint import pprint

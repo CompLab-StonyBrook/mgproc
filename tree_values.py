@@ -1,6 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# This file is called by metrics.py
+#
+# It defines a general function memory_measure from which various the values
+# for various memory-based metrics can be computed based on how its arguments
+# are instantiated.
+#
+# Metric   | Operator        | Memory Type
+# ---------|-----------------|----------------
+# MaxT     | safemax         | tenure_extract
+# SumT     | sum             | tenure_extract
+# BoxT     | len             | tenure_extract
+# AvgT     | avg             | tenure_extract
+# MaxTR    | None/sorted     | tenure_extract
+# --------------------------------------------
+# MaxS     | safemax         | move_extract
+# SumS     | sum             | move_extract
+# Movers   | len             | move_extract
+# AvgS     | avg             | move_extract
+# MaxSR    | None/sorted     | move_extract
+#
+# While all the functions in this module are meant to be private,
+# they are not prefixed with _ so that the user can easily reference them
+# in text files to define various metrics.
+
 from io_tree import *
 
 
