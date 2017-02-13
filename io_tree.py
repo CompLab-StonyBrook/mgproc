@@ -1,14 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# This file is called by metrics.py
+#
+# It defines:
+#
+# - IONode as a subtype of GornNode, with new methods for
+#   working with indices and outdices
+#
+# - IOTree as a subtype of GornTree where each GornNode is an IONode.
+#   They also provide new methods for annotating/parsing these trees
+#   and fprint for pretty-printing them to the Python shell.
+#
+# IOTrees are expanded into MetricTrees by metrics.py. A MetricTree
+# is an IOTree that also stores information about the values it receives
+# from various metrics.
+
 from gorn_tree import *
 from helpers import *
 
 
 class IONode(GornNode):
     """
-    Construct nodes as objects with Gorn-style addresses
+    Subclass of GornNode with index/outdex annotation.
+
+    Public Methods
+    --------------
+    .index: int
+        set index value of node to int;
+        if int is None, return current value
+    .outdex: int
+        set outdex value of node to int;
+        if int is None, return current value
+    .tenure: int
+        return tenure (= outdex - index) of node
+    .parts:
+        extends eponymous GornNode method to also include information
+        about index, outdex, and tenure
     """
+    # all arguments except index and outdex are initialized with the
+    # init function defined for GornNode
     def __init__(self,
                  address='', label='', name=None,
                  empty: bool=None, leaf: bool=None,
@@ -49,6 +80,18 @@ class IONode(GornNode):
 
 
 class IOTree(GornTree):
+    """
+    Subclass of GornTree such that all GornNodes are IONodes.
+
+    Public Methods
+    --------------
+    .parse:
+        add index/outdex annotation and set leaf/empty status for all nodes
+    .fprint:
+        print forest code for tree (with \Lab macros)
+    """
+    # we initialize almost everything ourselves and only pass name to
+    # the GornTree init function
     def __init__(self, *args: tuple,
                  leaf_order: list=None, movement: list=None, name: str=''):
         super().__init__(name=name)
@@ -79,12 +122,24 @@ class IOTree(GornTree):
     #  Annotation  #
     ################
 
-    def annotate(self) -> 'IOTree':
-        """Add index/outdex annotation to index-dictionary of flat tree."""
+    def _annotate(self) -> 'IOTree':
+        """
+        Add index/outdex annotation to index-dictionary of flat tree.
+
+        This algorithm traverses the tree in a peculiar fashion that combines
+        top-down and bottom-up. The idea is to first move top-down from the
+        root towards the linearly first leaf node while adding indices and
+        outdices. Once the leaf has been found, we move to the next leaf and
+        move bottom-up until we find a node with an index, and pass the
+        outdices down from there along the pather to the second leaf. Rinse
+        and repeat until all nodes have indices and outdices.
+        
+        The basic idea behind the algorithm was first articulated and implemented
+        by Chong Zhang.
+        """
         # check that linear order of leafs is known
-        if not self._linear:
-            raise Exception("""self._linear is empty;\
-specify a linearly ordered list of leaf addresses!
+        if not self._linear: raise Exception("""self._linear is empty;\ specify
+        a linearly ordered list of leaf addresses!
 
 Example: tree.sentence(231, 232, 11, 12, 21, 221)
 """)
@@ -126,7 +181,8 @@ Example: tree.sentence(231, 232, 11, 12, 21, 221)
             current_outdex += 1
             self.struct[leaf].outdex(current_outdex)
 
-    def set_status(self) -> 'IOTree':
+    def _set_status(self) -> 'IOTree':
+        """Set the flags "leaf" and "empty' for each node"""
         for address in self.struct:
             if self.has_daughters(address):
                 self.struct[address].leaf = False
@@ -135,8 +191,8 @@ Example: tree.sentence(231, 232, 11, 12, 21, 221)
                 self.struct[address].leaf = True
 
     def parse(self) -> 'IOTree':
-        self.annotate()
-        self.set_status()
+        self._annotate()
+        self._set_status()
 
     def fprint(self, annotation: 'labeling'=forest, address: str='',
               indent: int=0, tabwidth: int=4, whitespace: str=' ') -> str:
