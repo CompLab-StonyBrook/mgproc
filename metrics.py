@@ -313,7 +313,8 @@ def metrics_from_file(inputfile: str=None,
     with open(inputfile + extension, 'r') as metricfile:
         metrics = [line.split(';')
                    for line in metricfile.readlines()
-                   if not re.match(r'\s*#.*', line)]
+                   # discard empty lines and comments
+                   if not re.match(r'^\s*(#.*)?$', line)]
         metricfile.close()
 
     # use _construct_metrics_from_text to build a base set of metrics,
