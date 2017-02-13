@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# This file is called by metrics.py
+#
+# It defines the bases classes GornNode and GornTree from which all other
+# classes inherit:
+#
+# GornNode --> IONode
+# GornTree --> IOTree --> MetricTree
+#
+# Fixme: document this module very carefully (extended docstrings, examples)
+
+
 import re
 import pprint
 from collections import OrderedDict
