@@ -1,7 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from mgproc import *
+# This file is called by mgproc.py
+#
+# It defines:
+#
+# - Comparison as a new base class with methods for
+#    - computing the feasibility of all metrics wrt
+#      a given psycholinguistic contrast
+#    - reseting the results for all metrics
+#
+# - ComparisonSet as a new base class that collects multiple comparisons;
+#   its methods are:
+#   - .add for adding comparisons to the collection
+#   - .compare for running every comparison in the set
+#   - .show for printing the winners, ties, and losers among the metrics
+#
+# - Functions for definining Comparion(Set)s with text files
 
 
 class Comparison:
