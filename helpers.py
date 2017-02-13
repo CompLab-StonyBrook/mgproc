@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# This file is called by io_tree.py
+#
+# It defines several general purpose functions: 
+#
+# - a decorator that converts int to str;
+#   Gorn addresses are more conveniently specified as int in the shell,
+#   but many functions hinge on them being strings (e.g. for slicing);
+#   the decorator abstracts away all the type-checking logic
+#
+# - various print functions for trees:
+#   ascii: plain ascii labeled bracketing with indentation
+#   named: ascii with tikz names for nodes
+#   forest: forest output (with \Lab macro)
+#   ioprint: writes index/outdex annotation as *.io.forest file
+
+
 import os
 
 def int2str(function) -> 'function':
