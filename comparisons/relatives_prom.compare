@@ -4,5 +4,3 @@
 #
 eng-src-orc-prom; ; ENG_src_prom; ENG_orc_prom;
 chn-src-orc-prom; ; CHN_src_prom; CHN_orc_prom;
-eng-src-orc-wh;   ; ENG_src_wh  ; ENG_orc_wh;
-chn-src-orc-wh;   ; CHN_src_wh  ; CHN_orc_wh;

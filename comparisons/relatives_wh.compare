@@ -1,0 +1,6 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+eng-src-orc-prom; ; ENG_src_prom; ENG_orc_prom;
+chn-src-orc-prom; ; CHN_src_prom; CHN_orc_prom;
