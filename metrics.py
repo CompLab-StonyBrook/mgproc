@@ -28,9 +28,9 @@ from tree_values import memory_measure, safemax, safediv, avg
 # Metric Classes #
 ##################
 
-class Metric:
+class BaseMetric:
     """
-    Class of metrics for processing predictions.
+    Class of base metrics for processing predictions.
 
     Parameters
     ----------
@@ -50,24 +50,10 @@ class Metric:
 
     Public Methods
     --------------
-    .profile: dict
-        stores how the metric fares for each processing contrast it has been
-        tested on; each such contrast is itself a dictionary: 
-
-        'name': name of contrast (e.g. Eng-SRC-ORC)
-        'desired winner': (winning tree's object, name, and metric value)
-        'desired loser ': (losing tree's object, name, and metric value)
-        'captured': self.viable indicates whether the contrast was captured
-    .viable: (bool, bool)
-        (True, True) = correct prediction for at least one contrast
-        (False, True) = tie
-        (False, False) = wrong prediction for at least one contrast
+    .name: str
+        name of metric
     .eval: IOTree -> val
         compute metric value for IOTree
-    .get_or_set_value: MetricTree -> val
-        compute value for MetricTree (if it doesn't exist yet) and return it
-    .compare: IOTree, IOTree -> updated metric
-        compares two IOTrees and updates the metric accordingly
     """
     def __init__(self, name: str='',
                  load_type: str='tenure', operator: 'function'=None,
@@ -81,9 +67,6 @@ class Metric:
         self.latex = latex
         self.function = function if function != '' else memory_measure
 
-        self.profile = {}
-        self.viable = (True, True)
-
     def eval(self, tree: 'IOTree'):
         """Compute memory value of IOTree with respect to metric"""
         return self.function(tree,
@@ -91,6 +74,70 @@ class Metric:
                              load_type=self.load_type,
                              filters=self.filters,
                              trivial=self.trivial)
+
+
+class RankedMetric():
+    """
+    Class of ranked metrics for processing predictions.
+
+    A ranked metric is a tuple <m_1, m_2, ..., m_k> of metrics, where 
+    tree t_1 is preferred over t_2 iff there is some j such that all
+    m_i with i < j produce a tie and m_j prefers t_1 over t_2.
+
+    Public Methods
+    --------------
+    .metrics: tuple
+        list of BaseMetrics from which RankedMetric is built
+    .profile: dict
+        stores how the metric fares for each processing contrast it has been
+        tested on; each such contrast is itself a dictionary: 
+
+        'name': name of contrast (e.g. Eng-SRC-ORC)
+        'desired winner': (winning tree's object, name, and metric value)
+        'desired loser ': (losing tree's object, name, and metric value)
+        'captured': self.viable indicates whether the contrast was captured
+    .viable: (bool, bool)
+        (True, True) = correct prediction for all contrasts
+        (False, True) = tie for at least one contrast, but no wrong predictions
+        (False, False) = wrong prediction for at least one contrast
+    .name: str
+        name of metric
+    .filters: str
+        description of filters used by BaseMetrics;
+        for instance, I>>PU means the first BaseMetric uses filter I, the second
+        no filter at all, and the third the filters P and U
+    .eval: IOTree -> val
+        compute metric value for IOTree
+    .get_or_set_value: MetricTree -> val
+        compute value for MetricTree (if it doesn't exist yet) and return it
+    .compare: IOTree, IOTree -> updated metric
+        compares two IOTrees and updates the metric accordingly
+    """
+    def __init__(self, metrics: tuple):
+        self.metrics = metrics
+        self.profile = {}
+        self.viable = (True, True)
+        self.name = self._name()
+        self.filters = self._filters()
+
+    def _name(self):
+        """Typest name as ranked version of BaseMetric names"""
+        return ' > '.join([metric.name for metric in self.metrics])
+
+    def _filters(self):
+        """Typeset multiple filters in a nicer way"""
+        filters = [metric.filters for metric in self.metrics]
+        # replace tuples by strings;
+        # e.g. ('I', 'U', 'P') -> 'IPU'
+        for pos in range(len(filters)):
+            filters[pos] = ''.join(sorted([char for char in filters[pos]]))
+        # and join those strings
+        return '>'.join(filters)
+
+    def eval(self, tree: 'IOTree'):
+        """Compute memory value of IOTree with respect to ranked metric"""
+        return [metric.eval(tree)
+                for metric in self.metrics]
 
     def get_or_set_value(self, tree: 'MetricTree'):
         """Retrieve or compute value of MetricTree with respect to metric"""
@@ -122,7 +169,7 @@ class Metric:
         return (pair1[0] and pair2[0], pair1[1] and pair2[1])
 
     def compare(self, name: str, tree1: 'IOTree', tree2: 'IOTree'):
-        """Compare two IOTrees with respect to metric"""
+        """Compare two IOTrees with respect to ranked metric"""
 
         tree1_value = self.get_or_set_value(tree1)
         tree2_value = self.get_or_set_value(tree2)
@@ -134,6 +181,7 @@ class Metric:
                     'captured': viable}
         self.profile[name] = contrast
         self.viable = self._pair_and(self.viable, viable)
+
 
 
 class MetricTree(IOTree):
@@ -169,26 +217,26 @@ class MetricTree(IOTree):
 
 def _construct_ranked_metric(metric_set: list=[], ranks: int=2) -> list:
     """
-    Construct ranked metrics from base set.
+    Construct RankedMetrics from BaseMetrics.
 
-    Given a set B of base metrics, a ranked metric of rank n is a member
-    of B^n. Ranked metrics make it possible to resolve ties: if metric m1
+    Given a set B of BaseMetrics, a RankedMetric of rank n is a member
+    of B^n. RankedMetrics make it possible to resolve ties: if metric m1
     predicts a tie for trees t and t', we can expand it to a combined metric
     <m1, m2> such that m2 makes the correct prediction for t and t'.
 
     Parameters
     ----------
     metric_set: list
-        list of Metric objects
+        list of BaseMetric objects
     ranks: int
-        maximum number of Metric objects a ranked metric may consist of
+        maximum number of BaseMetric objects a RankedMetric may consist of
     """
     if ranks == 0:
         return []
-    elif ranks < 2:
-        return metric_set
     else:
-        return list(itertools.product(*[metric_set for _ in range(ranks)]))
+        return [RankedMetric(metric_tuple)
+                for metric_tuple in
+                itertools.product(*[metric_set for _ in range(ranks)])]
 
 def _powerset(iterable):
     """powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"""
@@ -272,7 +320,7 @@ def _construct_metrics_from_text(metric_text: list=[]):
         metrics.append(metric_variant)
 
     # now build all those lovely metrics
-    return [Metric(**metric_dict) for metric_dict in metrics]
+    return [BaseMetric(**metric_dict) for metric_dict in metrics]
 
 
 def metrics_from_file(inputfile: str=None,
