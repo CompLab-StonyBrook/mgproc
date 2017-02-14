@@ -189,9 +189,9 @@ Just copy-paste the following commands into the preamble of your document.
 % define move style
 \tikzset{move/.style = {-{Latex[length=.5em]},dashed,blue}}
 \tikzset{rightward/.style = {dotted}}
-\tikzset{annotation/.style = {font=\footnotesize}
-\tikzset{index/.style = {annotation, anchor=south.east}}
-\tikzset{outdex/.style = {annotation, anchor=north.west}}
+\tikzset{annotation/.style = {font=\footnotesize}}
+\tikzset{index/.style = {annotation, anchor=south east}}
+\tikzset{outdex/.style = {annotation, anchor=north west}}
 \tikzset{boxed/.style = {draw}}
 \tikzset{empty/.style = {}}
 \tikzset{non-final/.style = {opacity=70}}
@@ -203,22 +203,20 @@ Just copy-paste the following commands into the preamble of your document.
 \newcommand{\IBLab}[3]{\tsp{#2}#1{\setlength{\fboxsep}{.25\fboxsep}\boxed{\tsb{#3}}}} % for boxed interior nodes
 ```
 
-To typeset a tree with forest, use `\input` to load the relevant files.
-Here is an example where all files are stored in a subfolder `trees`:
+Then use *mgproc* to produce an `mgproc.forest` file for you and load it with `\input` in your document.
+Here is an example where the relevant files are stored in a subfolder `trees`:
 
 ```latex
-\begin{forest}
-    % load derivation tree
-    \input{./trees/foo.forest}
-    % add movement arrows
-    \input{./trees/foo.move.forest}
-    % add index/outdex annotation for each node
-    \input{./trees/foo.io.forest}
-\end{forest}
+The first tree is shown below.
+%
+\begin{center}
+    \input{./trees/foo.mgproc.forest}
+\end{center}
+%
+And the second one is next.
+%
+\input{./trees/bar.mgproc.forest}
 ```
-
-Note that there must not be any empty lines anywhere within the forest environment.
-This also holds for the files you load with `\input`.
 
 
 Limitations and Known Bugs
