@@ -163,9 +163,11 @@ def texprint(tree: 'IOTree', extension: str='.mgproc.forest',
     if not filename:
         return string
     else:
+        if io:
+            filename += '.io'
+        filename += extension
         if not directory:
             directory = '.'
-        filename += extension
         filename = os.path.join(directory, filename)
         with open(filename, "w") as text_file:
             print(string, file=text_file)
