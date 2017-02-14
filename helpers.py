@@ -83,7 +83,6 @@ def forest(tree: 'IOTree', address: str) -> str:
         )
 
 
-@int2str
 def ioprint(tree: 'IOTree', extension: str='.io.forest',
             filename: str=None, directory: str=None) -> str:
     """Prints index/outdex annotation as tikz nodes."""
@@ -99,7 +98,7 @@ def ioprint(tree: 'IOTree', extension: str='.io.forest',
         # draw a tikz node for index
         index_string = '\\node[index]'.ljust(command_padding)
         index_node = ('{' + str(node_index) + '}').ljust(label_padding)
-        index_string += '{1} at ({0});\n'.format(node_name, index_node)
+        index_string += 'at ({0}) {1};\n'.format(node_name, index_node)
 
         # draw a tikz node for outdex
         node_option = ', boxed]' if node_outdex - node_index > 2 else ']'
@@ -110,7 +109,7 @@ def ioprint(tree: 'IOTree', extension: str='.io.forest',
 
     # forest chokes on empty lines,
     # so add a % after the very last \n
-    string += string + '%'
+    string += '%'
 
     if not filename:
         return string
