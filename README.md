@@ -100,7 +100,7 @@ filters   | I, P, U, *                                   | whether nodes of a pa
 
 
 Filter Value | Effect
-:--          | :-- 
+--:          | :-- 
 I            | ignore interior nodes
 P            | ignore pronounced leaf nodes
 U            | ignore unpronounced leaf nodes
@@ -269,14 +269,6 @@ Since *mgproc* uses regular expressions instead of a proper text parser, there i
 Unexpected things may happen if the forest files are not well-formed.
 An incorrect `.linear` file may lead to obvious breakage or just an incorrectly computed index/outdex annotation without any warning messages.
 Always double- and triple-check that the linear order of leaf nodes is specified correctly!
-
-
-### File Names
-
-While batch processing has not been implemented yet, the plan is to simply collect all forest files in a given folder and filter out those that end in `.move.forest` or `.io.forest`.
-Each remaining file should be of the form `foo.tree.forest` and thus work with `tree_from_file()` as intended.
-Of course this strategy will fail whenever a tree specification file has been given a name that ends in `.move.forest`, e.g. `relative.clause.with.move.forest`.
-So avoid giving trees names that end in `.move.forest` or `.io.forest`.
 
 
 ### Memory Usage
