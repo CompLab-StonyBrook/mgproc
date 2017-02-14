@@ -287,9 +287,9 @@ def check_order(tree: 'IOTree', specification: 'linearization file') -> bool:
         return True
 
 
-def io_process_folder(path: str=None, extension: str='.tree.forest'):
+def process_folder(path: str=None, extension: str='.tree.forest'):
     """
-    Batch create trees from files in a folder and print their IO specification.
+    Batch create trees from files in a folder and print their forest specification.
 
     This function allows you to i/o-annotate every tree in a folder and print
     all the information about each tree to the Python shell.
