@@ -178,12 +178,27 @@ For comparison, setting the rank to 3 reduces the number to 729,000 metrics and 
 Given the dubious empirical status of metrics of rank 4 or greater, there are currently no plans to redesign the code for more efficient memory usage.
 
 
+Tips & Tricks
+-------------
+
+- If you have a forest file that uses our custom LaTeX macros `\Lab`, `\BLab`, or `\IBLab` for node labels, you can use a regular expression to remove them automatically.
+  On Linux, the command is:
+
+    ~~~bash
+    sed -i 's/\\I\?B\?Lab{\([^}]*\)}{[0-9]*}{[0-9]*}/\1/' <file_to_be_changed>
+    ~~~
+
+  You can also batch process all files in a given folder:
+
+    ~~~bash
+    for file in *.tree.forest; do sed -i 's/\\I\?B\?Lab{\([^}]*\)}{[0-9]*}{[0-9]*}/\1/' $file; done
+    ~~~
+
+
 To Do
 -----
 
 - convert all our current trees to the new format
-- add useful examples of comparison files
-- Better documentation of code (in particular docstrings)
 - factorize file reading and writing to avoid code duplication
 - some lists should be sets (e.g. filters)
 - Generalize empty & content to arbitrary property system
