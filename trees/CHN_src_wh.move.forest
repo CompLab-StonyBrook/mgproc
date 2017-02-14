@@ -1,0 +1,4 @@
+\draw[move = {SSubjtoTP2}] (SSubj)       .. controls +(130:6em) and +(220:4em) .. (TP1Spec);
+\draw[move = {CP2toSSubj}] (CP2)         .. controls +(220:10em) and +(220:10em) .. (SSubj);
+\draw[move = {whmvtToTP2}] (whmvt)       .. controls +(160:8em) and +(200:4em) .. (TP2rightmvt);
+\draw[move = {whmvtToCP2},dotted] (whmvt) .. controls +(60:8em) and +(320:6em) .. (CP2);

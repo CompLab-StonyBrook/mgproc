@@ -1,0 +1,50 @@
+[Merge
+  [the]
+  [Move, name = CP2
+    [Merge
+      [that]
+      [Move, name = subjectHigherLanding
+        [Merge
+          [T]
+          [Merge
+            [Move, name = CP1
+              [Merge
+                [that]
+                [Move, name = subjectLowerLanding
+                  [Merge
+                    [T]
+                    [Merge
+                      [NP, name = hd
+                        [horse, triangle]
+                      ]
+                      [Merge
+                        [\nl{v}]
+                        [Merge
+                          [chased]
+                          [Merge
+                            [the]
+                            [wolf]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+            [Merge
+              [\nl{v}]
+              [Merge
+                [kicked]
+                [Merge
+                  [the]
+                  [elephant]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]

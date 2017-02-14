@@ -20,6 +20,40 @@
 
 
 class Comparison:
+    """
+    Compare metrics with respect to a specific processing contrast.
+
+    A processing contrast consists of two trees, one of which is parsed faster
+    than the other. A Comparison collects two IOTrees, stores their empirical
+    processing difficulty, and how well metrics predict this contrast.
+
+    Picks two IOTrees as part of a processing contrast and records how well certain metrics
+    captured this contrast.
+
+    Public Methods
+    --------------
+    .name: str
+        name of comparsion (e.g. Eng-SRC-ORC)
+    .winner: IOTree
+        tree that is processed faster
+    .loser: IOTree
+        tree taht is prcoessed more slowly
+    .metrics: set
+        set of metrics to be used in comparison
+    .latex: str
+        LaTeX command for name of comparison
+    .success: set
+        set of metrics that correctly pick the winner
+    .tie: set
+        set of metrics that predict a tie
+    .failure: set
+        set of metrics that incorrectly pick the loser
+    .compare: list of metrics -> updated Comparison
+        for each metric, compute the values it assigns to the two trees
+        and update its viability accordingly
+    .reset:
+        wipe all comparison results calculated so far
+    """
     def __init__(self, name: str='',
                  winner: 'IOTree'=None, loser: 'IOTree'=None,
                  metrics: set=set(), latex: str='',
@@ -32,13 +66,15 @@ class Comparison:
         self.tie = tie
         self.failure = failure
 
-    def compare(self, metrics: list=[]):
+    def compare(self, metrics: set=set()):
         if not metrics:
             metrics = self.metrics
 
         for metric in metrics:
+            # check how the metric does
             metric.compare(self.name, self.winner, self.loser)
 
+            # and add it to the correct group (possibly removing it from others)
             if metric.viable == (True, True): 
                 try:
                     self.tie.remove(metric)

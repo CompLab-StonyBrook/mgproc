@@ -1,0 +1,51 @@
+[CP, name=CP1
+    [C$'$
+       [C]
+       [TP, name=TP1
+            [T$'$
+                [T]
+                [$v$P
+                    [DP, name=DP1
+                        [the]
+                        [NP
+                            [reporter]
+                            [CP, name=CP2
+                                [C$'$
+                                    [C]
+                                    [TP, name=TP2
+                                        [T$'$
+                                            [T]
+                                            [$v$P
+                                                [who, name=who]
+                                                [$v'$
+                                                    [$v$]
+                                                    [VP
+                                                        [attacked]
+                                                        [DP
+                                                            [the]
+                                                            [senator]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    [$v'$
+                        [$v$]
+                        [VP
+                            [admitted]
+                            [DP, name=DP3
+                                [the]
+                                [error]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]

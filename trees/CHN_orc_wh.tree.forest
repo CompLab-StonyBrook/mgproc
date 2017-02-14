@@ -1,0 +1,45 @@
+[CP
+    [C]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [$v$P
+                [DP, name=DP
+                    [D$'$
+                        [D]
+                        [NP
+                            [tycoon]
+                            [CP, name=CP
+                                [C$'$
+                                    [C]
+                                    [TP, name=TP
+                                        [T$'$
+                                            [T]
+                                            [$v$P
+                                                [mayor, name=mayor]
+                                                [$v'$
+                                                    [$v$]
+                                                    [VP
+                                                        [invite]
+                                                        [who, name=who]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [$v'$
+                    [$v$]
+                    [VP
+                        [likes]
+                        [wine]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
