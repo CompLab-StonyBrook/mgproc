@@ -206,3 +206,4 @@ To Do
    - generalize filters accordingly to match any definable property
 - Unit tests
 - Tons of bug testing
+- Implement a faster evaluation system for ranked metrics (if <m1,m2> wins/fails, so does <m1,m2,...>)
