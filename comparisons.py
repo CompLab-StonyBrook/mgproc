@@ -21,6 +21,7 @@
 import os
 import pprint
 import re
+import tabulate
 
 from mgproc import tree_from_file
 
@@ -42,7 +43,7 @@ class Comparison:
     .winner: IOTree
         tree that is processed faster
     .loser: IOTree
-        tree taht is prcoessed more slowly
+        tree that is processed more slowly
     .metrics: set
         set of metrics to be used in comparison
     .latex: str
@@ -116,6 +117,27 @@ class Comparison:
 
 
 class ComparisonSet:
+    """
+    Collection of Comparisons.
+
+    Multiple comparisons can be collected into a single ComparisonSet. This
+    makes it easy for the user to run multiple comparisons at once.
+
+    Public Methods
+    --------------
+    .comparison: list
+        stores all Comparisons belonging to this ComparisonSet
+    .add: Comparison -> updated ComparisonSet
+        add a Comparison to .comparison
+    .compare:
+        call .compare for every member of the ComparisonSet
+    .merge:
+        merge another ComparisonSet into this one; to be implemented
+    .show:
+        print the overview of successful, tie-ing, and failing metrics
+    .table:
+        print tabular overview of comparison results per metric
+    """
     def __init__(self, args: list, name: str='', metrics: set=set(),
                  success: set=set(), tie: set=set(), failure: set=set()):
         self.name = name
@@ -123,7 +145,7 @@ class ComparisonSet:
         self.success = success
         self.tie = tie
         self.failure = failure
-        self.comparisons = set()
+        self.comparisons = []
 
         for arg in args:
             try:
@@ -137,15 +159,18 @@ class ComparisonSet:
                 print('Comparison specification of ' + arg + ' is illicit')
 
     def add(self, comparison):
-        self.comparisons.add(comparison)
+        self.comparisons.append(comparison)
 
     def compare(self, comparisons: set=None):
+        # by default no Comparisons are passed;
+        # in that case, use the full collection
         if not comparisons:
             comparisons = self.comparisons
 
         for comparison in comparisons:
             comparison.compare(self.metrics)
 
+        # update our record of how the metrics did
         self.success = set.intersection(*[comparison.success
                                           for comparison in comparisons])
         self.tie = set.intersection(*[comparison.tie
@@ -153,12 +178,40 @@ class ComparisonSet:
         self.failure = set.union(*[comparison.failure
                                    for comparison in comparisons])
 
+    def merge(self,compset: 'ComparisonSet') -> 'ComparisonSet':
+        # fixme: to be implemented
+        pass
+
     def show(self):
         metric_dict = {}
         metric_dict['success'] = [metric.name for metric in self.success]
-        metric_dict['tie'] = [metric.name for metric in self.tie]
+        metric_dict['tie']     = [metric.name for metric in self.tie]
         metric_dict['failure'] = [metric.name for metric in self.failure]
         pprint.pprint(metric_dict)
+
+    def _matrix(self):
+        metrics = self.metrics
+        rows = []
+        for metric in metrics:
+            row = [metric.name, metric.filters]
+            for comparison in self.comparisons:
+                result = metric.profile[comparison.name]['captured']
+                row.append(_rewrite_tuple(result))
+            rows.append(row)
+        return rows
+
+    def table(self):
+        headers = ['Metric', 'Filters'] + [comp.name for comp in self.comparisons]
+        print(tabulate.tabulate(sorted(self._matrix()),
+                                 tablefmt='orgtbl', headers=headers))
+
+
+def _rewrite_tuple(tuplepair: (bool, bool)) -> str:
+    """Rewrite (bool, bool) pair as human-friendly string"""
+    rewrite = {(True, True): 'Yes',
+               (False, True): 'Tie',
+               (False, False): 'No'}
+    return rewrite.get(tuplepair, 'Error')
 
 
 #########################################
@@ -166,8 +219,31 @@ class ComparisonSet:
 #########################################
 
 
-def comparison_from_line(comparison_line: str, metrics: set=set(),
-                         inputfile: str='', directory: str=None):
+def _comparison_from_line(comparison_line: str, metrics: set=set(),
+                          inputfile: str='', directory: str=None) -> dict:
+    """
+    Construct Comparison from line in *.compare file.
+
+    The lines of a *.compare file are of the form
+    name; LaTeX command; winner; loser
+
+    name: Python-internal name of comparison
+    LaTeX: LaTeX command for the comparison name
+    winner: path to .tree.forest for more quickly processed tree
+    loser: path to .tree.forest for more slowly processed tree
+
+    Parameters
+    ----------
+    comparison_line: str
+        line from *.compare file that is to be processed
+    metrics: set
+        set of metrics to be used in comparison
+    inputfile: str
+        path to *.compare file
+    directory: str
+        if specified, this will be prepended to the paths for winner and loser
+    """
+    # split line at every ; and keep first four values
     parameters = [field.strip() for field in comparison_line.split(';')]
     try:
         name, latex, winner_path, loser_path = parameters[:4]
@@ -176,12 +252,14 @@ def comparison_from_line(comparison_line: str, metrics: set=set(),
 not enough parameters specified'
         raise Exception(message).format(inputfile)
 
+    # construct IOTrees for winner and loser
     if directory:
         winner_path = os.path.join(directory, winner_path)
         loser_path = os.path.join(directory, loser_path)
     winner = tree_from_file(winner_path)
     loser = tree_from_file(loser_path)
 
+    # return dictionary from which the Comparison will be built
     return {'name': name, 'latex': latex, 'metrics': metrics,
             'winner': winner, 'loser': loser}
 
@@ -189,23 +267,49 @@ not enough parameters specified'
 def comparisons_from_file(inputfile: str=None,
                           directory: str=None,
                           extension: str='.compare',
-                          metrics: set=set()):
+                          metrics: set=set()) -> 'ComparisonSet':
+    """
+    Build collection of Comparisons from *.compare file.
+
+    Users can define a ComparisonSet with a *.compare file,
+    where each line is of the form
+    name; LaTeX command; winner; loser
+
+    name: Python-internal name of comparison
+    LaTeX: LaTeX command for the comparison name
+    winner: path to .tree.forest for more quickly processed tree
+    loser: path to .tree.forest for more slowly processed tree
+
+    Parameters
+    ----------
+    inputfile: str
+        path to *.compare file
+    directory: str
+        if specified, this will be prepended to the paths for winner and loser
+    extension: str
+        overwrite default file extension for *.compare files
+    metrics: set
+    """
     # ask for input file if necessary
     if not inputfile:
         inputfile =\
             input("File to read in (without .compare extension):\n")
 
+    # remove extension if specified
     if inputfile.endswith(extension):
         inputfile = inputfile.replace(extension, '')
 
+    # set baseneame
     basename = os.path.basename(inputfile)
 
     # read in specification file
     with open(inputfile + extension, 'r') as compfile:
 
-        parameter_dicts = [comparison_from_line(line, metrics, inputfile, directory)
+        # create list of dictionary, each one of defines a Comparison
+        parameter_dicts = [_comparison_from_line(line, metrics, inputfile, directory)
                            for line in compfile.readlines()
-                           if not re.match(r'\s*#.*', line)]
+                           if not (re.match(r'^\s*$', line) or
+                                   re.match(r'\s*#.*', line))]
         compfile.close()
 
     comp = ComparisonSet(parameter_dicts, name=basename,
