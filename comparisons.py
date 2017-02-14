@@ -18,6 +18,11 @@
 #
 # - Functions for definining Comparion(Set)s with text files
 
+import os
+import pprint
+import re
+
+from mgproc import tree_from_file
 
 class Comparison:
     """
@@ -76,6 +81,7 @@ class Comparison:
 
             # and add it to the correct group (possibly removing it from others)
             if metric.viable == (True, True): 
+                # predict first guy to win, second to lose
                 try:
                     self.tie.remove(metric)
                     self.failure.remove(metric)
@@ -84,6 +90,7 @@ class Comparison:
                 finally:
                     self.success.add(metric)
             elif metric.viable == (False, True):
+                # predict a tie
                 try:
                     self.success.remove(metric)
                     self.failure.remove(metric)
@@ -92,6 +99,7 @@ class Comparison:
                 finally:
                     self.tie.add(metric)
             else:
+                # predict first guy to lose, second to win
                 try:
                     self.success.remove(metric)
                     self.tie.remove(metric)
@@ -159,7 +167,7 @@ class ComparisonSet:
 
 
 def comparison_from_line(comparison_line: str, metrics: set=set(),
-                         inputfile: str=''):
+                         inputfile: str='', directory: str=None):
     parameters = [field.strip() for field in comparison_line.split(';')]
     try:
         name, latex, winner_path, loser_path = parameters[:4]
@@ -168,6 +176,9 @@ def comparison_from_line(comparison_line: str, metrics: set=set(),
 not enough parameters specified'
         raise Exception(message).format(inputfile)
 
+    if directory:
+        winner_path = os.path.join(directory, winner_path)
+        loser_path = os.path.join(directory, loser_path)
     winner = tree_from_file(winner_path)
     loser = tree_from_file(loser_path)
 
@@ -176,6 +187,7 @@ not enough parameters specified'
 
 
 def comparisons_from_file(inputfile: str=None,
+                          directory: str=None,
                           extension: str='.compare',
                           metrics: set=set()):
     # ask for input file if necessary
@@ -185,15 +197,18 @@ def comparisons_from_file(inputfile: str=None,
 
     if inputfile.endswith(extension):
         inputfile = inputfile.replace(extension, '')
+
     basename = os.path.basename(inputfile)
 
     # read in specification file
     with open(inputfile + extension, 'r') as compfile:
 
-        parameter_dicts = [comparison_from_line(line, metrics, inputfile)
+        parameter_dicts = [comparison_from_line(line, metrics, inputfile, directory)
                            for line in compfile.readlines()
                            if not re.match(r'\s*#.*', line)]
         compfile.close()
 
-    return ComparisonSet(parameter_dicts, name=basename,
+    comp = ComparisonSet(parameter_dicts, name=basename,
                          metrics=metrics)
+    comp.compare()
+    return comp

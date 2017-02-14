@@ -16,11 +16,12 @@
 #
 # - Functions for building metrics from text files
 
-from io_tree import *
-from tree_values import *
 import itertools
 import os
 import re
+
+from io_tree import IOTree
+from tree_values import memory_measure, safemax, safediv, avg
 
 
 ##################
@@ -110,7 +111,7 @@ class Metric:
         else:
             return (False, False)
 
-    def _pair_and(pair1: (bool, bool), pair2: (bool, bool)):
+    def _pair_and(self, pair1: (bool, bool), pair2: (bool, bool)):
         """
         Compute metric viability from two (bool, bool) pairs.
 
@@ -132,7 +133,7 @@ class Metric:
                     'desired loser': (tree2, tree2.name, tree2_value),
                     'captured': viable}
         self.profile[name] = contrast
-        self.viable = _pair_and(self.viable, viable)
+        self.viable = self._pair_and(self.viable, viable)
 
 
 class MetricTree(IOTree):

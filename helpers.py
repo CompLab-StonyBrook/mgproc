@@ -16,8 +16,8 @@
 #   forest: forest output (with \Lab macro)
 #   ioprint: writes index/outdex annotation as *.io.forest file
 
-
 import os
+
 
 def int2str(function) -> 'function':
     """Convert int-arguments of function to type str"""

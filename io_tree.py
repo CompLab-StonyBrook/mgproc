@@ -16,8 +16,8 @@
 # is an IOTree that also stores information about the values it receives
 # from various metrics.
 
-from gorn_tree import *
-from helpers import *
+from gorn_tree import GornNode, GornTree
+from helpers import forest
 
 
 class IONode(GornNode):

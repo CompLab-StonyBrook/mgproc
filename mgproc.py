@@ -16,14 +16,10 @@
 #       tree_values
 #   comparisons
 
-
-import os
 import re
-from pprint import pprint
-from io_tree import *
-from tree_values import *
-from metrics import *
-from comparisons import *
+import os
+
+from metrics import MetricTree
 
 
 def _raw_tokenize(string: str) -> list:
@@ -264,7 +260,7 @@ def trees_from_folder(directory: str=None,
         for basename in files]
 
 
-def check_order(tree: IOTree, specification: 'linearization file') -> bool:
+def check_order(tree: 'IOTree', specification: 'linearization file') -> bool:
     """
     Check *.linear files for consistency with *.tree.forest
 

@@ -25,7 +25,7 @@
 # they are not prefixed with _ so that the user can easily reference them
 # in text files to define various metrics.
 
-from io_tree import *
+from io_tree import IONode, IOTree
 
 
 ####################
