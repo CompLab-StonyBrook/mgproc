@@ -20,6 +20,7 @@ import re
 import os
 
 from metrics import MetricTree
+from helpers import ioprint
 
 
 def _raw_tokenize(string: str) -> list:
@@ -275,7 +276,7 @@ def check_order(tree: 'IOTree', specification: 'linearization file') -> bool:
     specification: str
         path to *.linear file
     """
-    for label, address in linearization_from_file(specification + '.linear'):
+    for label, address in _linearization_from_file(specification + '.linear'):
         # sanitize address (remove \n, whitespace);
         # fails for address '', but root should never be leaf anyways
         address = str(int(address))
