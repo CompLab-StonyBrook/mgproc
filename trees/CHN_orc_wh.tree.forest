@@ -1,20 +1,20 @@
 [CP
-    [C]
+    [C, empty]
     [TP, name=TP1
         [T$'$
-            [T]
+            [T, empty]
             [$v$P
                 [DP, name=DP
                     [D$'$
-                        [D]
+                        [D, empty]
                         [NP
                             [tycoon]
                             [CP, name=CP
                                 [C$'$
-                                    [C]
+                                    [C, empty]
                                     [TP, name=TP
                                         [T$'$
-                                            [T]
+                                            [T, empty]
                                             [$v$P
                                                 [mayor, name=mayor]
                                                 [$v'$

@@ -1,20 +1,20 @@
         [CP
-            [C]
+            [C, empty]
             [TP, name=TP1Spec
                 [T$'$
-                    [T]
+                    [T, empty]
                     [$v$P
                         [DP, name=SSubj
-                            [D]
+                            [D, empty]
                             [RelP, name=TP2landing
                                 [Rel$'$
                                     [who]
                                     [CP, name=CP2Spec
                                         [C$'$
-                                            [C]
+                                            [C, empty]
                                             [TP, name=TP2Spec
                                                 [T$'$
-                                                    [T]
+                                                    [T, empty]
                                                     [$v$P
                                                         [mayor, name=headNP]
                                                         [$v'$
