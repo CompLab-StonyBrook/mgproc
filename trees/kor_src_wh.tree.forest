@@ -1,29 +1,29 @@
-[\Lab{CP}{1}{2}
-    [\Lab{C}{2}{3}]
-    [\Lab{TP}{2}{4}, name=TP1Spec
-        [\Lab{T$'$}{4}{5}
-            [\BLab{T}{5}{27}]
-            [\Lab{vP}{5}{6}, name=vP1Spec
-                [\Lab{vP}{6}{7}
-                    [\Lab{DP}{7}{8}, name=Subject
-                        [\Lab{D$'$}{8}{9}
-                            [\BLab{D}{9}{25}]
-                            [\Lab{NP}{9}{10}
-                                [\BLab{mayor}{10}{26}, name=mayorHead]
-                                [\Lab{CP}{10}{11}, name=CP2Spec
-                                    [\Lab{C$'$}{11}{12}
-                                        [\Lab{C}{12}{13}]
-                                        [\Lab{TP}{12}{14}, name=TP2Spec
-                                            [\Lab{T$'$}{14}{15}
-                                                [\Lab{T}{15}{16}]
-                                                [\Lab{vP}{15}{17}, name=vP2Spec
-                                                [\Lab{vP}{17}{18}
-                                                        [\BLab{who}{18}{24}, name=headNP]
-                                                        [\Lab{v$'$}{18}{19}
-                                                            [\BLab{v}{19}{22}]
-                                                            [\Lab{VP}{19}{20}
-                                                                [\BLab{invited}{20}{23}]
-                                                                [\Lab{tycoon}{20}{21}, name=headNP2]
+[CP
+    [C]
+    [TP, name=TP1Spec
+        [T$'$
+            [T]
+            [vP, name=vP1Spec
+                [vP
+                    [DP, name=Subject
+                        [D$'$
+                            [D]
+                            [NP
+                                [mayor, name=mayorHead]
+                                [CP, name=CP2Spec
+                                    [C$'$
+                                        [C]
+                                        [TP, name=TP2Spec
+                                            [T$'$
+                                                [T]
+                                                [vP, name=vP2Spec
+                                                [vP
+                                                        [who, name=headNP]
+                                                        [v$'$
+                                                            [v]
+                                                            [VP
+                                                                [invited]
+                                                                [tycoon, name=headNP2]
                                                             ]
                                                         ]
                                                     ]
@@ -35,11 +35,11 @@
                             ]
                         ]
                     ]
-                    [\IBLab{v$'$}{7}{28}
-                        [\BLab{v}{28}{31}]
-                        [\Lab{VP}{28}{29}, name=VP4Spec
-                            [\BLab{loves}{29}{32}]
-                            [\Lab{money}{29}{30}, name=headNP3]
+                    [v$'$
+                        [v]
+                        [VP, name=VP4Spec
+                            [loves]
+                            [money, name=headNP3]
                         ]
                     ]
                 ]

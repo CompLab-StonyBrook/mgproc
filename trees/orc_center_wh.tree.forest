@@ -1,38 +1,38 @@
-[\Lab{CP}{1}{2}
-    [\Lab{C}{2}{3}]
-    [\Lab{TP}{2}{4}, name=TP1
-        [\Lab{T$'$}{4}{5}
-            [\BLab{T}{5}{38}]
-            [\Lab{VP}{5}{6}
-                [\Lab{DP}{6}{7}, name=DP1
-                    [\Lab{the}{7}{8}]
-                    [\Lab{NP}{8}{9}
-                        [\Lab{boy}{9}{10}]
-                        [\Lab{CP}{10}{11}, name=CP2
-                            [\Lab{C$'$}{11}{12}
-                                [\BLab{C}{12}{18}]
-                                [\Lab{TP}{12}{13}, name=TP2
-                                    [\Lab{T$'$}{13}{14}
-                                        [\BLab{T}{14}{36}]
-                                        [\Lab{VP}{14}{15}
-                                            [\BLab{DP}{15}{19}, name=DP2
-                                                [\Lab{the}{19}{20}]
-                                                [\Lab{NP}{19}{21}
-                                                    [\Lab{man}{21}{22}]
-                                                    [\Lab{CP}{21}{23}, name=CP3
-                                                        [\Lab{C$'$}{23}{24}
-                                                            [\BLab{C}{24}{30}]
-                                                            [\Lab{TP}{24}{25}, name=TP3
-                                                                [\Lab{T$'$}{25}{26}
-                                                                    [\BLab{T}{26}{34}]
-                                                                    [\Lab{VP}{26}{27}
-                                                                        [\BLab{DP}{27}{31}, name=DP3
-                                                                            [\Lab{the}{31}{32}]
-                                                                            [\Lab{woman}{31}{33}]
+[CP
+    [C]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [VP
+                [DP, name=DP1
+                    [the]
+                    [NP
+                        [boy]
+                        [CP, name=CP2
+                            [C$'$
+                                [C]
+                                [TP, name=TP2
+                                    [T$'$
+                                        [T]
+                                        [VP
+                                            [DP, name=DP2
+                                                [the]
+                                                [NP
+                                                    [man]
+                                                    [CP, name=CP3
+                                                        [C$'$
+                                                            [C]
+                                                            [TP, name=TP3
+                                                                [T$'$
+                                                                    [T]
+                                                                    [VP
+                                                                        [DP, name=DP3
+                                                                            [the]
+                                                                            [woman]
                                                                         ]
-                                                                        [\Lab{V$'$}{27}{28}
-                                                                            [\BLab{praised}{28}{35}]
-                                                                            [\Lab{who}{28}{29}, name=wh2]
+                                                                        [V$'$
+                                                                            [praised]
+                                                                            [who, name=wh2]
                                                                         ]
                                                                     ]
                                                                 ]
@@ -41,9 +41,9 @@
                                                     ]
                                                 ]
                                             ]
-                                            [\Lab{V$'$}{15}{16}
-                                                [\BLab{saw}{16}{37}]
-                                                [\Lab{who}{16}{17}, name=wh1]
+                                            [V$'$
+                                                [saw]
+                                                [who, name=wh1]
                                             ]
                                         ]
                                     ]
@@ -52,7 +52,7 @@
                         ]
                     ]
                 ]
-                [\BLab{disappeared}{6}{39}]
+                [disappeared]
             ]
         ]
     ]
