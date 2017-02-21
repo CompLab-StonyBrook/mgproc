@@ -1,0 +1,47 @@
+[\Lab{CP}{1}{2}
+    [\Lab{that}{2}{3}]
+    [\Lab{TP}{2}{4}, name=TP1
+        [\Lab{T$'$}{4}{5}
+            [\BLab{T}{5}{9}]
+            [\Lab{VP}{5}{6}, name=VP1
+                [\Lab{VP}{6}{7}, name=VP2
+                    [\Lab{John}{7}{8}, name=John1]
+                    [\IBLab{V$'$}{7}{10}
+                        [\Lab{CP}{10}{11}, name=CP2
+                            [\Lab{that}{11}{12}]
+                            [\Lab{TP}{11}{13}, name=TP2
+                                [\Lab{T$'$}{13}{14}
+                                    [\BLab{T}{14}{18}]
+                                    [\Lab{VP}{14}{15}, name=VP3
+                                        [\Lab{VP}{15}{16}
+                                            [\Lab{John}{16}{17}, name=John2]
+                                            [\IBLab{V$'$}{16}{19}
+                                                [\Lab{CP}{19}{20}, name=CP3
+                                                    [\Lab{that}{20}{21}]
+                                                    [\Lab{TP}{20}{22}, name=TP3
+                                                        [\Lab{T$'$}{22}{23}
+                                                            [\BLab{T}{23}{26}]
+                                                            [\Lab{VP}{23}{24}
+                                                                [\Lab{John}{24}{25}, name=John3]
+                                                                [\IBLab{V$'$}{24}{27}
+                                                                    [\Lab{nothing}{27}{28}]
+                                                                    [\Lab{said}{27}{29}]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                                [\BLab{said}{19}{30}]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        [\BLab{said}{10}{31}]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]

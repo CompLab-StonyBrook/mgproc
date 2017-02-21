@@ -1,0 +1,5 @@
+\draw[move, [move={DP1toTP1}]] (DP1) to[out=west,in=south west] (TP1);
+\draw[move, [move={DP2toTP2}]] (DP2) to[out=west,in=south west] (TP2);
+\draw[move, [move={DP3toTP3}]] (DP3) to[out=west,in=south west] (TP3);
+\draw[move, [move={wh1ToCP2}]] (wh1) to[out=west,in=south west] (CP2);
+\draw[move, [move={wh2ToCP3}]] (wh2) to[out=west,in=south west] (CP3);

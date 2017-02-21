@@ -1,0 +1,57 @@
+[\Lab{CP}{1}{2}
+    [\Lab{C}{2}{3}]
+    [\Lab{TP}{2}{4}, name=TP1
+        [\Lab{T$'$}{4}{5}
+            [\BLab{T}{5}{18}]
+            [\Lab{VP}{5}{6}, name=VP1
+                [\Lab{VP}{6}{7}
+                    [\Lab{DP}{7}{8}, name=DP1
+                        [\Lab{the}{8}{9}]
+                        [\Lab{CP}{8}{10}, name=CP2
+                            [\Lab{C$'$}{10}{11}, name=Cbar1
+                                [\BLab{that}{11}{20}]
+                                [\Lab{TP}{11}{12}, name=TP2
+                                    [\Lab{T$'$}{12}{13}
+                                        [\BLab{T}{13}{30}]
+                                        [\Lab{VP}{13}{14}, name=VP3
+                                            [\Lab{VP}{14}{15}
+                                                [\BLab{DP}{15}{21}, name=DP2
+                                                    [\Lab{the}{21}{22}]
+                                                    [\Lab{CP}{21}{23}, name=CP3
+                                                        [\Lab{C$'$}{23}{24}, name=Cbar2
+                                                            [\BLab{that}{24}{32}]
+                                                            [\Lab{TP}{24}{25}, name=TP3
+                                                                [\Lab{T$'$}{25}{26}
+                                                                    [\BLab{T}{26}{36}]
+                                                                    [\Lab{VP}{26}{27}
+                                                                        [\IBLab{DP}{27}{33}, name=DP3
+                                                                            [\Lab{the}{33}{34}]
+                                                                            [\Lab{warning}{33}{35}]
+                                                                        ]
+                                                                        [\Lab{V$'$}{27}{28}
+                                                                                [\BLab{praised}{28}{37}]
+                                                                                [\Lab{man}{28}{29}, name=DP4]
+                                                                        ]
+                                                                     ]
+                                                                 ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                                [\Lab{V$'$}{15}{16}
+                                                    [\BLab{saw}{16}{31}]
+                                                    [\Lab{boy}{16}{17}]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                               ]
+                           ]
+                       ]
+                    ]
+                    [\BLab{disappeared}{7}{19}]
+                    ]
+               ]
+           ]
+       ]
+   ]
