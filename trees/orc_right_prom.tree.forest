@@ -1,10 +1,10 @@
 [CP
-    [C, empty]
+    [C]
     [TP, name=TP1
         [T$'$
-            [T, empty]
-            [$v$P, name=vP1
-                [$v$P
+            [T]
+            [VP, name=VP1
+                [VP
                     [DP, name=DP1
                         [the]
                         [CP, name=CP2
@@ -12,9 +12,9 @@
                                 [that]
                                 [TP, name=TP2
                                     [T$'$
-                                        [T, empty]
-                                        [$v$P, name=vP3
-                                            [$v$P
+                                        [T]
+                                        [VP, name=VP3
+                                            [VP
                                                 [DP, name=DP2
                                                     [the]
                                                     [CP, name=CP3
@@ -22,18 +22,15 @@
                                                             [that]
                                                             [TP, name=TP3
                                                                 [T$'$
-                                                                    [T, empty]
-                                                                    [$v$P
+                                                                    [T]
+                                                                    [VP
                                                                         [DP, name=DP3
                                                                             [the]
-                                                                            [woman]
+                                                                            [warning]
                                                                         ]
-                                                                        [$v'$
-                                                                            [$v$]
-                                                                            [VP
+                                                                        [V$'$
                                                                                 [praised]
                                                                                 [man, name=DP4]
-                                                                            ]
                                                                         ]
                                                                      ]
                                                                  ]
@@ -41,26 +38,20 @@
                                                         ]
                                                     ]
                                                 ]
-                                                [$v'$
-                                                    [$v$]
-                                                    [VP
-                                                        [saw]
-                                                        [boy, name=head-noun]
-                                                    ]
+                                                [V$'$
+                                                    [saw]
+                                                    [boy]
                                                 ]
                                             ]
                                         ]
                                     ]
-                                ]
-                            ]
-                        ]
+                               ]
+                           ]
+                       ]
                     ]
-                    [$v'$
-                        [$v$]
-                        [disappeared]
+                    [disappeared]
                     ]
-                ]
-            ]
-        ]
-    ]
-]
+               ]
+           ]
+       ]
+   ]

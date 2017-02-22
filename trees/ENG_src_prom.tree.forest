@@ -1,8 +1,8 @@
 [CP
-    [C]
+    [C, empty]
     [TP, name=TP1
         [T$'$
-            [T]
+            [T, empty]
             [$v$P
                 [DP, name=TP1subj
                     [the]
@@ -11,10 +11,10 @@
                             [who]
                             [TP, name=TP2
                                 [T$'$
-                                    [T]
+                                    [T, empty]
                                     [$v$P
                                         [DP, name=RCsource
-                                            [D]
+                                            [D, empty]
                                             [reporter]
                                         ]
                                         [$v'$

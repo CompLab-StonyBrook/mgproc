@@ -1,0 +1,4 @@
+\draw[move,bend left, [move={TP1SubjtoTP1}]] (TP1Subj) to (TP1);
+\draw[move,bend left, [move={TP2SubjtoTP1}]] (TP2Subj) to (TP2);
+\draw[move,bend left=60, [move={TP3SubjtoTP1}]] (TP3Subj) to (TP3);
+\draw[move,bend right, [move={RCsourceToTarget}]] (RCsource) to (RCtarget);

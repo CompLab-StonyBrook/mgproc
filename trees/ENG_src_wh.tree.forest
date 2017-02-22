@@ -1,9 +1,9 @@
 [CP, name=CP1
     [C$'$
-       [C]
+       [C, empty]
        [TP, name=TP1
             [T$'$
-                [T]
+                [T, empty]
                 [$v$P
                     [DP, name=DP1
                         [the]
@@ -11,10 +11,10 @@
                             [reporter]
                             [CP, name=CP2
                                 [C$'$
-                                    [C]
+                                    [C, empty]
                                     [TP, name=TP2
                                         [T$'$
-                                            [T]
+                                            [T, empty]
                                             [$v$P
                                                 [who, name=who]
                                                 [$v'$

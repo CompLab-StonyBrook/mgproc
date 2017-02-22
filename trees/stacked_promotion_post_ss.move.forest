@@ -1,4 +1,0 @@
-\draw[-{Latex[length=.5em]}, dashed, blue!75, [move={hdtoCP1}]] (hd) to[out= west,in=south west] (CP1);
-\draw[-{Latex[length=.5em]}, dashed, blue!75, [move={CP1toNonFinalLanding}]] (CP1) to[out= west,in=south west] (subjectHigherLanding);
-\draw[-{Latex[length=.5em]}, dashed, blue!75, [move={CP1toCP2}]] (CP1) to[out= west,in=south west] (CP2);
-\draw[-{Latex[length=.5em]}, dashed, blue!75, [move={subjLowtoLanding}]] (hd) to[out= west,in=south west] (subjectLowerLanding);
