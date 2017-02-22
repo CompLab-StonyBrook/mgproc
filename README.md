@@ -203,19 +203,25 @@ Just copy-paste the following commands into the preamble of your document.
 \newcommand{\IBLab}[3]{\tsp{#2}#1{\setlength{\fboxsep}{.25\fboxsep}\boxed{\tsb{#3}}}} % for boxed interior nodes
 ```
 
-Then use *mgproc* to produce an `mgproc.forest` file for you and load it with `\input` in your document.
-Here is an example where the relevant files are stored in a subfolder `trees`:
+Then use the `texprint` function to produce an `mgproc.forest` file for you and load it with `\input` in your document.
+
+```python
+my_tree = tree_from_file('./trees/beautiful.tree.forest')
+texprint(my_tree, filename='beautiful', tree_directory='./trees/')
+```
+
+Here is an example that shows how to load files stored in a subfolder `img`:
 
 ```latex
 The first tree is shown below.
 %
 \begin{center}
-    \input{./trees/foo.mgproc.forest}
+    \input{./img/foo.mgproc.forest}
 \end{center}
 %
 And the second one is next.
 %
-\input{./trees/bar.mgproc.forest}
+\input{./img/bar.mgproc.forest}
 ```
 
 
@@ -307,4 +313,4 @@ To Do
    - generalize filters accordingly to match any definable property
 - Unit tests
 - Tons of bug testing
-- Implement a faster evaluation system for ranked metrics (if <m1,m2> wins/fails, so does <m1,m2,...>)
+- Implement a faster evaluation system for ranked metrics (if [m1,m2] wins/fails, so does [m1,m2,...])

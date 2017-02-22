@@ -140,7 +140,28 @@ def texprint(tree: 'IOTree', extension: str='.mgproc.forest',
              filename: str=None, directory: str=None,
              tree_directory: str=None,
              io: bool=True) -> str:
-    """Prints forest file of tree"""
+    """
+    Prints forest output of tree.
+    
+    This function outputs a complete forest environment describing the full
+    structure of the tree, all the move arcs, and (if desired) the index/
+    outdex annotation.
+
+    Parameters
+    ----------
+    tree: IOTree
+        IOTree to be converted to forest code
+    extension: str
+        standard extension for produced file
+    filename: str
+        name of file to be produced
+    directory: str
+        directory in which to save the file
+    tree_directory: str
+        directory in which tree files are saved
+    io: bool
+        add code for index/outdex annotation?
+    """
     string = '\\begin{forest}'
     tree_header = '\n%\n' + '%' * 8 + '\n% Tree %\n' + '%' * 8
     string += tree_header + '\n%\n' + tree.print(annotation=forest)
@@ -148,9 +169,13 @@ def texprint(tree: 'IOTree', extension: str='.mgproc.forest',
     # add move specification
     move = os.path.join(tree_directory, tree.name) if tree_directory else tree.name
     move_header = '%' * 10 + '\n% Movers %\n' + '%' * 10
-    with open(move + '.move.forest', 'r') as move_file:
-        string += '\n%\n' + move_header + '\n%\n' + move_file.read() + '%'
-        move_file.close()
+    try:
+        with open(move + '.move.forest', 'r') as move_file:
+            string += '\n%\n' + move_header + '\n%\n' + move_file.read() + '%'
+            move_file.close()
+    except:
+        pass
+        # fixme: construct move code directly from IOTree
 
     # add index/outdex annotation if requested
     if io:
