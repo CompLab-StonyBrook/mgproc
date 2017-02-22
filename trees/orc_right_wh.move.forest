@@ -1,7 +1,7 @@
-\draw[move, [move={DP1toTP1}]] (DP1) to[out=west,in=south west] (TP1);
-\draw[move, [move={DP2toTP2}]] (DP2) to[out=west,in=south west] (TP2);
-\draw[move, [move={DP3toTP3}]] (DP3) to[out=west,in=south west] (TP3);
-\draw[move, [move={CP2toVP2}]] (CP2) to[out=east,in=south east] (VP2);
-\draw[move, [move={CP3toVP4}]] (CP3) to[out=east,in=south east] (VP4);
-\draw[move, [move={wh1toCP2}]] (wh1) to[out=west,in=south west] (CP2);
-\draw[move, [move={wh2toCP3}]] (wh2) to[out=west,in=south west] (CP3);
+\draw[move={DP1toTP1}] (DP1) to[out=west,in=south west] (TP1);
+\draw[move={DP2toTP2}] (DP2) to[out=west,in=south west] (TP2);
+\draw[move={DP3toTP3}] (DP3) to[out=west,in=south west] (TP3);
+\draw[move={CP2toVP2}] (CP2) to[out=east,in=south east] (VP2);
+\draw[move={CP3toVP4}] (CP3) to[out=east,in=south east] (VP4);
+\draw[move={wh1toCP2}] (wh1) to[out=west,in=south west] (CP2);
+\draw[move={wh2toCP3}] (wh2) to[out=west,in=south west] (CP3);

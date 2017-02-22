@@ -1,6 +1,6 @@
-\draw[move, [move={DP1toTP1}]] (DP1) to[out=west,in=south west] (TP1);
-\draw[move, [move={DP2toTP2}]] (DP2) to[out=west,in=south west] (TP2);
-\draw[move, [move={DP3toTP3}]] (DP3) to[out=west,in=south west] (TP3);
-\draw[move, [move={DP4toCP3}]] (DP4) to[out=east,in=south east] (CP3);
-\draw[move, [move={Cbar2toVP3}]] (Cbar2) to[out=east,in=south east] (VP3);
-\draw[move, [move={Cbar1toVP1}]] (Cbar1) to[out=east,in=south east] (VP1);
+\draw[move={DP1toTP1}] (DP1) to[out=west,in=south west] (TP1);
+\draw[move={DP2toTP2}] (DP2) to[out=west,in=south west] (TP2);
+\draw[move={DP3toTP3}] (DP3) to[out=west,in=south west] (TP3);
+\draw[move={DP4toCP3}] (DP4) to[out=east,in=south east] (CP3);
+\draw[move={Cbar2toVP3}] (Cbar2) to[out=east,in=south east] (VP3);
+\draw[move={Cbar1toVP1}] (Cbar1) to[out=east,in=south east] (VP1);

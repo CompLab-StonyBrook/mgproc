@@ -1,7 +1,7 @@
-\draw[move, [move={John1ToTP1}]] (John1) to[out=west,in=south west] (TP1);
-\draw[move, [move={CP2ToVP1}]] (CP2) to[out=west,in=south west] (VP1);
-\draw[move, [move={John2ToTP2}]] (John2) to[out=west,in=south west] (TP2);
-\draw[move, [move={CP3ToVP4}]] (CP3) to[out=west,in=south west] (VP4);
-\draw[move, [move={John3ToTP3}]] (John3) to[out=west,in=south west] (TP3);
-\draw[move, [move={VP7ToVP5}]] (VP7) to[out=west,in=south west] (VP5);
-\draw[move, [move={VP4ToVP2}]] (VP4) to[out=west,in=south west] (VP2);
+\draw[move={John1ToTP1}] (John1) to[out=west,in=south west] (TP1);
+\draw[move={CP2ToVP1}] (CP2) to[out=west,in=south west] (VP1);
+\draw[move={John2ToTP2}] (John2) to[out=west,in=south west] (TP2);
+\draw[move={CP3ToVP4}] (CP3) to[out=west,in=south west] (VP4);
+\draw[move={John3ToTP3}] (John3) to[out=west,in=south west] (TP3);
+\draw[move={VP7ToVP5}] (VP7) to[out=west,in=south west] (VP5);
+\draw[move={VP4ToVP2}] (VP4) to[out=west,in=south west] (VP2);
