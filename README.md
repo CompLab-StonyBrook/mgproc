@@ -125,12 +125,12 @@ my_metrics = metrics_from_file(inputfile='./metrics/base', ranks=3)
 With two metrics *A* and *B* and a rank of 3, *mgproc* would build 8 ranked metrics:
 
 1. A,A,A (same as A)
-1. A,A,B (same as <A,B>)
-1. A,B,A (same as <A,B>)
-1. A,B,B (same as <A,B>)
-1. B,A,A (same as <B,A>)
-1. B,A,B (same as <B,A>)
-1. B,B,A (same as <B,A>)
+1. A,A,B (same as A,B)
+1. A,B,A (same as A,B)
+1. A,B,B (same as A,B)
+1. B,A,A (same as B,A)
+1. B,A,B (same as B,A)
+1. B,B,A (same as B,A)
 1. B,B,B (same as B)
 
 As this example shows, there is little point in setting the number of ranks higher than the number of base metrics.
@@ -313,4 +313,4 @@ To Do
    - generalize filters accordingly to match any definable property
 - Unit tests
 - Tons of bug testing
-- Implement a faster evaluation system for ranked metrics (if <m1,m2> wins/fails, so does <m1,m2,...>)
+- Implement a faster evaluation system for ranked metrics (if [m1,m2] wins/fails, so does [m1,m2,...])
