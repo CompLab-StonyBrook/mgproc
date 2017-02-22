@@ -1,28 +1,29 @@
         [CP
-            [C, empty]
+            [C]
             [TP, name=TP1Spec
                 [T$'$
-                    [T, empty]
-                    [$v$P
+                    [T]
+                    [vP, name=vPSpec
+                    		[vP
                         [DP, name=SSubj
-                            [D, empty]
+                        [D]
                             [RelP, name=TP2landing
                                 [Rel$'$
                                     [who]
                                     [CP, name=CP2Spec
                                         [C$'$
-                                            [C, empty]
+                                            [C]
                                             [TP, name=TP2Spec
                                                 [T$'$
-                                                    [T, empty]
-                                                    [$v$P
+                                                    [T]
+                                                    [vP, name=vP3Spec
+                                                    [vP
                                                         [mayor, name=headNP]
-                                                        [$v'$
-                                                            [$v$]
-                                                            [VP
-                                                                [invite]
-                                                                [tycoon]
-                                                            ]
+                                                        [v$'$
+                                                        [v]
+                                                        [VP
+                                                            [invited]
+                                                            [tycoon, name=headNP2]
                                                         ]
                                                     ]
                                                 ]
@@ -32,14 +33,17 @@
                                 ]
                             ]
                         ]
-                        [$v'$
-                            [$v$]
+                    ]
+                ]
+                        [v$'$
+                        	[v]
                             [VP
-                                [likes]
-                                [wine]
-                            ]
+                            	[loves]
+                            	[money, name=headNP3]
                         ]
                     ]
                 ]
             ]
         ]
+    ]
+]

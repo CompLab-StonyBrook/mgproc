@@ -1,0 +1,51 @@
+[CP
+    [that]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [VP, name=VP1
+                [VP, name=VP2
+                    [VP
+                        [John, name=John1]
+                        [V$'$
+                            [CP, name=CP2
+                                [that]
+                                [TP, name=TP2
+                                    [T$'$
+                                        [T]
+                                        [VP, name=VP4
+                                            [VP, name=VP5
+                                                [VP
+                                                    [John, name=John2]
+                                                    [V$'$
+                                                        [CP, name=CP3
+                                                            [that]
+                                                            [TP, name=TP3
+                                                                [T$'$
+                                                                    [T]
+                                                                    [VP, name=VP7
+                                                                        [John, name=John3]
+                                                                        [V$'$
+                                                                            [said]
+                                                                            [nothing]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                        [said]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            [said]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]            

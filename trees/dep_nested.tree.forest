@@ -1,0 +1,47 @@
+[CP
+    [that]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [VP, name=VP1
+                [VP, name=VP2
+                    [John, name=John1]
+                    [V$'$
+                        [CP, name=CP2
+                            [that]
+                            [TP, name=TP2
+                                [T$'$
+                                    [T]
+                                    [VP, name=VP3
+                                        [VP
+                                            [John, name=John2]
+                                            [V$'$
+                                                [CP, name=CP3
+                                                    [that]
+                                                    [TP, name=TP3
+                                                        [T$'$
+                                                            [T]
+                                                            [VP
+                                                                [John, name=John3]
+                                                                [V$'$
+                                                                    [nothing]
+                                                                    [said]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                                [said]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        [said]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
