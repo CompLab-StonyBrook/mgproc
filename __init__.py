@@ -30,11 +30,9 @@ def load_user_code(user_file: str=None,
     if user_file:
         user_files = [os.path.join(user_dir, user_file)]
     else:
-        # produce a generator rather than a list
-        # as there might be tons of files in this folder
-        user_files = (os.path.join(user_dir, user_file)
+        user_files = [os.path.join(user_dir, user_file)
                       for user_file in os.listdir(user_dir)
-                      if user_file.endswith('py'))
+                      if user_file.endswith('py')]
 
     # execute code in each file and
     # add it to list of globally accessible functions
