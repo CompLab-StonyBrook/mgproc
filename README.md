@@ -225,6 +225,112 @@ And the second one is next.
 ```
 
 
+Dynamically Extending the Code
+------------------------------
+
+For your own research, you may need to define completely new metrics or tree traversals.
+But digging into the bowels of *mgproc* and making code changes is not for the faint of heart and may easily cause breakage.
+Instead, you can create a new Python file in the folder *usercode*.
+When mgproc is started, it automatically executes all the code in every Python file in that folder.
+
+
+### Defining New Metrics
+
+Behind the scenes, the value a metric assigns to a given tree is computed in three steps:
+
+1.  The `memory_measure` function calls the correct helper function based on the load type of the metric (*tenure* or *size*).
+
+1.  Depending on the load type, `tenure_extract` or `move_extract` is called to produce a list of the tenure or size values for every node.
+
+1.  The operator function is applied to the list to obtain the final value under the defined metric.
+
+For most cases, defining a new metric only requires you to use a different operator.
+For example, if you want the lowest tenure value rather than the highest, you could use the Python built-in function `min`:
+
+~~~bash
+MinTen; ; tenure; min; ; I, U, P, *
+~~~
+
+But sometimes Python built-ins just won't do and you have to define your own function.
+This is very easy.
+
+1.  Create a new file in *usercode*.
+1.  Add the appropriate function definition to that file.
+
+    ~~~python
+    def new_function(list_argument):
+        """This function does not do much"""
+        return list_argument
+    ~~~
+
+1.  Specify that function as the operator for your new metric.
+
+    ~~~bash
+    NewMetric; ; tenure; new_function;
+    ~~~
+
+Since you can use just about any Python function that takes a single list as its argument, you can define even very complicated metrics.
+
+
+### Defining New Load Types
+
+Unfortunately, sometimes your metric is so complicated that the values provided by `tenure_extract` and `move_extract` simply aren't enough.
+In that case, you have to define a completely new load type.
+This requires more effort, but is still doable.
+
+The solution is to redefine `memory_measure` to expand it with your own custom code:
+
+1.  Create a new file in *usercode*.
+1.  Write a new function definition for `memory_measure`.
+    It is a good idea to copy-paste the original memory_measure code so that old metrics will still work as intended.
+    Just expand the if-then-else block for load_type with new cases.
+
+    ~~~python
+    def memory_measure(IOTree,
+                       operator: 'function'=None, load_type: str='tenure',
+                       filters: list=[], trivial: bool=False) -> 'int/list':
+
+    if load_type == 'tenure':
+        load_type = tenure_extract
+    elif load_type == 'size':
+        load_type = move_extract
+    elif load_type == 'my_metric':
+        load_type = new_function
+
+    return operator(load_type(IOTree,
+                              filters=filters,
+                              trivial=trivial).values())
+    ~~~
+
+1.  Add a definition for the new function you are calling in `memory_measure`.
+    In the example above, we added `new_function`, so we need to add the corresponding definition.
+
+    ~~~python
+    def new_function(list_argument):
+        """This function does not do much"""
+        return list_argument
+    ~~~
+
+    For examples of what a useful metric function looks like, check out `tenure_extract` and `move_extract` in `tree_values.py`.
+
+1.  Add the definition for your new metric to the relevant metric file.
+    Since we told memory_measure to use `new_function` if the load type is `my_metric` in the example above, our metric file could include the following new line:
+
+    ```bash
+    DummyMetric; ; my_metric; sum
+    ```
+
+### Defining New Tree Traversals
+
+Unfortunately the code in its current form isn't sufficiently modular when it comes to the tree traversal.
+Right now, it is defined directly in the `_annotate` method of the class `IOTree`.
+So you will have to overwrite that class method with your own.
+That is pretty tricky and should not be attempted unless you know what you're doing.
+At this point, it is indeed easier to just change `_annotate` directly in the code.
+
+In the future, this part of the code will be modularized so that multiple traversals can be defined at the same time and each metric decides which traversal it should be used with.
+
+
 Limitations and Known Bugs
 --------------------------
 
@@ -287,6 +393,11 @@ Given the dubious empirical status of metrics of rank 4 or greater, there are cu
 
 Tips & Tricks
 -------------
+
+- The *usercode* folder can be used to design your own standard test suites.
+  If you find yourself always running the same sequence of `metrics_from_file` and `comparison_from_file` commands right after starting *mgproc*, just put them in a separate Python file in *usercode*.
+
+  Give it a filename like `zzz_startup` to ensure that the file is loaded **after** any other files in *usercode* that are needed for any custom metrics you use.
 
 - If you have a forest file that uses our custom LaTeX macros `\Lab`, `\BLab`, or `\IBLab` for node labels, you can use a regular expression to remove them automatically.
   On Linux, the command is:
