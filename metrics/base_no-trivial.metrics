@@ -1,0 +1,22 @@
+# General format:
+# name; LaTeX command; load_type; operator; trivial; filter; function
+#
+#
+# tenure based, trivial memory load is ignored
+#
+MaxT ;    ; tenure; safemax
+SumT ;    ; tenure; sum
+BoxT ;    ; tenure; len
+AvgT ;    ; tenure; avg
+MaxTR;    ; tenure; sorted
+#
+#
+# size based, trivial memory load is ignored
+#
+MaxS  ;   ; size  ; safemax
+SumS  ;   ; size  ; sum
+Movers;   ; size  ; len
+AvgS  ;   ; size  ; avg
+MaxSR ;   ; size  ; sorted
+#
+#
