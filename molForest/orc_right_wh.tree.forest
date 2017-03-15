@@ -1,0 +1,72 @@
+[CP
+    [C]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [$v$P, name=vP2
+                [$v$P
+                    [DP, name=DP1
+                        [the]
+                        [NP
+                            [boy]
+                            [CP, name=CP2
+                                [C$'$
+                                    [C]
+                                    [TP, name=TP2
+                                        [T$'$
+                                            [T]
+                                            [$v$P, name=vP4
+                                                [$v$P
+                                                    [DP, name=DP2
+                                                        [the]
+                                                        [NP
+                                                            [man]
+                                                            [CP, name=CP3
+                                                                [C$'$
+                                                                    [C]
+                                                                    [TP, name=TP3
+                                                                        [T$'$
+                                                                            [T]
+                                                                            [VP
+                                                                                [DP, name=DP3
+                                                                                    [the]
+                                                                                    [woman]
+                                                                                ]
+                                                                                [$v'$
+                                                                                    [$v$]
+                                                                                    [VP
+                                                                                        [praised]
+                                                                                        [who, name=wh2]
+                                                                                    ]
+                                                                                ]
+                                                                            ]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                    [$v'$
+                                                        [$v$]
+                                                        [VP
+                                                            [saw]
+                                                            [who, name=wh1]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    [$v'$
+                        [$v$]
+                        [disappeared]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]                       

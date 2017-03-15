@@ -1,0 +1,72 @@
+[CP
+    [C]
+    [TP, name=TP1
+        [T$'$
+            [T]
+            [$v$P
+                [DP, name=TP1Subj
+                    [the]
+                    [NP, name=RCtarget
+                        [N$'$
+                            [who]
+                            [TP, name=TP2
+                                [T$'$
+                                    [T]
+                                    [$v$P
+                                        [DP, name=TP2Subj
+                                            [the]
+                                            [NP
+                                                [fact]
+                                                [CP
+                                                    [that]
+                                                    [TP, name=TP3
+                                                        [T$'$
+                                                            [T]
+                                                            [$v$P
+                                                                [DP, name=TP3Subj
+                                                                    [the]
+                                                                    [employee]
+                                                                ]
+                                                                [$v'$
+                                                                    [$v$]
+                                                                    [VP
+                                                                        [stole]
+                                                                        [office supplies]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        [$v'$
+                                            [$v$]
+                                            [VP
+                                                [worried]
+                                                [DP, name=RCsource
+                                                    [D]
+                                                    [executive]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [$v'$
+                    [$v$]
+                    [VP
+                        [hired]
+                        [DP
+                            [the]
+                            [manager]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]

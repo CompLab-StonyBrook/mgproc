@@ -1,0 +1,154 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=t
+    [C, name=t1, empty]
+    [TP, name=TP1Spec
+        [T$'$, name=t21
+            [T, name=t211, empty]
+            [$v$P, name=t212
+                [DP, name=SSubj
+                    [D, name=t21211, empty]
+                    [RelP, name=TP2landing
+                        [Rel$'$, name=t212121
+                            [who, name=t2121211]
+                            [CP, name=CP2Spec
+                                [C$'$, name=t21212121
+                                    [C, name=t212121211, empty]
+                                    [TP, name=TP2Spec
+                                        [T$'$, name=t2121212121
+                                            [T, name=t21212121211, empty]
+                                            [$v$P, name=t21212121212
+                                                [mayor, name=headNP]
+                                                [$v'$, name=t212121212122
+                                                    [$v$, name=t2121212121221]
+                                                    [VP, name=t2121212121222
+                                                        [invite, name=t21212121212221]
+                                                        [tycoon, name=t21212121212222]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [$v'$, name=t2122
+                    [$v$, name=t21221]
+                    [VP, name=t21222
+                        [likes, name=t212221]
+                        [wine, name=t212222]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[move = {hdtoTP2}] (headNP)   .. controls +(170:2em) and +(230:4em) .. (TP2Spec);
+\draw[move = {hdtoCP2}] (headNP)   .. controls +(170:8em) and +(220:7em) .. (CP2Spec);
+\draw[move = {TP2}] (TP2Spec)  .. controls +(220:8em) and +(200:10em) .. (TP2landing);
+\draw[move = {SSubjtoTP1}] (SSubj)    .. controls +(120:4em) and +(220:4em) .. (TP1Spec);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (t)                        {1};
+\node[outdex]           at (t)                        {2};
+%
+\node[index]            at (t21221)                  {26};
+\node[outdex]           at (t21221)                  {27};
+%
+\node[index]            at (t2121211)                {10};
+\node[outdex, boxed]    at (t2121211)                {22};
+%
+\node[index]            at (t2121212121)             {13};
+\node[outdex]           at (t2121212121)             {14};
+%
+\node[index]            at (t21211)                   {7};
+\node[outdex]           at (t21211)                   {8};
+%
+\node[index]            at (SSubj)                    {6};
+\node[outdex]           at (SSubj)                    {7};
+%
+\node[index]            at (t21212121212221)         {19};
+\node[outdex]           at (t21212121212221)         {20};
+%
+\node[index]            at (t212121211)              {12};
+\node[outdex, boxed]    at (t212121211)              {24};
+%
+\node[index]            at (t21212121212)            {14};
+\node[outdex]           at (t21212121212)            {16};
+%
+\node[index]            at (t21)                      {4};
+\node[outdex]           at (t21)                      {5};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (headNP)                  {16};
+\node[outdex, boxed]    at (headNP)                  {23};
+%
+\node[index]            at (TP1Spec)                  {2};
+\node[outdex]           at (TP1Spec)                  {4};
+%
+\node[index]            at (TP2Spec)                 {12};
+\node[outdex]           at (TP2Spec)                 {13};
+%
+\node[index]            at (t212)                     {5};
+\node[outdex]           at (t212)                     {6};
+%
+\node[index]            at (t211)                     {5};
+\node[outdex, boxed]    at (t211)                    {25};
+%
+\node[index]            at (CP2Spec)                 {10};
+\node[outdex]           at (CP2Spec)                 {11};
+%
+\node[index]            at (t21212121212222)         {19};
+\node[outdex]           at (t21212121212222)         {21};
+%
+\node[index]            at (TP2landing)               {7};
+\node[outdex]           at (TP2landing)               {9};
+%
+\node[index]            at (t212121212122)           {16};
+\node[outdex]           at (t212121212122)           {17};
+%
+\node[index]            at (t21212121)               {11};
+\node[outdex]           at (t21212121)               {12};
+%
+\node[index]            at (t21222)                  {26};
+\node[outdex]           at (t21222)                  {28};
+%
+\node[index]            at (t212121)                  {9};
+\node[outdex]           at (t212121)                 {10};
+%
+\node[index]            at (t2122)                    {6};
+\node[outdex, boxed]    at (t2122)                   {26};
+%
+\node[index]            at (t2121212121221)          {17};
+\node[outdex]           at (t2121212121221)          {18};
+%
+\node[index]            at (t212222)                 {28};
+\node[outdex]           at (t212222)                 {30};
+%
+\node[index]            at (t212221)                 {28};
+\node[outdex]           at (t212221)                 {29};
+%
+\node[index]            at (t2121212121222)          {17};
+\node[outdex]           at (t2121212121222)          {19};
+%
+\node[index]            at (t21212121211)            {14};
+\node[outdex]           at (t21212121211)            {15};
+%
+%
+\end{forest}

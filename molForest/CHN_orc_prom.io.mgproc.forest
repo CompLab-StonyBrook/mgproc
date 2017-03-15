@@ -1,0 +1,154 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=t
+    [C, name=t1, empty]
+    [TP, name=TP1
+        [T$'$, name=t21
+            [T, name=t211, empty]
+            [$v$P, name=t212
+                [DP, name=DP
+                    [D, name=t21211, empty]
+                    [RelP, name=RelP
+                        [Rel$'$, name=t212121
+                            [who, name=t2121211]
+                            [CP, name=CP
+                                [C$'$, name=t21212121
+                                    [C, name=t212121211, empty]
+                                    [TP, name=TP2
+                                        [T$'$, name=t2121212121
+                                            [T, name=t21212121211, empty]
+                                            [$v$P, name=vP2
+                                                [mayor, name=mayor]
+                                                [$v'$, name=t212121212122
+                                                    [$v$, name=t2121212121221]
+                                                    [VP, name=t2121212121222
+                                                        [invite, name=t21212121212221]
+                                                        [tycoon, name=TP2obj]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [$v'$, name=t2122
+                    [$v$, name=t21221]
+                    [VP, name=t21222
+                        [likes, name=t212221]
+                        [wine, name=t212222]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[move = {TP2objToCP}] (TP2obj) .. controls +(65:12em) and +(190:2em) .. (CP);
+\draw[move = {mayorToTP2}] (mayor)  .. controls +(190:6em) and +(220:6em) .. (TP2);
+\draw[move = {TP2toRelP}] (TP2)  .. controls +(230:12em) and +(210:12em) .. (RelP);
+\draw[move = {DPtoTP1}] (DP)     .. controls +(120:4em) and +(220:4em) .. (TP1);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (t)                        {1};
+\node[outdex]           at (t)                        {2};
+%
+\node[index]            at (t21221)                  {26};
+\node[outdex]           at (t21221)                  {27};
+%
+\node[index]            at (t2121211)                {10};
+\node[outdex, boxed]    at (t2121211)                {22};
+%
+\node[index]            at (t2121212121)             {13};
+\node[outdex]           at (t2121212121)             {14};
+%
+\node[index]            at (t21211)                   {7};
+\node[outdex]           at (t21211)                   {8};
+%
+\node[index]            at (DP)                       {6};
+\node[outdex]           at (DP)                       {7};
+%
+\node[index]            at (t21212121212221)         {20};
+\node[outdex]           at (t21212121212221)         {21};
+%
+\node[index]            at (t212121211)              {12};
+\node[outdex, boxed]    at (t212121211)              {24};
+%
+\node[index]            at (vP2)                     {14};
+\node[outdex]           at (vP2)                     {15};
+%
+\node[index]            at (t21)                      {4};
+\node[outdex]           at (t21)                      {5};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (mayor)                   {15};
+\node[outdex]           at (mayor)                   {16};
+%
+\node[index]            at (TP1)                      {2};
+\node[outdex]           at (TP1)                      {4};
+%
+\node[index]            at (TP2)                     {12};
+\node[outdex]           at (TP2)                     {13};
+%
+\node[index]            at (t212)                     {5};
+\node[outdex]           at (t212)                     {6};
+%
+\node[index]            at (t211)                     {5};
+\node[outdex, boxed]    at (t211)                    {25};
+%
+\node[index]            at (CP)                      {10};
+\node[outdex]           at (CP)                      {11};
+%
+\node[index]            at (TP2obj)                  {20};
+\node[outdex, boxed]    at (TP2obj)                  {23};
+%
+\node[index]            at (RelP)                     {7};
+\node[outdex]           at (RelP)                     {9};
+%
+\node[index]            at (t212121212122)           {15};
+\node[outdex, boxed]    at (t212121212122)           {18};
+%
+\node[index]            at (t21212121)               {11};
+\node[outdex]           at (t21212121)               {12};
+%
+\node[index]            at (t21222)                  {26};
+\node[outdex]           at (t21222)                  {28};
+%
+\node[index]            at (t212121)                  {9};
+\node[outdex]           at (t212121)                 {10};
+%
+\node[index]            at (t2122)                    {6};
+\node[outdex, boxed]    at (t2122)                   {26};
+%
+\node[index]            at (t2121212121221)          {18};
+\node[outdex]           at (t2121212121221)          {19};
+%
+\node[index]            at (t212222)                 {28};
+\node[outdex]           at (t212222)                 {30};
+%
+\node[index]            at (t212221)                 {28};
+\node[outdex]           at (t212221)                 {29};
+%
+\node[index]            at (t2121212121222)          {18};
+\node[outdex]           at (t2121212121222)          {20};
+%
+\node[index]            at (t21212121211)            {14};
+\node[outdex, boxed]    at (t21212121211)            {17};
+%
+%
+\end{forest}
