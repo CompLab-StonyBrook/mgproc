@@ -1,0 +1,5 @@
+\draw[move={DP1toTP1}] (DP1) to[out=west,in=south west] (TP1);
+\draw[move={DP2toTP2}] (DP2) to[out=west,in=south west] (TP2);
+\draw[move={DP3toTP3}] (DP3) to[out=west,in=south west] (TP3);
+\draw[move={wh1toCP2}] (wh1) .. controls +(80:14em) and +(220:2em) .. (CP2);
+\draw[move={wh2toCP3}] (wh2) .. controls +(80:14em) and +(220:2em) .. (CP3);

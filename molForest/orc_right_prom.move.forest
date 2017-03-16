@@ -1,0 +1,7 @@
+\draw[move={DP1toTP1}] (DP1) to[out=west,in=south west] (TP1);
+\draw[move={DP2toTP2}] (DP2) to[out=west,in=south west] (TP2);
+\draw[move={DP3toTP3}] (DP3) to[out=west,in=south west] (TP3);
+\draw[move={DP4toCP3}] (DP4) to[out=east,in=south east] (CP3);
+\draw[move={hdtoCP2}] (head-noun) to [out=east,in=south east] (CP2);
+\draw[move={Cbar2tovP3},dotted] (Cbar2) .. controls +(45:5em) and +(320:3em) .. (vP3);
+\draw[move={Cbar1tovP1},dotted] (Cbar1) .. controls +(45:5em) and +(320:3em) .. (vP1);
