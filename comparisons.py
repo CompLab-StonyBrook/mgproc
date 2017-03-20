@@ -125,7 +125,7 @@ class ComparisonSet:
 
     Public Methods
     --------------
-    .comparison: list
+    .comparisons: list
         stores all Comparisons belonging to this ComparisonSet
     .add: Comparison -> updated ComparisonSet
         add a Comparison to .comparison
