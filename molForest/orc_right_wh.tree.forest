@@ -1,8 +1,8 @@
 [CP
-    [C]
+    [C, empty]
     [TP, name=TP1
         [T$'$
-            [T]
+            [T, empty]
             [$v$P, name=vP2
                 [$v$P
                     [DP, name=DP1
@@ -11,10 +11,10 @@
                             [boy]
                             [CP, name=CP2
                                 [C$'$
-                                    [C]
+                                    [C, empty]
                                     [TP, name=TP2
                                         [T$'$
-                                            [T]
+                                            [T, empty]
                                             [$v$P, name=vP4
                                                 [$v$P
                                                     [DP, name=DP2
@@ -23,17 +23,17 @@
                                                             [man]
                                                             [CP, name=CP3
                                                                 [C$'$
-                                                                    [C]
+                                                                    [C, empty]
                                                                     [TP, name=TP3
                                                                         [T$'$
-                                                                            [T]
+                                                                            [T, empty]
                                                                             [VP
                                                                                 [DP, name=DP3
                                                                                     [the]
                                                                                     [woman]
                                                                                 ]
                                                                                 [$v'$
-                                                                                    [$v$]
+                                                                                    [$v$, empty]
                                                                                     [VP
                                                                                         [praised]
                                                                                         [who, name=wh2]
@@ -47,7 +47,7 @@
                                                         ]
                                                     ]
                                                     [$v'$
-                                                        [$v$]
+                                                        [$v$, empty]
                                                         [VP
                                                             [saw]
                                                             [who, name=wh1]
@@ -62,11 +62,11 @@
                         ]
                     ]
                     [$v'$
-                        [$v$]
+                        [$v$, empty]
                         [disappeared]
                     ]
                 ]
             ]
         ]
     ]
-]                       
+]

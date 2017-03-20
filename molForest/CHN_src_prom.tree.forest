@@ -18,7 +18,7 @@
                                                     [$v$P
                                                         [mayor, name=headNP]
                                                         [$v'$
-                                                            [$v$]
+                                                            [$v$, empty]
                                                             [VP
                                                                 [invite]
                                                                 [tycoon]
@@ -33,7 +33,7 @@
                             ]
                         ]
                         [$v'$
-                            [$v$]
+                            [$v$, empty]
                             [VP
                                 [likes]
                                 [wine]

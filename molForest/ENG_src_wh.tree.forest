@@ -35,7 +35,7 @@
                         ]
                     ]
                     [$v'$
-                        [$v$]
+                        [$v$, empty]
                         [VP
                             [admitted]
                             [DP, name=DP3
