@@ -173,20 +173,28 @@ class ComparisonSet:
         # update our record of how the metrics did
         self.success = set.intersection(*[comparison.success
                                           for comparison in comparisons])
-        self.tie = set.intersection(*[comparison.tie
-                                      for comparison in comparisons])
         self.failure = set.union(*[comparison.failure
                                    for comparison in comparisons])
+        self.tie = set(self.metrics).difference(
+                   self.success.union(self.failure))
+        # self.tie = set.intersection(*[comparison.tie
+                                      # for comparison in comparisons])
 
-    def merge(self,compset: 'ComparisonSet') -> 'ComparisonSet':
+    def merge(self, compset: 'ComparisonSet') -> 'ComparisonSet':
         # fixme: to be implemented
         pass
 
+    def _metric_id(self, metric: 'RankedMetric'):
+        return '{0}_{1}'.format(metric._name(), metric._filters())
+
     def show(self):
         metric_dict = {}
-        metric_dict['success'] = [metric.name for metric in self.success]
-        metric_dict['tie']     = [metric.name for metric in self.tie]
-        metric_dict['failure'] = [metric.name for metric in self.failure]
+        metric_dict['success'] = [self._metric_id(metric)
+                                  for metric in self.success]
+        metric_dict['tie'] = [self._metric_id(metric)
+                              for metric in self.tie]
+        metric_dict['failure'] = [self._metric_id(metric)
+                                  for metric in self.failure]
         pprint.pprint(metric_dict)
 
     def _matrix(self, numerical: bool=False):
