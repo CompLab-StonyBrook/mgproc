@@ -189,21 +189,36 @@ class ComparisonSet:
         metric_dict['failure'] = [metric.name for metric in self.failure]
         pprint.pprint(metric_dict)
 
-    def _matrix(self):
+    def _matrix(self, numerical: bool=False):
         metrics = self.metrics
         rows = []
         for metric in metrics:
             row = [metric.name, metric.filters]
             for comparison in self.comparisons:
-                result = metric.profile[comparison.name]['captured']
-                row.append(_rewrite_tuple(result))
+                if numerical:
+                    winner = str(
+                        metric.profile[comparison.name]['desired winner'][2])
+                    loser = str(
+                        metric.profile[comparison.name]['desired loser'][2])
+                    result = '{0}/{1}'.format(winner, loser)
+                    row.append(result)
+                else:
+                    result = metric.profile[comparison.name]['captured']
+                    row.append(_rewrite_tuple(result))
             rows.append(row)
         return rows
 
-    def table(self):
-        headers = ['Metric', 'Filters'] + [comp.name for comp in self.comparisons]
-        print(tabulate.tabulate(sorted(self._matrix()),
-                                 tablefmt='orgtbl', headers=headers))
+    def table(self, numerical: bool=False, filename: str=None):
+        headers = ['Metric', 'Filters'] +\
+                  [comp.name for comp in self.comparisons]
+        table = tabulate.tabulate(sorted(self._matrix(numerical=numerical)),
+                                  tablefmt='orgtbl', headers=headers)
+        if filename:
+            f = open(filename, 'w')
+            f.write(table)
+            f.close()
+        else:
+            print(table)
 
 
 def _rewrite_tuple(tuplepair: (bool, bool)) -> str:
