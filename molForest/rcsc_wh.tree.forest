@@ -1,8 +1,8 @@
 [CP
-    [C]
+    [C, empty]
     [TP, name=TP1
         [T$'$
-            [T]
+            [T, empty]
             [$v$P
                 [DP, name=TP1Subj
                     [the]
@@ -10,10 +10,10 @@
                         [executive]
                         [CP, name=RCtarget
                             [C$'$
-                                [C]
+                                [C, empty]
                                 [TP, name=TP2
                                     [T$'$
-                                        [T]
+                                        [T, empty]
                                         [$v$P
                                             [DP, name=TP2Subj
                                                 [the]
@@ -23,14 +23,14 @@
                                                         [that]
                                                         [TP, name=TP3
                                                             [T$'$
-                                                                [T]
+                                                                [T, empty]
                                                                 [$v$P
                                                                     [DP, name=TP3Subj
                                                                         [the]
                                                                         [employee]
                                                                     ]
                                                                     [$v'$
-                                                                        [$v$]
+                                                                        [$v$, empty]
                                                                         [VP
                                                                             [stole]
                                                                             [office supplies]
@@ -43,7 +43,7 @@
                                                 ]
                                             ]
                                             [$v'$
-                                                [$v$]
+                                                [$v$, empty]
                                                 [VP
                                                     [worried]
                                                     [who,name=RCsource]
@@ -57,7 +57,7 @@
                     ]
                 ]
                 [$v'$
-                    [$v$]
+                    [$v$, empty]
                     [VP
                         [hired]
                         [DP

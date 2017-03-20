@@ -1,26 +1,26 @@
 [CP
-    [C]
+    [C, empty]
     [TP, name=TP1Spec
         [T$'$
-            [T]
+            [T, empty]
             [vP, name=vP1Spec
                 [vP
                     [DP, name=Subject
                         [D$'$
-                            [D]
+                            [D, empty]
                             [NP
                                 [mayor, name=mayorHead]
                                 [CP, name=CP2Spec
                                     [C$'$
-                                        [C]
+                                        [C, empty]
                                         [TP, name=TP2Spec
                                             [T$'$
-                                                [T]
+                                                [T, empty]
                                                 [vP, name=vP2Spec
                                                 [vP
                                                         [who, name=headNP]
                                                         [v$'$
-                                                            [v]
+                                                            [v, empty]
                                                             [VP
                                                                 [invited]
                                                                 [tycoon, name=headNP2]
@@ -36,7 +36,7 @@
                         ]
                     ]
                     [v$'$
-                        [v]
+                        [v, empty]
                         [VP, name=VP4Spec
                             [loves]
                             [money, name=headNP3]

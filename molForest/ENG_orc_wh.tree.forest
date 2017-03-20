@@ -21,7 +21,7 @@
                                                         [senator]
                                                     ]
                                                     [$v'$
-                                                        [$v$]
+                                                        [$v$, name=DP2]
                                                         [VP
                                                             [attacked]
                                                             [who, name=WHO]
@@ -37,7 +37,7 @@
                         [$v'$
                             [admitted]
                             [DP, name=DP3
-                                [$v$]
+                                [$v$, name=DP2]
                                 [VP
                                     [the]
                                     [error]
