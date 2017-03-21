@@ -18,7 +18,7 @@
                                             [senator]
                                         ]
                                         [$v'$
-                                            [$v$]
+                                            [$v$, empty]
                                             [VP
                                                 [attacked]
                                                 [DP, name=RCsource
@@ -34,7 +34,7 @@
                     ]
                 ]
                 [$v'$
-                    [$v$]
+                    [$v$, empty]
                     [VP
                         [admitted]
                         [DP

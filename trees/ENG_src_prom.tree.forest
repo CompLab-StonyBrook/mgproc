@@ -18,7 +18,7 @@
                                             [reporter]
                                         ]
                                         [$v'$
-                                            [$v$]
+                                            [$v$, empty]
                                             [VP
                                                 [attacked]
                                                 [DP
@@ -34,7 +34,7 @@
                     ]
                 ]
                 [$v'$
-                    [$v$]
+                    [$v$, empty]
                     [VP
                         [admitted]
                         [DP
