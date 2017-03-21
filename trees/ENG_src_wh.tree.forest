@@ -18,7 +18,7 @@
                                             [$v$P
                                                 [who, name=who]
                                                 [$v'$
-                                                    [$v$]
+                                                    [$v$, empty]
                                                     [VP
                                                         [attacked]
                                                         [DP
@@ -35,7 +35,7 @@
                         ]
                     ]
                     [$v'$
-                        [$v$]
+                        [$v$, empty]
                         [VP
                             [admitted]
                             [DP, name=DP3
