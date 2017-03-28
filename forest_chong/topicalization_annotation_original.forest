@@ -1,0 +1,27 @@
+\begin{forest}
+[CP, name = topLanding
+  [C$'$
+    [C]
+    [TP, name = subjLanding
+      [T$'$
+        [may]
+        [\nl{v}P
+          [DP, name = subj
+            [the]
+            [girl]
+          ]
+          [\nl{v}$'$
+            [\nl{v}]
+            [VP
+              [like]
+              [John, name = top]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\draw[-{Latex[length=.5em]}, dashed, blue!75] (top) to[out = west, in = south west] (topLanding);
+\draw[-{Latex[length=.5em]}, dashed, blue!75] (subj) to[out = north west, in = south west] (subjLanding);
+\end{forest}

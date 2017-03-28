@@ -1,0 +1,7 @@
+\draw[-{Latex[length=.5em]},move={hdtoLanding}] (hd) to[out= west,in=south west] (hdLanding);
+\draw[-{Latex[length=.5em]},move={subjLowToLanding}] (subjectLower) to[out= west,in= south west] (subjectLowerLanding);
+\draw[-{Latex[length=.5em]},move={subjHighToLanding}] (subjectHigher) to[out= west,in= south west] (subjectHigherLanding);
+\draw[-{Latex[length=.5em]},move={subjLowLandingToRelP}] (subjectLowerLanding) to[out= west,in= south west] (RelP);
+\draw[-{Latex[length=.5em]},move={RelPtoLanding}] (RelP) to[out= west,in= south west] (RelPLanding);
+\draw[-{Latex[length=.5em]},move={subjHighLandingToTP}] (subjectHigherLanding) to[out= west,in= south west] (TPHigherLanding);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

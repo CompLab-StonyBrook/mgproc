@@ -1,0 +1,171 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=CP1
+    [C$'$, name=t1
+        [C, name=t11, empty]
+        [TP, name=TP1
+            [T$'$, name=t121
+                [T, name=t1211, empty]
+                [$v$P, name=t1212
+                    [DP, name=DP1
+                        [the, name=t121211]
+                        [NP, name=t121212
+                            [reporter, name=t1212121]
+                            [CP, name=CP2
+                                [C$'$, name=t12121221
+                                    [C, name=t121212211, empty]
+                                    [TP, name=TP2
+                                        [T$'$, name=t1212122121
+                                            [T, name=t12121221211, empty]
+                                            [$v$P, name=t12121221212
+                                                [DP, name=DP2
+                                                    [the, name=t1212122121211]
+                                                    [senator, name=t1212122121212]
+                                                ]
+                                                [$v'$, name=t121212212122
+                                                    [$v$, name=t1212122121221]
+                                                    [VP, name=t1212122121222
+                                                        [attacked, name=t12121221212221]
+                                                        [who, name=WHO]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                    [$v'$, name=t12122
+                        [admitted, name=t121221]
+                        [DP, name=DP3
+                            [$v$, name=t1212221]
+                            [VP, name=t1212222
+                                [the, name=t12122221]
+                                [error, name=t12122222]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[move = {whoToCP2}] (WHO) .. controls +(85:11em) and +(220:2em) .. (CP2);
+\draw[move = {DP2toTP2}] (DP2) .. controls +(130:4em) and +(220:5em) .. (TP2);
+\draw[move = {DP1toTP1}] (DP1) .. controls +(120:2em) and +(220:4em) .. (TP1);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (CP1)                      {1};
+\node[outdex]           at (CP1)                      {2};
+%
+\node[index]            at (t121211)                  {8};
+\node[outdex]           at (t121211)                  {9};
+%
+\node[index]            at (t1211)                    {6};
+\node[outdex, boxed]    at (t1211)                   {27};
+%
+\node[index]            at (t1212122121221)          {17};
+\node[outdex, boxed]    at (t1212122121221)          {25};
+%
+\node[index]            at (TP2)                     {13};
+\node[outdex]           at (TP2)                     {14};
+%
+\node[index]            at (TP1)                      {3};
+\node[outdex]           at (TP1)                      {5};
+%
+\node[index]            at (t12122222)               {32};
+\node[outdex]           at (t12122222)               {34};
+%
+\node[index]            at (t1212221)                {30};
+\node[outdex]           at (t1212221)                {31};
+%
+\node[index]            at (t1212122121212)          {21};
+\node[outdex]           at (t1212122121212)          {23};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex]           at (t11)                      {4};
+%
+\node[index]            at (t12121221211)            {15};
+\node[outdex, boxed]    at (t12121221211)            {24};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (DP3)                     {28};
+\node[outdex]           at (DP3)                     {30};
+%
+\node[index]            at (t12121221212)            {15};
+\node[outdex]           at (t12121221212)            {16};
+%
+\node[index]            at (t121212212122)           {16};
+\node[outdex]           at (t121212212122)           {17};
+%
+\node[index]            at (t1212122121222)          {17};
+\node[outdex]           at (t1212122121222)          {18};
+%
+\node[index]            at (t1212121)                {10};
+\node[outdex]           at (t1212121)                {11};
+%
+\node[index]            at (DP1)                      {7};
+\node[outdex]           at (DP1)                      {8};
+%
+\node[index]            at (t12121221)               {12};
+\node[outdex]           at (t12121221)               {13};
+%
+\node[index]            at (t121)                     {5};
+\node[outdex]           at (t121)                     {6};
+%
+\node[index]            at (t121221)                 {28};
+\node[outdex]           at (t121221)                 {29};
+%
+\node[index]            at (t1212)                    {6};
+\node[outdex]           at (t1212)                    {7};
+%
+\node[index]            at (t1212122121211)          {21};
+\node[outdex]           at (t1212122121211)          {22};
+%
+\node[index]            at (t12122221)               {32};
+\node[outdex]           at (t12122221)               {33};
+%
+\node[index]            at (t1212122121)             {14};
+\node[outdex]           at (t1212122121)             {15};
+%
+\node[index]            at (t1212222)                {30};
+\node[outdex]           at (t1212222)                {32};
+%
+\node[index]            at (t12122)                   {7};
+\node[outdex, boxed]    at (t12122)                  {28};
+%
+\node[index]            at (WHO)                     {18};
+\node[outdex]           at (WHO)                     {19};
+%
+\node[index]            at (t121212211)              {13};
+\node[outdex, boxed]    at (t121212211)              {20};
+%
+\node[index]            at (t12121221212221)         {18};
+\node[outdex, boxed]    at (t12121221212221)         {26};
+%
+\node[index]            at (CP2)                     {10};
+\node[outdex]           at (CP2)                     {12};
+%
+\node[index]            at (DP2)                     {16};
+\node[outdex, boxed]    at (DP2)                     {21};
+%
+\node[index]            at (t121212)                  {8};
+\node[outdex]           at (t121212)                 {10};
+%
+%
+\end{forest}

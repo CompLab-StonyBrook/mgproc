@@ -1,0 +1,73 @@
+[TP, name = subjMainLanding
+  [T$'$
+    [T, empty]
+    [\nl{v}P
+[DP, name = subjMain
+      [the]
+      [NP, name = CPwolflanding
+        [NP, name = CPelephantlanding
+          [NP
+              [NP
+                [horse]
+                [CP, name = de1landing
+                  [C$'$
+                    [C, empty]
+                    [TP, name = DP1landing
+                      [T$'$
+                        [T, empty]
+                        [\nl{v}P
+                          [DP, name = DP1start
+                            [the]
+                            [elephant]
+                          ]
+                          [\nl{v}$'$
+                            [\nl{v}, empty]
+                            [VP
+                              [kicked]
+                              [de, name = de1start]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            [CP, name = de2landing
+              [C$'$
+                [C, empty]
+                [TP, name = DP2landing
+                  [T$'$
+                    [T, empty]
+                    [\nl{v}P
+                      [de, name = de2start
+                      ]
+                      [\nl{v}$'$
+                        [\nl{v}, empty]
+                        [VP
+                          [chased]
+                          [DP
+                            [the]
+                            [wolf]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+    [\nl{v}$'$
+      [\nl{v}, empty]
+      [VP
+        [left]
+        [home]
+      ]
+    ]
+  ]
+]
+]

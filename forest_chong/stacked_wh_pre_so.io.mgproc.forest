@@ -1,0 +1,235 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[TP, name=subjMainLanding
+    [T$'$, name=t1
+        [T, name=t11, empty]
+        [\nl{v}P, name=t12
+            [DP, name=subjMain
+                [the, name=t1211]
+                [NP, name=CPwolflanding
+                    [NP, name=CPelephantlanding
+                        [NP, name=t121211
+                            [NP, name=t1212111
+                                [horse, name=t12121111]
+                                [CP, name=de1landing
+                                    [C$'$, name=t121211121
+                                        [C, name=t1212111211, empty]
+                                        [TP, name=DP1landing
+                                            [T$'$, name=t12121112121
+                                                [T, name=t121211121211, empty]
+                                                [\nl{v}P, name=t121211121212
+                                                    [DP, name=DP1start
+                                                        [the, name=t12121112121211]
+                                                        [elephant, name=t12121112121212]
+                                                    ]
+                                                    [\nl{v}$'$, name=t1212111212122
+                                                        [\nl{v}, name=t12121112121221, empty]
+                                                        [VP, name=t12121112121222
+                                                            [kicked, name=t121211121212221]
+                                                            [de, name=de1start]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            [CP, name=de2landing
+                                [C$'$, name=t12121121
+                                    [C, name=t121211211, empty]
+                                    [TP, name=DP2landing
+                                        [T$'$, name=t1212112121
+                                            [T, name=t12121121211, empty]
+                                            [\nl{v}P, name=t12121121212
+                                                [de, name=de2start]
+                                                [\nl{v}$'$, name=t121211212122
+                                                    [\nl{v}, name=t1212112121221, empty]
+                                                    [VP, name=t1212112121222
+                                                        [chased, name=t12121121212221]
+                                                        [DP, name=t12121121212222
+                                                            [the, name=t121211212122221]
+                                                            [wolf, name=t121211212122222]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            [\nl{v}$'$, name=t122
+                [\nl{v}, name=t1221, empty]
+                [VP, name=t1222
+                    [left, name=t12221]
+                    [home, name=t12222]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[-{Latex[length=.5em]},move={de1tosubjLanding}] (DP1start) to[out=north west,in=south west] (DP1landing);
+\draw[-{Latex[length=.5em]}, dotted,move={de1toLanding}] (de1start) to[out=north east,in=south east] (de1landing);
+\draw[-{Latex[length=.5em]},move={de2toCP1Landing}] (de2landing) to[out=west,in=south west] (CPwolflanding);
+\draw[-{Latex[length=.5em]},move={de1toCP2Landing}] (de1landing) to[out=north west,in=south west] (CPelephantlanding);
+\draw[-{Latex[length=.5em]},move={DP2toLanding}] (de2start) to[out=north west,in=south west] (DP2landing);
+\draw[-{Latex[length=.5em]}, dotted,move={de2toLanding}] (de2start) to[out=north east,in=south east] (de2landing);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (subjMainLanding)          {1};
+\node[outdex]           at (subjMainLanding)          {2};
+%
+\node[index]            at (t12121112121212)         {32};
+\node[outdex]           at (t12121112121212)         {34};
+%
+\node[index]            at (de2start)                {16};
+\node[outdex, boxed]    at (de2start)                {24};
+%
+\node[index]            at (t1222)                   {43};
+\node[outdex]           at (t1222)                   {45};
+%
+\node[index]            at (t122)                     {4};
+\node[outdex, boxed]    at (t122)                    {43};
+%
+\node[index]            at (t1212111)                 {9};
+\node[outdex, boxed]    at (t1212111)                {25};
+%
+\node[index]            at (t121211)                  {8};
+\node[outdex]           at (t121211)                  {9};
+%
+\node[index]            at (t121211121211)           {30};
+\node[outdex, boxed]    at (t121211121211)           {35};
+%
+\node[index]            at (t1212111212122)          {31};
+\node[outdex, boxed]    at (t1212111212122)          {36};
+%
+\node[index]            at (t121211212122222)        {21};
+\node[outdex]           at (t121211212122222)        {23};
+%
+\node[index]            at (t12221)                  {45};
+\node[outdex]           at (t12221)                  {46};
+%
+\node[index]            at (t1212112121222)          {17};
+\node[outdex]           at (t1212112121222)          {19};
+%
+\node[index]            at (t121211212122221)        {21};
+\node[outdex]           at (t121211212122221)        {22};
+%
+\node[index]            at (t1211)                    {5};
+\node[outdex]           at (t1211)                    {6};
+%
+\node[index]            at (DP1start)                {31};
+\node[outdex]           at (DP1start)                {32};
+%
+\node[index]            at (t121211211)              {11};
+\node[outdex]           at (t121211211)              {12};
+%
+\node[index]            at (t121211212122)           {16};
+\node[outdex]           at (t121211212122)           {17};
+%
+\node[index]            at (de1landing)              {25};
+\node[outdex]           at (de1landing)              {26};
+%
+\node[index]            at (t1212111211)             {27};
+\node[outdex]           at (t1212111211)             {28};
+%
+\node[index]            at (t12222)                  {45};
+\node[outdex]           at (t12222)                  {47};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t12121112121221)         {36};
+\node[outdex]           at (t12121112121221)         {37};
+%
+\node[index]            at (t12121121)               {10};
+\node[outdex]           at (t12121121)               {11};
+%
+\node[index]            at (t121211121)              {26};
+\node[outdex]           at (t121211121)              {27};
+%
+\node[index]            at (CPwolflanding)            {5};
+\node[outdex]           at (CPwolflanding)            {7};
+%
+\node[index]            at (t1212112121)             {13};
+\node[outdex]           at (t1212112121)             {14};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex, boxed]    at (t11)                     {42};
+%
+\node[index]            at (t12121112121211)         {32};
+\node[outdex]           at (t12121112121211)         {33};
+%
+\node[index]            at (t121211121212)           {30};
+\node[outdex]           at (t121211121212)           {31};
+%
+\node[index]            at (t12121121212221)         {19};
+\node[outdex]           at (t12121121212221)         {20};
+%
+\node[index]            at (t12121112121)            {29};
+\node[outdex]           at (t12121112121)            {30};
+%
+\node[index]            at (t12121121211)            {14};
+\node[outdex]           at (t12121121211)            {15};
+%
+\node[index]            at (subjMain)                 {4};
+\node[outdex]           at (subjMain)                 {5};
+%
+\node[index]            at (de1start)                {38};
+\node[outdex]           at (de1start)                {40};
+%
+\node[index]            at (t12121111)               {25};
+\node[outdex, boxed]    at (t12121111)               {41};
+%
+\node[index]            at (t121211121212221)        {38};
+\node[outdex]           at (t121211121212221)        {39};
+%
+\node[index]            at (t12121121212)            {14};
+\node[outdex]           at (t12121121212)            {16};
+%
+\node[index]            at (t1212112121221)          {17};
+\node[outdex]           at (t1212112121221)          {18};
+%
+\node[index]            at (t12121112121222)         {36};
+\node[outdex]           at (t12121112121222)         {38};
+%
+\node[index]            at (t1221)                   {43};
+\node[outdex]           at (t1221)                   {44};
+%
+\node[index]            at (t12)                      {3};
+\node[outdex]           at (t12)                      {4};
+%
+\node[index]            at (DP2landing)              {11};
+\node[outdex]           at (DP2landing)              {13};
+%
+\node[index]            at (de2landing)               {9};
+\node[outdex]           at (de2landing)              {10};
+%
+\node[index]            at (CPelephantlanding)        {7};
+\node[outdex]           at (CPelephantlanding)        {8};
+%
+\node[index]            at (t12121121212222)         {19};
+\node[outdex]           at (t12121121212222)         {21};
+%
+\node[index]            at (DP1landing)              {27};
+\node[outdex]           at (DP1landing)              {29};
+%
+%
+\end{forest}

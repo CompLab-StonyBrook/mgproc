@@ -1,0 +1,6 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+eng-src-orc-NOMS; ; NP_NOM_post_src; NP_NOM_post_orc;
+chn-src-orc-NOMS; ; NP_NOM_pre_src; NP_NOM_pre_orc;

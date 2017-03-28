@@ -1,0 +1,3 @@
+\draw[-{Latex[length=.5em]},move={headStartToLanding}] (headNPstart) to[out=west,in=south west] (headNPlanding);
+\draw[-{Latex[length=.5em]},move={subjToLanding}] (subject) to[out=west,in=south west] (subjectLanding);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

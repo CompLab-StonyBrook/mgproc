@@ -1,0 +1,205 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[TP, name=subjMainLanding
+    [T$'$, name=t1
+        [T, name=t11, empty]
+        [\nl{v}P, name=t12
+            [NP, name=subjMain
+                [NP, name=t1211
+                    [the, name=t12111]
+                    [horse, name=t12112]
+                ]
+                [CP, name=extraposeLanding
+                    [CP, name=landing
+                        [TP, name=subjectHigherLanding
+                            [T$'$, name=t1212111
+                                [T, name=t12121111, empty]
+                                [\nl{v}P, name=t12121112
+                                    [NP, name=subjectHigher
+                                        [the, name=t1212111211]
+                                        [wolf, name=t1212111212]
+                                    ]
+                                    [\nl{v}$'$, name=t121211122
+                                        [\nl{v}, name=t1212111221, empty]
+                                        [VP, name=t1212111222
+                                            [chased, name=t12121112221]
+                                            [NP, name=t12121112222
+                                                [that, name=t121211122221]
+                                                [CP, name=extraposeStart
+                                                    [that, name=start]
+                                                    [TP, name=subjectLowerLanding
+                                                        [T$'$, name=t12121112222221
+                                                            [T, name=t121211122222211, empty]
+                                                            [\nl{v}P, name=t121211122222212
+                                                                [NP, name=subjectLower
+                                                                    [the, name=t12121112222221211]
+                                                                    [elephant, name=t12121112222221212]
+                                                                ]
+                                                                [\nl{v}$'$, name=t1212111222222122
+                                                                    [\nl{v}, name=t12121112222221221, empty]
+                                                                    [kicked, name=t12121112222221222]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            [\nl{v}$'$, name=t122
+                [\nl{v}, name=t1221, empty]
+                [VP, name=t1222
+                    [left, name=t12221]
+                    [home, name=t12222]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[-{Latex[length=.5em]},move={startToLanding}] (start) to[out=west,in=west] (landing);
+\draw[-{Latex[length=.5em]}, dotted,move={ExtraposeStartToLanding}] (extraposeStart) to[out=north east,in=east] (extraposeLanding);
+\draw[-{Latex[length=.5em]},move={subjectHigherToLanding}] (subjectHigher) to[out=north west,in=south west] (subjectHigherLanding);
+\draw[-{Latex[length=.5em]},move={subjectLowerToLanding}] (subjectLower) to[out=north west,in=south west] (subjectLowerLanding);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (subjMainLanding)          {1};
+\node[outdex]           at (subjMainLanding)          {2};
+%
+\node[index]            at (t1212111221)             {14};
+\node[outdex, boxed]    at (t1212111221)             {23};
+%
+\node[index]            at (t12222)                  {39};
+\node[outdex]           at (t12222)                  {41};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t121211122222212)        {27};
+\node[outdex]           at (t121211122222212)        {28};
+%
+\node[index]            at (t122)                     {4};
+\node[outdex, boxed]    at (t122)                    {37};
+%
+\node[index]            at (t121211122221)           {16};
+\node[outdex, boxed]    at (t121211122221)           {25};
+%
+\node[index]            at (subjectHigher)           {13};
+\node[outdex, boxed]    at (subjectHigher)           {19};
+%
+\node[index]            at (t12111)                   {6};
+\node[outdex]           at (t12111)                   {7};
+%
+\node[index]            at (t1212111)                {11};
+\node[outdex]           at (t1212111)                {12};
+%
+\node[index]            at (t121211122222211)        {27};
+\node[outdex, boxed]    at (t121211122222211)        {32};
+%
+\node[index]            at (t1212111222)             {14};
+\node[outdex]           at (t1212111222)             {15};
+%
+\node[index]            at (t12121112222221211)      {29};
+\node[outdex]           at (t12121112222221211)      {30};
+%
+\node[index]            at (subjectHigherLanding)    {10};
+\node[outdex]           at (subjectHigherLanding)    {11};
+%
+\node[index]            at (subjectLowerLanding)     {17};
+\node[outdex, boxed]    at (subjectLowerLanding)     {26};
+%
+\node[index]            at (extraposeStart)          {16};
+\node[outdex]           at (extraposeStart)          {17};
+%
+\node[index]            at (subjMain)                 {4};
+\node[outdex]           at (subjMain)                 {5};
+%
+\node[index]            at (t1212111222222122)       {28};
+\node[outdex, boxed]    at (t1212111222222122)       {33};
+%
+\node[index]            at (t12121112221)            {15};
+\node[outdex, boxed]    at (t12121112221)            {24};
+%
+\node[index]            at (t12121111)               {12};
+\node[outdex, boxed]    at (t12121111)               {22};
+%
+\node[index]            at (start)                   {17};
+\node[outdex]           at (start)                   {18};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex, boxed]    at (t11)                     {36};
+%
+\node[index]            at (t12121112222)            {15};
+\node[outdex]           at (t12121112222)            {16};
+%
+\node[index]            at (t1211)                    {5};
+\node[outdex]           at (t1211)                    {6};
+%
+\node[index]            at (t12121112222221212)      {29};
+\node[outdex]           at (t12121112222221212)      {31};
+%
+\node[index]            at (t12112)                   {6};
+\node[outdex]           at (t12112)                   {8};
+%
+\node[index]            at (t12221)                  {39};
+\node[outdex]           at (t12221)                  {40};
+%
+\node[index]            at (t12121112222221)         {26};
+\node[outdex]           at (t12121112222221)         {27};
+%
+\node[index]            at (t12121112222221221)      {33};
+\node[outdex]           at (t12121112222221221)      {34};
+%
+\node[index]            at (subjectLower)            {28};
+\node[outdex]           at (subjectLower)            {29};
+%
+\node[index]            at (t12121112222221222)      {33};
+\node[outdex]           at (t12121112222221222)      {35};
+%
+\node[index]            at (t1222)                   {37};
+\node[outdex]           at (t1222)                   {39};
+%
+\node[index]            at (t1221)                   {37};
+\node[outdex]           at (t1221)                   {38};
+%
+\node[index]            at (t12)                      {3};
+\node[outdex]           at (t12)                      {4};
+%
+\node[index]            at (extraposeLanding)         {5};
+\node[outdex, boxed]    at (extraposeLanding)         {9};
+%
+\node[index]            at (t12121112)               {12};
+\node[outdex]           at (t12121112)               {13};
+%
+\node[index]            at (landing)                  {9};
+\node[outdex]           at (landing)                 {10};
+%
+\node[index]            at (t121211122)              {13};
+\node[outdex]           at (t121211122)              {14};
+%
+\node[index]            at (t1212111212)             {19};
+\node[outdex]           at (t1212111212)             {21};
+%
+\node[index]            at (t1212111211)             {19};
+\node[outdex]           at (t1212111211)             {20};
+%
+%
+\end{forest}

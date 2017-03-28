@@ -1,0 +1,154 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[TP, name=subjMainLanding
+    [T$'$, name=t1
+        [T, name=t11, empty]
+        [\nl{v}P, name=t12
+            [DP, name=subjMain
+                [the, name=t1211]
+                [RelP, name=RelPspec
+                    [Rel$'$, name=t12121
+                        [de, name=t121211]
+                        [CP, name=CPspec
+                            [C$'$, name=t1212121
+                                [C, name=t12121211, empty]
+                                [TP, name=TP
+                                    [T$'$, name=t121212121
+                                        [T, name=t1212121211, empty]
+                                        [\nl{v}P, name=t1212121212
+                                            [horse, name=headNP]
+                                            [\nl{v}$'$, name=t12121212122
+                                                [\nl{v}, name=t121212121221, empty]
+                                                [VP, name=t121212121222
+                                                    [chased, name=t1212121212221]
+                                                    [DP, name=t1212121212222
+                                                        [the, name=t12121212122221]
+                                                        [wolf, name=t12121212122222]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            [\nl{v}$'$, name=t122
+                [\nl{v}, name=t1221, empty]
+                [VP, name=t1222
+                    [left, name=t12221]
+                    [home, name=t12222]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[-{Latex[length=.5em]},move={headNPtoCPspec}] (headNP) to[out=west,in=south west] (CPspec);
+\draw[-{Latex[length=.5em]},move={TPtoRelPspec}] (TP) to[out=west,in=south west] (RelPspec);
+\draw[-{Latex[length=.5em]},move={headNPToTP}] (headNP) to[out=west,in=south west] (TP);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (subjMainLanding)          {1};
+\node[outdex]           at (subjMainLanding)          {2};
+%
+\node[index]            at (t12121212122221)         {19};
+\node[outdex]           at (t12121212122221)         {20};
+%
+\node[index]            at (CPspec)                   {8};
+\node[outdex]           at (CPspec)                   {9};
+%
+\node[index]            at (t1212121211)             {12};
+\node[outdex]           at (t1212121211)             {13};
+%
+\node[index]            at (t121212121)              {11};
+\node[outdex]           at (t121212121)              {12};
+%
+\node[index]            at (t1212121)                 {9};
+\node[outdex]           at (t1212121)                {10};
+%
+\node[index]            at (t1212121212221)          {17};
+\node[outdex]           at (t1212121212221)          {18};
+%
+\node[index]            at (t1222)                   {26};
+\node[outdex]           at (t1222)                   {28};
+%
+\node[index]            at (t12121212122222)         {19};
+\node[outdex]           at (t12121212122222)         {21};
+%
+\node[index]            at (TP)                      {10};
+\node[outdex]           at (TP)                      {11};
+%
+\node[index]            at (t12121211)               {10};
+\node[outdex, boxed]    at (t12121211)               {24};
+%
+\node[index]            at (t12121)                   {7};
+\node[outdex]           at (t12121)                   {8};
+%
+\node[index]            at (t1212121212222)          {17};
+\node[outdex]           at (t1212121212222)          {19};
+%
+\node[index]            at (RelPspec)                 {5};
+\node[outdex]           at (RelPspec)                 {7};
+%
+\node[index]            at (t12)                      {3};
+\node[outdex]           at (t12)                      {4};
+%
+\node[index]            at (t121211)                  {8};
+\node[outdex, boxed]    at (t121211)                 {22};
+%
+\node[index]            at (t1212121212)             {12};
+\node[outdex]           at (t1212121212)             {14};
+%
+\node[index]            at (subjMain)                 {4};
+\node[outdex]           at (subjMain)                 {5};
+%
+\node[index]            at (t122)                     {4};
+\node[outdex, boxed]    at (t122)                    {26};
+%
+\node[index]            at (t12222)                  {28};
+\node[outdex]           at (t12222)                  {30};
+%
+\node[index]            at (t1221)                   {26};
+\node[outdex]           at (t1221)                   {27};
+%
+\node[index]            at (headNP)                  {14};
+\node[outdex, boxed]    at (headNP)                  {23};
+%
+\node[index]            at (t121212121222)           {15};
+\node[outdex]           at (t121212121222)           {17};
+%
+\node[index]            at (t12121212122)            {14};
+\node[outdex]           at (t12121212122)            {15};
+%
+\node[index]            at (t12221)                  {28};
+\node[outdex]           at (t12221)                  {29};
+%
+\node[index]            at (t121212121221)           {15};
+\node[outdex]           at (t121212121221)           {16};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t1211)                    {5};
+\node[outdex]           at (t1211)                    {6};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex, boxed]    at (t11)                     {25};
+%
+%
+\end{forest}

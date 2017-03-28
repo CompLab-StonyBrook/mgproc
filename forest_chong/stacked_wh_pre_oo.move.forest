@@ -1,0 +1,7 @@
+\draw[-{Latex[length=.5em]},move={DP1toLanding}] (DP1start) to[out=north west,in=south west] (DP1landing);
+\draw[-{Latex[length=.5em]}, dotted,move={de1toLanding}] (de1start) to[out=north east,in=south east] (de1landing);
+\draw[-{Latex[length=.5em]},move={de2toCP1Landing}] (de2landing) to[out=west,in=south west] (CPwolflanding);
+\draw[-{Latex[length=.5em]},move={de1toCP2Landing}] (de1landing) to[out=north west,in=south west] (CPelephantlanding);
+\draw[-{Latex[length=.5em]},move={DP2toLanding}] (DP2start) to[out=north west,in=south west] (DP2landing);
+\draw[-{Latex[length=.5em]}, dotted,move={de2toLanding}] (de2start) to[out=north east,in=south east] (de2landing);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

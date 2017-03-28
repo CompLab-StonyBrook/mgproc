@@ -1,0 +1,45 @@
+        [CP
+            [C, empty]
+            [TP, name=TP1Spec
+                [T$'$
+                    [T, empty]
+                    [$v$P
+                        [DP, name=SSubj
+                            [D, empty]
+                            [RelP, name=TP2landing
+                                [Rel$'$
+                                    [who]
+                                    [CP, name=CP2Spec
+                                        [C$'$
+                                            [C, empty]
+                                            [TP, name=TP2Spec
+                                                [T$'$
+                                                    [T, empty]
+                                                    [$v$P
+                                                        [mayor, name=headNP]
+                                                        [$v'$
+                                                            [$v$, empty]
+                                                            [VP
+                                                                [invite]
+                                                                [tycoon]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        [$v'$
+                            [$v$, empty]
+                            [VP
+                                [likes]
+                                [wine]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]

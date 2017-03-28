@@ -1,0 +1,5 @@
+\draw[-{Latex[length=.5em]},move={subj1toLanding}] (subject) to[out=north west,in=south west] (subjectLanding);
+\draw[-{Latex[length=.5em]},move={subj2toLanding}] (wh2) to[out=north west,in=south west] (subject2Landing);
+\draw[-{Latex[length=.5em]},move={whToLanding}] (wh1) to[out=north west,in=south west] (wh1Landing);
+\draw[-{Latex[length=.5em]},move={whToLanding}] (wh2) to[out=north west,in=south west] (wh2Landing);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

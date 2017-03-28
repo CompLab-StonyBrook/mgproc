@@ -1,0 +1,181 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[TP, name=subjMainLanding
+    [T$'$, name=t1
+        [T, name=t11, empty]
+        [\nl{v}P, name=t12
+            [DP, name=subjMain
+                [the, name=t1211]
+                [NP, name=t1212
+                    [CP, name=t12121
+                        [TP, name=t121211
+                            [T, name=t1212111, empty]
+                            [\nl{v}P, name=t1212112
+                                [\nl{v}, name=t12121121, empty]
+                                [VP, name=t12121122
+                                    [chased, name=t121211221]
+                                    [DP, name=t121211222
+                                        [the, name=t1212112221]
+                                        [wolf, name=t1212112222]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        [\nl{de}, name=t121212]
+                    ]
+                    [NP, name=t12122
+                        [CP, name=t121221
+                            [TP, name=t1212211
+                                [T, name=t12122111, empty]
+                                [\nl{v}P, name=t12122112
+                                    [\nl{v}, name=t121221121, empty]
+                                    [VP, name=t121221122
+                                        [kicked, name=t1212211221]
+                                        [DP, name=t1212211222
+                                            [the, name=t12122112221]
+                                            [elephant, name=t12122112222]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            [\nl{de}, name=t1212212]
+                        ]
+                        [horse, name=t121222]
+                    ]
+                ]
+            ]
+            [\nl{v}$'$, name=t122
+                [\nl{v}, name=t1221, empty]
+                [VP, name=t1222
+                    [left, name=t12221]
+                    [home, name=t12222]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
+%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (subjMainLanding)          {1};
+\node[outdex]           at (subjMainLanding)          {2};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t121221)                 {19};
+\node[outdex]           at (t121221)                 {20};
+%
+\node[index]            at (t12121121)               {11};
+\node[outdex]           at (t12121121)               {12};
+%
+\node[index]            at (t1212211)                {20};
+\node[outdex]           at (t1212211)                {21};
+%
+\node[index]            at (t12222)                  {35};
+\node[outdex]           at (t12222)                  {37};
+%
+\node[index]            at (t1212111)                 {9};
+\node[outdex]           at (t1212111)                {10};
+%
+\node[index]            at (t1212211222)             {25};
+\node[outdex]           at (t1212211222)             {27};
+%
+\node[index]            at (t12122111)               {21};
+\node[outdex]           at (t12122111)               {22};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex, boxed]    at (t11)                     {32};
+%
+\node[index]            at (t12122112222)            {27};
+\node[outdex]           at (t12122112222)            {29};
+%
+\node[index]            at (t121221122)              {23};
+\node[outdex]           at (t121221122)              {25};
+%
+\node[index]            at (t1212211221)             {25};
+\node[outdex]           at (t1212211221)             {26};
+%
+\node[index]            at (t12122112221)            {27};
+\node[outdex]           at (t12122112221)            {28};
+%
+\node[index]            at (t121211)                  {8};
+\node[outdex]           at (t121211)                  {9};
+%
+\node[index]            at (t121221121)              {23};
+\node[outdex]           at (t121221121)              {24};
+%
+\node[index]            at (t1211)                    {5};
+\node[outdex]           at (t1211)                    {6};
+%
+\node[index]            at (t121211222)              {13};
+\node[outdex]           at (t121211222)              {15};
+%
+\node[index]            at (subjMain)                 {4};
+\node[outdex]           at (subjMain)                 {5};
+%
+\node[index]            at (t12221)                  {35};
+\node[outdex]           at (t12221)                  {36};
+%
+\node[index]            at (t1221)                   {33};
+\node[outdex]           at (t1221)                   {34};
+%
+\node[index]            at (t1212112221)             {15};
+\node[outdex]           at (t1212112221)             {16};
+%
+\node[index]            at (t121211221)              {13};
+\node[outdex]           at (t121211221)              {14};
+%
+\node[index]            at (t121212)                  {8};
+\node[outdex, boxed]    at (t121212)                 {18};
+%
+\node[index]            at (t12122)                   {7};
+\node[outdex, boxed]    at (t12122)                  {19};
+%
+\node[index]            at (t1212212)                {20};
+\node[outdex, boxed]    at (t1212212)                {30};
+%
+\node[index]            at (t122)                     {4};
+\node[outdex, boxed]    at (t122)                    {33};
+%
+\node[index]            at (t1222)                   {33};
+\node[outdex]           at (t1222)                   {35};
+%
+\node[index]            at (t121222)                 {19};
+\node[outdex, boxed]    at (t121222)                 {31};
+%
+\node[index]            at (t12)                      {3};
+\node[outdex]           at (t12)                      {4};
+%
+\node[index]            at (t12121122)               {11};
+\node[outdex]           at (t12121122)               {13};
+%
+\node[index]            at (t1212)                    {5};
+\node[outdex]           at (t1212)                    {7};
+%
+\node[index]            at (t1212112)                 {9};
+\node[outdex]           at (t1212112)                {11};
+%
+\node[index]            at (t12121)                   {7};
+\node[outdex]           at (t12121)                   {8};
+%
+\node[index]            at (t1212112222)             {15};
+\node[outdex]           at (t1212112222)             {17};
+%
+\node[index]            at (t12122112)               {21};
+\node[outdex]           at (t12122112)               {23};
+%
+%
+\end{forest}

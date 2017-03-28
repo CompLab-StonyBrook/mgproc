@@ -1,0 +1,6 @@
+    \draw[move={subjToTP1spec}] (SSubj)    .. controls +(120:2em) and +(220:4em) .. (TP1Spec);
+    \draw[move={headNPtoTP2spec}] (headNP)   .. controls +(120:2em) and +(220:6em) .. (TP2Spec);
+    \draw[move={headNP2toCP2spec}] (headNP2)  .. controls +(75:16em) and +(190:4em) .. (CP2Spec);
+    \draw[move={headNPtovP3spec}] (headNP2)  .. controls +(70:8em) and +(220:3em)  .. (vP3Spec);
+    \draw[move={TP2SpecToLanding}] (TP2Spec)  .. controls +(190:4em) and +(210:7em)  .. (TP2landing);
+    \draw[move={headNP3tovPspec}] (headNP3)  .. controls +(70:8em) and +(220:3em) .. (vPSpec);

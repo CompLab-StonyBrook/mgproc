@@ -1,0 +1,3 @@
+\draw[-{Latex[length=.5em]}, dotted,move={markerToMove}] (marker) to[out = south, in = south west] (move);
+\draw[-{Latex[length=.5em]},move={subj1ToLanding}] (subject) to[out = west, in = south west] (subjectLanding);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

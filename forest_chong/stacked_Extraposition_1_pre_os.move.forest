@@ -1,0 +1,3 @@
+\draw[-{Latex[length=.5em]},move={subjToLanding}] (subjectLowerLanding) to[out=south west,in=south west] (landing);
+\draw[-{Latex[length=.5em]},move={subjHigherToLanding}] (subjectHigher) to[out=north west,in=south west] (subjectHigherLanding);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

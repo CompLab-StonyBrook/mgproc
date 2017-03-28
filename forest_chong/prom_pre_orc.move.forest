@@ -1,0 +1,4 @@
+\draw[-{Latex[length=.5em]},move={headNPtoCPspec}] (headNP) to[out=west,in=south west] (CPspec);
+\draw[-{Latex[length=.5em]},move={TPtoRelPspec}] (TP) to[out=west,in=south west] (RelPspec);
+\draw[-{Latex[length=.5em]},move={subjToTP}] (subject) to[out=west,in=south west] (TP);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

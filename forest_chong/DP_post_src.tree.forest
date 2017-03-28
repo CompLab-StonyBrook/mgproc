@@ -1,0 +1,36 @@
+[TP, name = subjMainLanding
+  [T$'$
+    [T, empty]
+    [\nl{v}P
+[DP, name = subjMain
+    [the]
+    [NP
+      [horse]
+      [CP
+        [that]
+        [TP
+          [T, empty]
+          [\nl{v}P
+            [\nl{v}, empty]
+            [VP
+              [chased]
+              [DP
+                [the]
+                [wolf]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [\nl{v}$'$
+    [\nl{v}, empty]
+    [VP
+      [left]
+      [home]
+    ]
+  ]
+]
+]
+]

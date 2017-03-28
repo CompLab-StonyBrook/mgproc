@@ -1,0 +1,70 @@
+[TP, name = subjMainLanding
+  [T$'$
+    [T, empty]
+    [\nl{v}P
+[NP, name = subjMain
+  [RelP, name = RelPspec
+    [Rel$'$
+      [de]
+      [CP, name = extraposeVacuousLanding
+        [CP, name = extraposeNPLanding
+         [CP
+          [C, empty]
+          [TP, name = subjectHigherLanding
+            [T$'$
+              [T, empty]
+              [\nl{v}P
+              [NP, name = subjectHigher
+                [de]
+                [CP, name = extraposeVacuous
+                  [C, empty]
+                  [TP, name = subjectLowerLanding
+                    [T$'$
+                      [T, empty]
+                      [\nl{v}P
+                        [NP, name  = subjectLower
+                          [the]
+                          [elephant]
+                        ]
+                        [\nl{v}$'$
+                          [\nl{v}, empty]
+                          [kicked]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+                [\nl{v}$'$
+                  [\nl{v}, empty]
+                  [VP
+                    [chased]
+                    [NP
+                      [the]
+                      [wolf]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+       ]
+      ]
+    ]
+  ]
+  [NP
+    [the]
+    [horse]
+  ]
+]
+[\nl{v}$'$
+  [\nl{v}, empty]
+  [VP
+    [left]
+    [home]
+  ]
+]
+]
+]
+]

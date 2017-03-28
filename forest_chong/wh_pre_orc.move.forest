@@ -1,0 +1,4 @@
+\draw[-{Latex[length=.5em]}, dotted,move={deStartToLanding}] (destart) to[out=north east,in=south east] (delanding);
+\draw[-{Latex[length=.5em]},move={DPstartToLanding}] (DPstart) to[out=north west,in=south west] (DPlanding);
+\draw[-{Latex[length=.5em]},move={delandingToLanding}] (delanding) to[out=west,in=south west] (landing);
+\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
