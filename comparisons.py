@@ -187,15 +187,21 @@ class ComparisonSet:
     def _metric_id(self, metric: 'RankedMetric'):
         return '{0}_{1}'.format(metric._name(), metric._filters())
 
-    def show(self):
+    def _metric_dict(self, function: 'function'=None):
+        if not function:
+            function = lambda x: x
+
         metric_dict = {}
-        metric_dict['success'] = [self._metric_id(metric)
+        metric_dict['success'] = [function(metric)
                                   for metric in self.success]
-        metric_dict['tie'] = [self._metric_id(metric)
+        metric_dict['tie'] = [function(metric)
                               for metric in self.tie]
-        metric_dict['failure'] = [self._metric_id(metric)
+        metric_dict['failure'] = [function(metric)
                                   for metric in self.failure]
-        pprint.pprint(metric_dict)
+        return metric_dict
+
+    def show(self):
+        pprint.pprint(self._metric_dict(function=self._metric_id))
 
     def _matrix(self, numerical: bool=False):
         metrics = self.metrics
