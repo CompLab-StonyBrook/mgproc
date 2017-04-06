@@ -1,0 +1,10 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+eng-thatClause-oo-so-NPS; ; stacked_NP_S_post_oo; stacked_NP_S_post_so;
+eng-thatClause-ss-os-NPS; ; stacked_NP_S_post_ss; stacked_NP_S_post_os;
+chn-oo-so-NPS;            ; stacked_NP_S_pre_oo      ; stacked_NP_S_pre_so;
+chn-ss-os-NPS;            ; stacked_NP_S_pre_ss      ; stacked_NP_S_pre_os;
+eng-src-orc-NPS; ; NP_S_post_src; NP_S_post_orc;
+chn-src-orc-NPS; ; NP_S_pre_src; NP_S_pre_orc;
