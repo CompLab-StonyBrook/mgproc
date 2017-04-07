@@ -81,7 +81,7 @@ class Comparison:
             metric.compare(self.name, self.winner, self.loser)
 
             # and add it to the correct group (possibly removing it from others)
-            if metric.viable == (True, True):
+            if metric.viable == (True, True): 
                 # predict first guy to win, second to lose
                 try:
                     self.tie.remove(metric)
@@ -182,43 +182,14 @@ class ComparisonSet:
         # fixme: to be implemented
         pass
 
-    def _metric_dict(self, function: 'function'=None):
-        if not function:
-            function = lambda x: x
-
-        metric_dict = {}
-        metric_dict['success'] = [function(metric) for metric in self.success]
-        metric_dict['tie'] = [function(metric) for metric in self.tie]
-        metric_dict['failure'] = [function(metric) for metric in self.failure]
-        return metric_dict
-
-    def _metric_id(self, metric: 'RankedMetric'):
-        return '{0}_{1}'.format(metric._name(), metric._filters())
-
-<<<<<<< Updated upstream
-    def _metric_dict(self, function: 'function'=None):
-        if not function:
-            function = lambda x: x
-
-        metric_dict = {}
-        metric_dict['success'] = [function(metric)
-                                  for metric in self.success]
-        metric_dict['tie'] = [function(metric)
-                              for metric in self.tie]
-        metric_dict['failure'] = [function(metric)
-                                  for metric in self.failure]
-        return metric_dict
-
     def show(self):
-        pprint.pprint(self._metric_dict(function=self._metric_id))
-
-    def _matrix(self, numerical: bool=False):
-=======
-    def show(self):
-        pprint.pprint(self._metric_dict(function=self._metric_id))
+        metric_dict = {}
+        metric_dict['success'] = [metric.name for metric in self.success]
+        metric_dict['tie']     = [metric.name for metric in self.tie]
+        metric_dict['failure'] = [metric.name for metric in self.failure]
+        pprint.pprint(metric_dict)
 
     def _matrix(self):
->>>>>>> Stashed changes
         metrics = self.metrics
         rows = []
         for metric in metrics:
