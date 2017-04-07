@@ -15,9 +15,11 @@ def load_user_code(user_file: str=None,
                    user_dir: str='./usercode'):
     """
     Load user-defined code.
+
     The user may want to define new tree traversals or new functions to be used
     by metrics. To simplify this, users can just add Python files to a user_dir
     folder.
+
     Parameters
     ----------
     user_file: str

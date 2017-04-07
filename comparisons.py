@@ -125,7 +125,7 @@ class ComparisonSet:
 
     Public Methods
     --------------
-    .comparison: list
+    .comparisons: list
         stores all Comparisons belonging to this ComparisonSet
     .add: Comparison -> updated ComparisonSet
         add a Comparison to .comparison
@@ -173,37 +173,66 @@ class ComparisonSet:
         # update our record of how the metrics did
         self.success = set.intersection(*[comparison.success
                                           for comparison in comparisons])
-        self.tie = set.intersection(*[comparison.tie
-                                      for comparison in comparisons])
         self.failure = set.union(*[comparison.failure
                                    for comparison in comparisons])
+        self.tie = set(self.metrics).difference(
+                   self.success.union(self.failure))
+        # self.tie = set.intersection(*[comparison.tie
+                                      # for comparison in comparisons])
 
-    def merge(self,compset: 'ComparisonSet') -> 'ComparisonSet':
+    def merge(self, compset: 'ComparisonSet') -> 'ComparisonSet':
         # fixme: to be implemented
         pass
 
-    def show(self):
-        metric_dict = {}
-        metric_dict['success'] = [metric.name for metric in self.success]
-        metric_dict['tie']     = [metric.name for metric in self.tie]
-        metric_dict['failure'] = [metric.name for metric in self.failure]
-        pprint.pprint(metric_dict)
+    def _metric_id(self, metric: 'RankedMetric'):
+        return '{0}_{1}'.format(metric._name(), metric._filters())
 
-    def _matrix(self):
+    def _metric_dict(self, function: 'function'=None):
+        if not function:
+            function = lambda x: x
+
+        metric_dict = {}
+        metric_dict['success'] = [function(metric)
+                                  for metric in self.success]
+        metric_dict['tie'] = [function(metric)
+                              for metric in self.tie]
+        metric_dict['failure'] = [function(metric)
+                                  for metric in self.failure]
+        return metric_dict
+
+    def show(self):
+        pprint.pprint(self._metric_dict(function=self._metric_id))
+
+    def _matrix(self, numerical: bool=False):
         metrics = self.metrics
         rows = []
         for metric in metrics:
             row = [metric.name, metric.filters]
             for comparison in self.comparisons:
-                result = metric.profile[comparison.name]['captured']
-                row.append(_rewrite_tuple(result))
+                if numerical:
+                    winner = str(
+                        metric.profile[comparison.name]['desired winner'][2])
+                    loser = str(
+                        metric.profile[comparison.name]['desired loser'][2])
+                    result = '{0}/{1}'.format(winner, loser)
+                    row.append(result)
+                else:
+                    result = metric.profile[comparison.name]['captured']
+                    row.append(_rewrite_tuple(result))
             rows.append(row)
         return rows
 
-    def table(self):
-        headers = ['Metric', 'Filters'] + [comp.name for comp in self.comparisons]
-        print(tabulate.tabulate(sorted(self._matrix()),
-                                 tablefmt='orgtbl', headers=headers))
+    def table(self, numerical: bool=False, filename: str=None):
+        headers = ['Metric', 'Filters'] +\
+                  [comp.name for comp in self.comparisons]
+        table = tabulate.tabulate(sorted(self._matrix(numerical=numerical)),
+                                  tablefmt='orgtbl', headers=headers)
+        if filename:
+            f = open(filename, 'w')
+            f.write(table)
+            f.close()
+        else:
+            print(table)
 
 
 def _rewrite_tuple(tuplepair: (bool, bool)) -> str:
