@@ -21,7 +21,7 @@
                                                         [senator]
                                                     ]
                                                     [$v'$
-                                                        [$v$]
+                                                        [$v$, empty]
                                                         [VP
                                                             [attacked]
                                                             [who, name=WHO]
