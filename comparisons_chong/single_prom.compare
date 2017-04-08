@@ -3,7 +3,7 @@
 #
 #
 eng-thatClause-src-orc-prom; ; prom_post_src; prom_post_orc;
-chn-src-orc-prom; ; prom_pre_src; prom_pre_orc;
+chn-src-orc-prom; ; prom_pre_orc; prom_pre_src;
 eng-src-orc-prom; ; ENG_src_prom; ENG_orc_prom;
-kor-src-orc-prom; ; kor_src_prom; kor_orc_prom;
-jap-src-orc-prom; ; jap_src_prom; jap_orc_prom;
+#kor-src-orc-prom; ; kor_src_prom; kor_orc_prom;
+#jap-src-orc-prom; ; jap_src_prom; jap_orc_prom;

@@ -7,4 +7,4 @@ eng-thatClause-ss-os-determinerS; ; stacked_DeterminerS_post_ss; stacked_Determi
 chn-oo-so-determinerS;            ; stacked_DeterminerS_pre_oo      ; stacked_DeterminerS_pre_so;
 chn-ss-os-determinerS;            ; stacked_DeterminerS_pre_ss      ; stacked_DeterminerS_pre_os;
 eng-src-orc-DeterminerS; ; DeterminerS_post_src; DeterminerS_post_orc;
-chn-src-orc-DeterminerS; ; DeterminerS_pre_src; DeterminerS_pre_orc;
+chn-src-orc-DeterminerS; ; DeterminerS_pre_orc; DeterminerS_pre_src;

@@ -7,4 +7,4 @@ eng-thatClause-ss-os-NOMS; ; stacked_NOM_S_post_ss; stacked_NOM_S_post_os;
 chn-oo-so-NOMS;            ; stacked_NOM_S_pre_oo      ; stacked_NOM_S_pre_so;
 chn-ss-os-NOMS;            ; stacked_NOM_S_pre_ss      ; stacked_NOM_S_pre_os;
 eng-src-orc-NOMS; ; NP_NOM_post_src; NP_NOM_post_orc;
-chn-src-orc-NOMS; ; NP_NOM_pre_src; NP_NOM_pre_orc;
+chn-src-orc-NOMS; ; NP_NOM_pre_orc; NP_NOM_pre_src;
