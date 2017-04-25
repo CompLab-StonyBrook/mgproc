@@ -1,0 +1,15 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+notop-0-0 ;  ; some-every_surface                             ; some-every_inverse                              ; 
+notop-0-1 ;  ; some-every_surface                             ; some-every_inverse_with-one-reconstruction      ; 
+notop-1-0 ;  ; some-every_surface_with-one-reconstruction     ; some-every_inverse                              ; 
+notop-1-1 ;  ; some-every_surface_with-one-reconstruction     ; some-every_inverse_with-one-reconstruction      ; 
+notop-2-0 ;  ; some-every_surface_with-two-reconstructions    ; some-every_inverse                              ; 
+notop-2-1 ;  ; some-every_surface_with-two-reconstructions    ; some-every_inverse_with-one-reconstruction      ; 
+
+top-0-1 ;  ; some-every_top_surface                         ; some-every_top_inverse_with-one-reconstruction  ; 
+top-0-2 ;  ; some-every_top_surface                         ; some-every_top_inverse_with-two-reconstructions ; 
+top-1-1 ;  ; some-every_top_surface_with-one-reconstruction ; some-every_top_inverse_with-one-reconstruction  ; 
+top-1-2 ;  ; some-every_top_surface_with-one-reconstruction ; some-every_top_inverse_with-two-reconstructions ; 
