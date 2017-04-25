@@ -133,10 +133,12 @@ class ComparisonSet:
         call .compare for every member of the ComparisonSet
     .merge:
         merge another ComparisonSet into this one; to be implemented
-    .show:
+    .show():
         print the overview of successful, tie-ing, and failing metrics
-    .table:
+    .table():
         print tabular overview of comparison results per metric
+    .trees():
+        print list of trees used in comparison
     """
     def __init__(self, args: list, name: str='', metrics: set=set(),
                  success: set=set(), tie: set=set(), failure: set=set()):
@@ -146,6 +148,9 @@ class ComparisonSet:
         self.tie = tie
         self.failure = failure
         self.comparisons = []
+        self._winners = []
+        self._losers = []
+        self._trees = []
 
         for arg in args:
             try:
@@ -157,6 +162,17 @@ class ComparisonSet:
                     print('something is going wrong')
             except:
                 print('Comparison specification of ' + arg + ' is illicit')
+
+    def trees(self,split: bool=False, update: bool=False):
+        if update or not self._losers:
+            self._losers = [comp.loser for comp in self.comparisons]
+        if update or not self._winners:
+            self._winners = [comp.winner for comp in self.comparisons]
+        if split and (update or not self._trees):
+            self._trees = [self._winners, self._losers]
+        elif update or not self._trees:
+            self._trees = self._winners + self._losers
+        return self._trees
 
     def add(self, comparison):
         self.comparisons.append(comparison)
@@ -200,8 +216,11 @@ class ComparisonSet:
                                   for metric in self.failure]
         return metric_dict
 
-    def show(self):
-        pprint.pprint(self._metric_dict(function=self._metric_id))
+    def show(self,subtype=None):
+        if subtype:
+            pprint.pprint(self._metric_dict(function=self._metric_id)[subtype])
+        else:
+            pprint.pprint(self._metric_dict(function=self._metric_id))
 
     def _matrix(self, numerical: bool=False):
         metrics = self.metrics
