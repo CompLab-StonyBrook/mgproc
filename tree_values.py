@@ -207,7 +207,7 @@ def move_length(IOTree, IONode, filters: list=[], trivial: bool=False) -> dict:
     >>> move_length(tree, node, filters=['nom', 'acc', 'top'], trivial=True)
     {}
     """
-    # only keep non-final movers if intermediate is set to True
+    # only keep non-final movers if trivial is set to True
     try:
         final_target = [next(reversed(IONode.movement))]
     except:
