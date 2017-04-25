@@ -416,12 +416,11 @@ Tips & Tricks
 To Do
 -----
 
-- convert all our current trees to the new format
 - factorize file reading and writing to avoid code duplication
 - some lists should be sets (e.g. filters)
 - Generalize empty & content to arbitrary property system
    - prop={empty, content, R-expression, discourse-salient}
    - generalize filters accordingly to match any definable property
 - Unit tests
-- Tons of bug testing
-- Implement a faster evaluation system for ranked metrics (if [m1,m2] wins/fails, so does [m1,m2,...])
+- Implement a faster evaluation system for ranked metrics (based on results for base metrics)
+- allow disjunctions in comparison files ("A or B is easier than C or D"; useful for scope, attachment preferences, and ambiguities)
