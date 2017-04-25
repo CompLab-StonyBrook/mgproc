@@ -1,3 +1,0 @@
-\draw[move={TP1subj}] (TP1subj) .. controls +(130:4em) and +(220:6em) .. (TP1);
-\draw[move={TP2subj}] (TP2subj) .. controls +(130:4em) and +(220:6em) .. (TP2);
-\draw[move={RC}] (RCsource) .. controls +(75:10em) and +(190:4em) .. (RCtarget);

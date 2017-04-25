@@ -1,6 +1,0 @@
-# General format:
-# name; LaTeX command; winner; loser
-#
-#
-eng-src-orc-DPS; ; DP_post_src; DP_post_orc;
-chn-src-orc-DPS; ; DP_pre_orc; DP_pre_src;

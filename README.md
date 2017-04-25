@@ -104,7 +104,7 @@ Filter Value | Effect
 I            | ignore interior nodes
 P            | ignore pronounced leaf nodes
 U            | ignore unpronounced leaf nodes
-*            | also use filter combinations
+\*           | also use filter combinations
 
 The `*` operator is used to produce multiple metrics from one line.
 Whereas a filter specification `U, I` would just produce a single metric that ignores unpronounced leaf nodes and all interior nodes, the minimally different `U, I, *` produces four metrics with different filters (no filters, I filter, U filter, both I and U filter).

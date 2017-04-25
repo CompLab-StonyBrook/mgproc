@@ -1,6 +1,0 @@
-# General format:
-# name; LaTeX command; winner; loser
-#
-#
-orc_right_center; ; orc_right_prom; orc_center_prom;
-orc_right_center; ; orc_right_wh; orc_center_wh;

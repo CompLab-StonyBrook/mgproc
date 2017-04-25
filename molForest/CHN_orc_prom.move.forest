@@ -1,4 +1,0 @@
-\draw[move = {TP2objToCP}] (TP2obj) .. controls +(65:12em) and +(190:2em) .. (CP);
-\draw[move = {mayorToTP2}] (mayor)  .. controls +(190:6em) and +(220:6em) .. (TP2);
-\draw[move = {TP2toRelP}] (TP2)  .. controls +(230:12em) and +(210:12em) .. (RelP);
-\draw[move = {DPtoTP1}] (DP)     .. controls +(120:4em) and +(220:4em) .. (TP1);

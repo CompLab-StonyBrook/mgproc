@@ -1,8 +1,0 @@
-# General format:
-# name; LaTeX command; winner; loser
-#
-#
-eng-thatClause-oo-so-extraposition2; ; stacked_Extraposition_2_post_oo; stacked_Extraposition_2_post_so;
-eng-thatClause-ss-os-extraposition2; ; stacked_Extraposition_2_post_ss; stacked_Extraposition_2_post_os;
-chn-oo-so-extraposition2;            ; stacked_Extraposition_2_pre_oo      ; stacked_Extraposition_2_pre_so;
-chn-ss-os-extraposition2;            ; stacked_Extraposition_2_pre_ss      ; stacked_Extraposition_2_pre_os;

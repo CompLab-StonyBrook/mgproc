@@ -1,4 +1,0 @@
-\draw[move = {hdtoTP2}] (headNP)   .. controls +(170:2em) and +(230:4em) .. (TP2Spec);
-\draw[move = {hdtoCP2}] (headNP)   .. controls +(170:8em) and +(220:7em) .. (CP2Spec);
-\draw[move = {TP2}] (TP2Spec)  .. controls +(220:8em) and +(200:10em) .. (TP2landing);
-\draw[move = {SSubjtoTP1}] (SSubj)    .. controls +(120:4em) and +(220:4em) .. (TP1Spec);

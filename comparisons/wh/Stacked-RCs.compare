@@ -1,0 +1,8 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+eng-thatClause-oo-so-wh ;  ; stacked_wh_that_post_oo ; stacked_wh_that_post_so ; 
+eng-thatClause-ss-os-wh ;  ; stacked_wh_that_post_ss ; stacked_wh_that_post_os ; 
+chn-oo-so-wh            ;  ; stacked_wh_pre_oo       ; stacked_wh_pre_so       ; 
+chn-ss-os-wh            ;  ; stacked_wh_pre_ss       ; stacked_wh_pre_os       ; 

@@ -1,0 +1,8 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+eng-src-orc-wh ;  ; eng_src_wh ; eng_orc_wh ; 
+chn-src-orc-wh ;  ; chn_src_wh ; chn_orc_wh ; 
+kor-src-orc-wh ;  ; kor_src_wh ; kor_orc_wh ; 
+jap-src-orc-wh ;  ; jap_src_wh ; jap_orc_wh ; 

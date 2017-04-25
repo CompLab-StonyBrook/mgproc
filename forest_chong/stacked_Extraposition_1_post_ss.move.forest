@@ -1,4 +1,0 @@
-\draw[-{Latex[length=.5em]},move={startToLanding}] (subjectHigher) to[out=west,in= south west] (landing);
-\draw[-{Latex[length=.5em]}, dotted,move={extraposeStartToLanding}] (extraposeStart) to[out=north east,in=south east] (extraposeLanding);
-\draw[-{Latex[length=.5em]},move={subjHigherToLanding}] (subjectHigher) to[out= west,in=south west] (subjectHigherLanding);
-\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);

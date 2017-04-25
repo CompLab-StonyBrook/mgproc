@@ -1,5 +1,0 @@
-\draw[-{Latex[length=.5em]},move={subjHighToLanding}] (subjectHigher) to[out= west,in= west] (subjectHigherLanding);
-\draw[-{Latex[length=.5em]},move={subjLowToLanding}] (subjectLower) to[out= west,in= west] (subjectLowerLanding);
-\draw[-{Latex[length=.5em]}, dotted,move={extrapose}] (extraposeVacuous) to[out=north east,in=east] (extraposeVacuousLanding);
-\draw[-{Latex[length=.5em]}, dotted,move={CPtoRelP}] (extraposeVacuousLanding) to[out=south west, in= west] (RelPspec);
-\draw[-{Latex[length=.5em]},move={subjMaintoLanding}] (subjMain) to[out = west, in = south west] (subjMainLanding);
