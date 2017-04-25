@@ -1,0 +1,55 @@
+\begin{forest}
+[NP
+  [Determiner
+    [the]
+    [Marker, name = start]
+  ]
+  [NP
+      [horse]
+    [Marker, name = landing
+    [CP
+      [that]
+      [TP, name = subjectLanding
+        [T$'$
+          [T]
+          [\nl{v}P
+            [NP, name = subject
+              [the]
+              [wolf]
+            ]
+            [\nl{v}$'$
+              [\nl{v}]
+              [chased]
+            ]
+          ]
+        ]
+      ]
+    ]
+      [Marker
+      [CP
+        [that]
+        [TP, name = subjectLanding2
+          [T$'$
+            [T]
+            [\nl{v}P
+              [NP, name = subject2
+                [the]
+                [elephant]
+              ]
+              [\nl{v}$'$
+                [\nl{v}]
+                [kicked]
+              ]
+            ]
+          ]
+        ]
+      ]
+        [Marker]
+      ]
+    ]
+  ]
+]
+      \draw[-{Latex[length=.5em]}, dotted, blue!75] (start) to[out = south, in = south west] (landing);
+      \draw[-{Latex[length=.5em]}, dashed, blue!75] (subject) to[out = west, in = south west] (subjectLanding);
+      \draw[-{Latex[length=.5em]}, dashed, blue!75] (subject2) to[out = west, in = south west] (subjectLanding2);
+\end{forest}

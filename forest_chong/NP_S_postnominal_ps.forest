@@ -1,0 +1,15 @@
+\begin{forest}
+        [NP
+            [NP
+                [Det
+                  [the]
+                ]
+                [N
+                  [horse]
+                ]
+            ]
+            [S
+              [that the wolf chased, triangle]
+            ]
+        ]
+\end{forest}

@@ -1,0 +1,18 @@
+\begin{forest}
+[NP
+  [Determiner
+    [the]
+    [Marker
+      [S
+        [the wolf chased de]
+      ]
+      [Marker]
+    ]
+  ]
+  [NP
+    [N
+      [horse]
+    ]
+  ]
+]
+\end{forest}

@@ -1,0 +1,20 @@
+\begin{forest}
+[NP
+  [Determiner
+    [the]
+    [\nl{t}, name = start]
+  ]
+  [NP
+    [N
+      [horse]
+    ]
+    [Marker, name = landing
+      [S
+        [that the wolf chased, triangle]
+      ]
+      [Marker]
+    ]
+  ]
+]
+    \draw[-{Latex[length=.5em]}, dotted, blue!75] (start) to[out = south, in = west] (landing);
+\end{forest}

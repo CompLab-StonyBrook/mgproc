@@ -1,0 +1,10 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+#scrc-rcsc-wh; ; scrc_wh; rcsc_wh;
+eng-wh; ; ENG_src_wh; ENG_orc_wh;
+chi-wh; ; CHN_orc_wh; CHN_src_wh;
+#kor-wh; ; kor_src_wh; kor_orc_wh;
+#jap-wh; ; jap_src_wh; jap_orc_wh;
+#right-center; ; orc_right_wh; orc_center_wh;

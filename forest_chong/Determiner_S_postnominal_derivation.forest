@@ -1,0 +1,34 @@
+\begin{forest}
+[NP
+  [Determiner
+    [the]
+    [Marker, name = start]
+  ]
+  [NP
+      [horse]
+    [Marker, name = landing
+    [CP
+      [that]
+      [TP, name = subjectLanding
+        [T$'$
+          [T]
+          [\nl{v}P
+            [NP, name = subject
+              [the]
+              [wolf]
+            ]
+            [\nl{v}$'$
+              [\nl{v}]
+              [chased]
+            ]
+          ]
+        ]
+      ]
+    ]
+      [Marker]
+    ]
+  ]
+]
+\draw[-{Latex[length=.5em]}, dotted, blue!75] (start) to[out = south, in = south west] (landing);
+\draw[-{Latex[length=.5em]}, dashed, blue!75] (subject) to[out = north west, in = south west] (subjectLanding);
+\end{forest}

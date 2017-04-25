@@ -1,0 +1,23 @@
+\begin{forest}
+[NP
+  [Determiner
+    [the]
+    [Marker
+      [S
+        [the wolf chased de]
+      ]
+      [Marker
+        [S
+          [the elephant kicked de]
+        ]
+        [Marker]
+      ]
+    ]
+  ]
+  [NP
+    [N
+      [horse]
+    ]
+  ]
+]
+\end{forest}
