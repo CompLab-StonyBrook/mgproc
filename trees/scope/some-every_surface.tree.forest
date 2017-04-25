@@ -1,0 +1,24 @@
+[CP
+    [C]
+    [TP,name=subjt
+        [T$'$
+            [T]
+            [$v$P
+                [DP,name=subjs
+                    [a]
+                    [pianist]
+                ]
+                [$v'$
+                    [$v$]
+                    [VP
+                        [played]
+                        [DP
+                            [every]
+                            [sonata]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]

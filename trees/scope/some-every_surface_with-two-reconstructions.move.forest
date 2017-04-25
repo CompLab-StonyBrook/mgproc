@@ -1,0 +1,4 @@
+\draw[move={nom}] (subjs) to (subjt);
+\draw[move={nom}] (subjt) to (subjs);
+\draw[move={qr}]  (qrs) to (qrt);
+\draw[move={qr}]  (qrt) to (qrs);
