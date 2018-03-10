@@ -1,0 +1,44 @@
+[CP
+	[C]
+	[TP
+		[T]
+		[vP,name = vptarget
+			[vP,name = nptarget
+				[vP
+					[Max]
+					[v'
+						[v]
+						[VP,name=vp
+							[DP,name = np
+								[all]
+								[DP
+									[the]
+									[NP
+										[boxes]
+										[PP
+											[of]
+											[NP
+												[home]
+												[furnishings]
+											]
+										]
+									]
+								]
+							]
+							[V$'$
+								[put]
+								[PP
+									[in]
+									[DP
+										[his]
+										[car]
+									]
+								]
+							]
+						]
+					]
+				]
+			]
+		]
+	]
+]

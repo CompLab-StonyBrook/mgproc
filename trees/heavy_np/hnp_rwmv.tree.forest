@@ -1,0 +1,42 @@
+[CP
+	[C]
+	[TP
+		[T]
+			[vP,name = rightward-movement
+				[vP
+					[Max]
+					[v$'$
+						[v]
+						[VP
+							[DP,name = heavy-np
+								[all]
+								[DP
+									[the]
+									[NP
+										[boxes]
+										[PP
+											[of]
+											[NP
+												[home]
+												[furnishings]
+											]
+										]
+									]
+								]
+							]
+							[V$'$
+								[put]
+								[PP
+									[in]
+									[DP
+										[his]
+										[car]
+									]
+								]
+							]
+						]
+					]
+				]
+			]
+	]
+]

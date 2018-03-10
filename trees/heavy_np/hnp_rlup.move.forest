@@ -1,0 +1,2 @@
+\draw[move={np}] (np) to[out=west,in=south west] (nptarget);
+\draw[move={vp}] (vp) to[out=west,in=south west] (vptarget);

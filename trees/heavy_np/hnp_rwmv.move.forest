@@ -1,0 +1,1 @@
+\draw[move={rwmv}] (heavy-np) to[out=west,in=south west] (rightward-movement);
