@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+\draw[move={rwmv}] (heavy-np) to[out=west,in=south west] (rightward-movement);
+=======
+\draw[move={rwmv},color = cyan] (np) to[out=west,in=south east] node[left]{rwmv} (tnp);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
+\draw[move={v2v},color = orange] (bigv) to[out=west,in=south west] node[left]{v2v} (tbigv);
+>>>>>>> master

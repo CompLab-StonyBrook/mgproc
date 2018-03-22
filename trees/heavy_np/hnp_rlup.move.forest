@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+\draw[move={np}] (np) to[out=west,in=south west] (nptarget);
+\draw[move={vp}] (vp) to[out=west,in=south west] (vptarget);
+=======
+\draw[move={npshift},color = cyan] (np) to[out=west,in=south west] node[left]{np} (tnp);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
+\draw[move={remant},color = blue] (vp) to[out=west,in=south west] node[left]{remnant} (tvp);
+>>>>>>> master

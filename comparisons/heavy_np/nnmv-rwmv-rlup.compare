@@ -1,0 +1,13 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+nnmv-rwmv ; ; hnp_rwmv ; hnp_nnmv ;
+nnmv-rlup ; ; hnp_rlup ; hnp_nnmv ;
+<<<<<<< HEAD
+=======
+nnmv-rlupv2v ; ; hnp_rlupv2v ; hnp_nnmv ;
+v2vyesno ; ; hnp_rlup ; hnp_rlupv2v;
+# nnmv-rlupv2v ; ; hnp_rlupv2v ; hnp_nnmv ;
+>>>>>>> master
+# rwmv-rlup ; ; hnp_rlup ; hnp_rwmv ;
