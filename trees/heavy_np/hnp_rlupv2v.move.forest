@@ -1,0 +1,4 @@
+\draw[move={npshift},color = cyan] (np) to[out=west,in=south west] node[left]{np} (tnp);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
+\draw[move={remant},color = blue] (vp) to[out=west,in=south west] node[left]{remnant} (tvp);
+\draw[move={v2v},color = orange] (bigv) to[out=west,in=south west] node[left]{v2v} (tbigv);
