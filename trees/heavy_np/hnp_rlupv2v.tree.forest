@@ -1,43 +1,10 @@
 [CP
 	[C]
-<<<<<<< HEAD
-	[TP
-		[T]
-		[vP,name = vptarget
-			[vP,name = nptarget
-				[vP
-					[Max]
-					[v'
-						[v]
-						[VP,name=vp
-							[DP,name = np
-								[all]
-								[DP
-									[the]
-									[NP
-										[boxes]
-										[PP
-											[of]
-											[NP
-												[home]
-												[furnishings]
-											]
-										]
-									]
-								]
-							]
-							[V$'$
-								[put]
-								[PP
-									[in]
-									[DP
-										[his]
-										[car]
-=======
 	[TP,name = tnom
 		[TP
 			[T]
-			[vP,name = tvp
+			[vP,name = tbigv	
+				[vP,name = tvp
 					[vP,name = tnp
 						[vP
 							[Max,name=nom]
@@ -69,17 +36,13 @@
 												[car]
 											]
 										]
->>>>>>> master
 									]
 								]
 							]
 						]
 					]
 				]
-<<<<<<< HEAD
 			]
-=======
->>>>>>> master
 		]
 	]
 ]

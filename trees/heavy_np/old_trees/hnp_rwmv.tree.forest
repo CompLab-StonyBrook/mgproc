@@ -1,26 +1,5 @@
 [CP
 	[C]
-<<<<<<< HEAD
-	[TP
-		[T]
-			[vP,name = rightward-movement
-				[vP
-					[Max]
-					[v$'$
-						[v]
-						[VP
-							[DP,name = heavy-np
-								[all]
-								[DP
-									[the]
-									[NP
-										[boxes]
-										[PP
-											[of]
-											[NP
-												[home]
-												[furnishings]
-=======
 	[TP,name=tnom
 		[TP
 		[T]
@@ -43,21 +22,10 @@
 													[home]
 													[furnishings]
 												]
->>>>>>> master
 											]
 										]
 									]
 								]
-<<<<<<< HEAD
-							]
-							[V$'$
-								[put]
-								[PP
-									[in]
-									[DP
-										[his]
-										[car]
-=======
 								[V$'$
 									[put,name=bigv]
 									[PP
@@ -66,19 +34,13 @@
 											[his]
 											[car]
 										]
->>>>>>> master
 									]
 								]
 							]
 						]
 					]
 				]
-<<<<<<< HEAD
-			]
-	]
-=======
 			]	
 		]
 	]	
->>>>>>> master
 ]
