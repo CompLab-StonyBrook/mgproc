@@ -1,15 +1,15 @@
 [CP
 	[C,empty]
-	[TP,name = tnom
+	[TP,name=tnom
 		[TP
 			[T,empty]
-			[vP,name=tvbar
+			[vP,name=tbigv
 				[vP
 					[Max,name=nom]
-					[v'
-						[put]
-						[VP,name=vp
-							[DP,name = np
+					[v$'$
+						[v,empty]
+						[VP
+							[DP
 								[all]
 								[DP
 									[the]
@@ -25,13 +25,22 @@
 									]
 								]
 							]
-							[V$'$,name = vbar
-								[V,empty,name=bigv]
+							[V'
+								[put,name=bigv]
 								[PP
 									[in]
 									[DP
 										[his]
-										[car]
+										[NP
+											[car]
+											[rel
+												[made]
+												[PP
+													[in]
+													[Stuttgart]
+												]
+											]
+										]
 									]
 								]
 							]

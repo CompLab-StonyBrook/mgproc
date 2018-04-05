@@ -1,0 +1,3 @@
+\draw[move={vbar},color = HotPink] (vbar) to[out=west,in=south west] node{reanalysis} (tvbar);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
+\draw[move={v2v},color = orange] (bigv) to[out=west,in=south west] node[left]{v2v} (tbigv);

@@ -1,7 +1,0 @@
-# General format:
-# name; LaTeX command; winner; loser
-#
-#
-right move - no move ; ; nheavy-rightmv ; nheavy-nomv ;
-remnant move - no move ; ; nheavy-remnantmv ; nheavy-nomv ;
-reanalysis - no move ; ; nheavy-reanalysis ; nheavy-nomv ;

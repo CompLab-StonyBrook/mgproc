@@ -1,9 +1,0 @@
-# General format:
-# name; LaTeX command; winner; loser
-#
-#
-lvp-rwmv-nnmv ; ; lvp_rwmv ; lvp_nnmv ;
-lvp-rlup-nnmv ; ; lvp_rlup ; lvp_nnmv ;
-# v2vyesno ; ; hnp_rlup ; hnp_rlupv2v;
-# nnmv-rlupv2v ; ; hnp_rlupv2v ; hnp_nnmv ;
-# rwmv-rlup ; ; hnp_rlup ; hnp_rwmv ;
