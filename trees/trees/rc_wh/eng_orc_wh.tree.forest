@@ -1,0 +1,51 @@
+[CP, name=CP1
+    [C$'$
+       [C, empty]
+       [TP, name=TP1
+            [T$'$
+                [T, empty]
+                    [$v$P
+                        [DP, name=DP1
+                            [the]
+                            [NP
+                                [reporter]
+                                [CP, name=CP2
+                                    [C$'$
+                                        [C, empty]
+                                        [TP, name=TP2
+                                            [T$'$
+                                                [T, empty]
+                                                [$v$P
+                                                    [DP, name=DP2
+                                                        [the]
+                                                        [senator]
+                                                    ]
+                                                    [$v'$
+                                                        [$v$, empty]
+                                                        [VP
+                                                            [attacked]
+                                                            [who, name=WHO]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        [$v'$
+                            [admitted]
+                            [DP, name=DP3
+                                [$v$, empty]
+                                [VP
+                                    [the]
+                                    [error]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
