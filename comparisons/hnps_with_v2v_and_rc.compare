@@ -1,0 +1,8 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+right move wins no move ; ; nhv_rightmv ; nhv_nomv ;
+remnant wins no move ; ; nhv_remnantmv ; nhv_nomv ;
+src wins orc in promo ; ; eng_src_prom ; eng_orc_prom ;
+src wins orc in wh ; ; eng_src_wh ; eng_orc_wh ;
