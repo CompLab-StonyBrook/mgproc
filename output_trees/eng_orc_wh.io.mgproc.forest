@@ -69,98 +69,98 @@
 \node[index]            at (t)                        {1};
 \node[outdex]           at (t)                        {2};
 %
-\node[index]            at (t21212121222)            {19};
-\node[outdex]           at (t21212121222)            {21};
-%
-\node[index]            at (RCsource)                {13};
-\node[outdex]           at (RCsource)                {14};
-%
-\node[index]            at (t212121212222)           {21};
-\node[outdex]           at (t212121212222)           {23};
-%
-\node[index]            at (t212121)                  {9};
-\node[outdex]           at (t212121)                 {10};
-%
-\node[index]            at (t1)                       {2};
-\node[outdex]           at (t1)                       {3};
-%
-\node[index]            at (t21212121221)            {19};
-\node[outdex]           at (t21212121221)            {20};
-%
-\node[index]            at (t2121212122)             {13};
-\node[outdex, boxed]    at (t2121212122)             {19};
-%
-\node[index]            at (t21221)                  {27};
-\node[outdex]           at (t21221)                  {28};
-%
-\node[index]            at (t212121212)              {12};
-\node[outdex]           at (t212121212)              {13};
-%
-\node[index]            at (t2122)                    {6};
-\node[outdex, boxed]    at (t2122)                   {27};
-%
-\node[index]            at (t212)                     {5};
-\node[outdex]           at (t212)                     {6};
-%
-\node[index]            at (TP2)                     {10};
-\node[outdex]           at (TP2)                     {11};
-%
-\node[index]            at (t211)                     {5};
-\node[outdex, boxed]    at (t211)                    {26};
-%
-\node[index]            at (t2122221)                {31};
-\node[outdex]           at (t2122221)                {32};
-%
-\node[index]            at (t212121212221)           {21};
-\node[outdex]           at (t212121212221)           {22};
-%
-\node[index]            at (RCtarget)                 {7};
-\node[outdex]           at (RCtarget)                 {9};
-%
-\node[index]            at (t212121211)              {12};
-\node[outdex, boxed]    at (t212121211)              {18};
-%
-\node[index]            at (TP1)                      {2};
-\node[outdex]           at (TP1)                      {4};
-%
-\node[index]            at (t21212121212)            {14};
-\node[outdex]           at (t21212121212)            {16};
+\node[index]            at (t2122222)                {31};
+\node[outdex]           at (t2122222)                {33};
 %
 \node[index]            at (t21211)                   {7};
 \node[outdex]           at (t21211)                   {8};
 %
-\node[index]            at (t2121211)                {10};
-\node[outdex, boxed]    at (t2121211)                {17};
+\node[index]            at (t21212121222)            {19};
+\node[outdex]           at (t21212121222)            {21};
 %
-\node[index]            at (t212221)                 {29};
-\node[outdex]           at (t212221)                 {30};
+\node[index]            at (t21212121212)            {14};
+\node[outdex]           at (t21212121212)            {16};
 %
-\node[index]            at (t2121212122221)          {23};
-\node[outdex]           at (t2121212122221)          {24};
+\node[index]            at (t211)                     {5};
+\node[outdex, boxed]    at (t211)                    {26};
 %
-\node[index]            at (t2122222)                {31};
-\node[outdex]           at (t2122222)                {33};
+\node[index]            at (t212121212222)           {21};
+\node[outdex]           at (t212121212222)           {23};
 %
-\node[index]            at (t21222)                  {27};
-\node[outdex]           at (t21222)                  {29};
+\node[index]            at (t2122221)                {31};
+\node[outdex]           at (t2122221)                {32};
 %
-\node[index]            at (t21)                      {4};
-\node[outdex]           at (t21)                      {5};
-%
-\node[index]            at (t212222)                 {29};
-\node[outdex]           at (t212222)                 {31};
-%
-\node[index]            at (t2121212122222)          {23};
-\node[outdex]           at (t2121212122222)          {25};
-%
-\node[index]            at (t21212121211)            {14};
-\node[outdex]           at (t21212121211)            {15};
+\node[index]            at (t21212121221)            {19};
+\node[outdex]           at (t21212121221)            {20};
 %
 \node[index]            at (TP1subj)                  {6};
 \node[outdex]           at (TP1subj)                  {7};
 %
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
 \node[index]            at (t21212121)               {11};
 \node[outdex]           at (t21212121)               {12};
+%
+\node[index]            at (t21222)                  {27};
+\node[outdex]           at (t21222)                  {29};
+%
+\node[index]            at (t2122)                    {6};
+\node[outdex, boxed]    at (t2122)                   {27};
+%
+\node[index]            at (RCtarget)                 {7};
+\node[outdex]           at (RCtarget)                 {9};
+%
+\node[index]            at (t212221)                 {29};
+\node[outdex]           at (t212221)                 {30};
+%
+\node[index]            at (t212)                     {5};
+\node[outdex]           at (t212)                     {6};
+%
+\node[index]            at (t2121212122)             {13};
+\node[outdex, boxed]    at (t2121212122)             {19};
+%
+\node[index]            at (TP2)                     {10};
+\node[outdex]           at (TP2)                     {11};
+%
+\node[index]            at (t212222)                 {29};
+\node[outdex]           at (t212222)                 {31};
+%
+\node[index]            at (t21)                      {4};
+\node[outdex]           at (t21)                      {5};
+%
+\node[index]            at (t2121212122221)          {23};
+\node[outdex]           at (t2121212122221)          {24};
+%
+\node[index]            at (t2121212122222)          {23};
+\node[outdex]           at (t2121212122222)          {25};
+%
+\node[index]            at (t21221)                  {27};
+\node[outdex]           at (t21221)                  {28};
+%
+\node[index]            at (t212121211)              {12};
+\node[outdex, boxed]    at (t212121211)              {18};
+%
+\node[index]            at (t2121211)                {10};
+\node[outdex, boxed]    at (t2121211)                {17};
+%
+\node[index]            at (t212121212221)           {21};
+\node[outdex]           at (t212121212221)           {22};
+%
+\node[index]            at (RCsource)                {13};
+\node[outdex]           at (RCsource)                {14};
+%
+\node[index]            at (t212121)                  {9};
+\node[outdex]           at (t212121)                 {10};
+%
+\node[index]            at (t212121212)              {12};
+\node[outdex]           at (t212121212)              {13};
+%
+\node[index]            at (TP1)                      {2};
+\node[outdex]           at (TP1)                      {4};
+%
+\node[index]            at (t21212121211)            {14};
+\node[outdex]           at (t21212121211)            {15};
 %
 %
 \end{forest}

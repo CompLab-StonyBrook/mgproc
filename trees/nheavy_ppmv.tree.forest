@@ -1,14 +1,14 @@
-[CP
+	[CP
 	[C,empty]
-	[TP,name = tnom
+	[TP,name=tnom
 		[TP
-			[T,empty]
+		[T,empty]
 			[vP
 				[Max,name=nom]
-				[v'
+				[v$'$
 					[put]
-					[vP,name=tvbar
-						[VP,name=vp
+					[vP,name = tpp
+						[VP
 							[DP,name = np
 								[all]
 								[DP
@@ -25,9 +25,9 @@
 									]
 								]
 							]
-							[V$'$,name = vbar
+							[V$'$
 								[V,empty,name=bigv]
-								[PP
+								[PP,name = pp
 									[in]
 									[DP
 										[his]
@@ -38,7 +38,7 @@
 						]
 					]
 				]
-			]
+			]	
 		]
-	]
+	]	
 ]

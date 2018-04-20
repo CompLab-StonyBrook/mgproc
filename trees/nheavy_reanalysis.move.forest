@@ -1,2 +1,0 @@
-\draw[move={vbar},color = Coral] (vbar) to[out=west,in=south west] node[left]{reanalysis} (tvbar);
-\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
