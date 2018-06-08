@@ -1,4 +1,4 @@
-	[CP
+[CP
 	[C,empty]
 	[TP,name = tnom
 		[TP
@@ -8,7 +8,9 @@
 				[v'
 					[put]
 					[vP,name = tvp
+						[v, empty]
 						[vP,name = tnp
+							[v, empty]
 							[VP,name=vp
 								[DP,name = np
 									[all]

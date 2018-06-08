@@ -1,4 +1,4 @@
-	[CP
+[CP
 		[C, empty]
 		[TP, name = tnom
 			[TP
@@ -7,8 +7,10 @@
 					[Max, name = nom]
 					[v'
 						[put]
-						[VP, name = tvp	
-							[VP,name = tnp
+						[vP, name = tvp	
+							[v, empty]
+							[vP,name = tnp
+								[v, empty]
 								[VP,name = vp
 									[boxes, name = np]
 									[V'
