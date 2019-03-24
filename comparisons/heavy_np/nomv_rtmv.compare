@@ -1,0 +1,8 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+sdp_spp ; ; nomv_sdp_spp ; rtmv_sdp_spp ;
+sdp_lpp ; ; nomv_sdp_lpp ; rtmv_sdp_lpp ;
+ldp_spp ; ; rtmv_ldp_spp ; nomv_ldp_spp ;
+ldp_lpp ; ; nomv_ldp_lpp ; rtmv_ldp_lpp ;

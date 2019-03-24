@@ -1,0 +1,132 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=t
+    [C, name=t1, empty]
+    [TP, name=tnom
+        [TP, name=t21
+            [T, name=t211, empty]
+            [vP, name=t212
+                [Max, name=nom]
+                [v', name=t2122
+                    [put, name=t21221]
+                    [VP, name=tpp
+                        [VP, name=t212221
+                            [boxes, name=np]
+                            [V', name=t2122212
+                                [V, name=t21222121, empty]
+                                [PP, name=pp
+                                    [in, name=t212221221]
+                                    [DP, name=t212221222
+                                        [his, name=t2122212221]
+                                        [NP, name=t2122212222
+                                            [car, name=t21222122221]
+                                            [rel, name=t21222122222
+                                                [made, name=t212221222221]
+                                                [PP, name=t212221222222
+                                                    [in, name=t2122212222221]
+                                                    [Stuttgart, name=t2122212222222]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+	\draw[move = {nom}, olive] (nom) to[out=west, in=south west] (tnom);
+	\draw[move={ppmv},color = LimeGreen] (pp) to[out=west,in=south west] node[right]{pp movement} (tpp);%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (t)                        {1};
+\node[outdex]           at (t)                        {2};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t212221222221)           {20};
+\node[outdex]           at (t212221222221)           {21};
+%
+\node[index]            at (t211)                     {5};
+\node[outdex, boxed]    at (t211)                     {8};
+%
+\node[index]            at (t212221222222)           {20};
+\node[outdex]           at (t212221222222)           {22};
+%
+\node[index]            at (t21221)                   {9};
+\node[outdex]           at (t21221)                  {10};
+%
+\node[index]            at (pp)                      {13};
+\node[outdex]           at (pp)                      {14};
+%
+\node[index]            at (t212221222)              {14};
+\node[outdex]           at (t212221222)              {16};
+%
+\node[index]            at (t2122212221)             {16};
+\node[outdex]           at (t2122212221)             {17};
+%
+\node[index]            at (tnom)                     {2};
+\node[outdex]           at (tnom)                     {4};
+%
+\node[index]            at (t2122212222221)          {22};
+\node[outdex]           at (t2122212222221)          {23};
+%
+\node[index]            at (t2122212)                {12};
+\node[outdex]           at (t2122212)                {13};
+%
+\node[index]            at (t2122212222222)          {22};
+\node[outdex]           at (t2122212222222)          {24};
+%
+\node[index]            at (np)                      {12};
+\node[outdex, boxed]    at (np)                      {25};
+%
+\node[index]            at (nom)                      {6};
+\node[outdex]           at (nom)                      {7};
+%
+\node[index]            at (t2122)                    {6};
+\node[outdex, boxed]    at (t2122)                    {9};
+%
+\node[index]            at (t212)                     {5};
+\node[outdex]           at (t212)                     {6};
+%
+\node[index]            at (t21222121)               {13};
+\node[outdex, boxed]    at (t21222121)               {26};
+%
+\node[index]            at (t2122212222)             {16};
+\node[outdex]           at (t2122212222)             {18};
+%
+\node[index]            at (t21222122221)            {18};
+\node[outdex]           at (t21222122221)            {19};
+%
+\node[index]            at (t21)                      {4};
+\node[outdex]           at (t21)                      {5};
+%
+\node[index]            at (t212221)                 {11};
+\node[outdex]           at (t212221)                 {12};
+%
+\node[index]            at (tpp)                      {9};
+\node[outdex]           at (tpp)                     {11};
+%
+\node[index]            at (t212221221)              {14};
+\node[outdex]           at (t212221221)              {15};
+%
+\node[index]            at (t21222122222)            {18};
+\node[outdex]           at (t21222122222)            {20};
+%
+%
+\end{forest}

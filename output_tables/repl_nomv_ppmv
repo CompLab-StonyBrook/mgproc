@@ -1,0 +1,26 @@
+\begin{tabular}{llllll}
+\hline
+ Metric   & Filters   & sdp\_spp   & sdp\_lpp   & ldp\_spp   & ldp\_lpp   \\
+\hline
+ AvgS     &           & Tie       & Tie       & Yes       & Tie       \\
+ AvgS'    &           & Tie       & Tie       & Yes       & Tie       \\
+ AvgT     &           & Yes       & Yes       & No        & Yes       \\
+ AvgT'    &           & Yes       & Yes       & No        & Yes       \\
+ BoxT     &           & Yes       & Yes       & No        & Yes       \\
+ BoxT'    &           & Yes       & Yes       & Tie       & Yes       \\
+ MaxS     &           & Tie       & Tie       & Yes       & Tie       \\
+ MaxS'    &           & Tie       & Tie       & Yes       & Tie       \\
+ MaxSR    &           & Yes       & Yes       & Yes       & Yes       \\
+ MaxSR'   &           & Yes       & Yes       & Yes       & Yes       \\
+ MaxT     &           & Yes       & Yes       & No        & Yes       \\
+ MaxT'    &           & Yes       & Yes       & No        & Yes       \\
+ MaxTR    &           & Yes       & Yes       & No        & Yes       \\
+ MaxTR'   &           & Yes       & Yes       & No        & Yes       \\
+ Movers   &           & Yes       & Yes       & No        & Yes       \\
+ Movers'  &           & Yes       & Yes       & No        & Yes       \\
+ SumS     &           & Yes       & Yes       & No        & Yes       \\
+ SumS'    &           & Yes       & Yes       & No        & Yes       \\
+ SumT     &           & Yes       & Yes       & No        & Yes       \\
+ SumT'    &           & Yes       & Yes       & No        & Yes       \\
+\hline
+\end{tabular}

@@ -1,0 +1,2 @@
+	\draw[move = {nom}, olive] (nom) to[out=west, in=south west] (tnom);
+	 \draw[move={rwmv},color = cyan] (np) to[out=west,in=south east] node[left]{rwmv} (tnp);

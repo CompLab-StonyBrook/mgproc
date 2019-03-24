@@ -1,0 +1,2 @@
+\draw[move={v2v},color = orange] (bigv) to[out=west,in=south west] node[left]{v2v} (tbigv);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);

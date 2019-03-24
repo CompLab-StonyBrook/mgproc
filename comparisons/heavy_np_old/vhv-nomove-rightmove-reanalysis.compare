@@ -1,0 +1,6 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+right move wins no move ; ; vhv_rightmv ; vhv_nomv ;
+reanalysis wins no move ; ; vhv_reanalysis ; vhv_nomv ;

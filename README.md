@@ -1,3 +1,11 @@
+5.5
+
+- Issue folder was used to recreate foo.show() and foo.table() mismatch, was not successful. Mismatches only show for heavy_np sentences
+- output_tables and output_trees folders were created for paper writing purposes. 
+- table function in helper.py changed to output latex tables
+
+
+
 *mgproc*: A Python Package for MG Processing Research
 ===================================================
 

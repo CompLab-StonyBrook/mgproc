@@ -1,0 +1,9 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+PP_LONG no move >> right move ; ; vheavy_nomv ; vheavy_rightmv ;
+PP_LONG no move >> pp move ; ; vheavy_nomv ; vheavy_ppmv ;
+PP_LONG no move >> remnant move ; ; vheavy_nomv ; vheavy_remnantmv ;
+eng src wins orc ; ; eng_src_wh ; eng_orc_wh ;
+chn src wins orc ; ; chn_src_wh ; chn_orc_wh ;

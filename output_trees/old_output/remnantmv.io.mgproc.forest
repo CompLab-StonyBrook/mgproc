@@ -1,0 +1,156 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=t
+    [C, name=t1, empty]
+    [TP, name=tnom
+        [TP, name=t21
+            [T, name=t211, empty]
+            [vP, name=t212
+                [Max, name=nom]
+                [v', name=t2122
+                    [put, name=t21221]
+                    [vP, name=tvp
+                        [vP, name=tnp
+                            [VP, name=vp
+                                [DP, name=np
+                                    [all, name=t212221111]
+                                    [DP, name=t212221112
+                                        [the, name=t2122211121]
+                                        [NP, name=t2122211122
+                                            [boxes, name=t21222111221]
+                                            [PP, name=t21222111222
+                                                [of, name=t212221112221]
+                                                [NP, name=t212221112222
+                                                    [home, name=t2122211122221]
+                                                    [furnishings, name=t2122211122222]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                [V$'$, name=t21222112
+                                    [V, name=bigv, empty]
+                                    [PP, name=t212221122
+                                        [in, name=t2122211221]
+                                        [DP, name=t2122211222
+                                            [his, name=t21222112221]
+                                            [car, name=t21222112222]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%
+%%%%%%%%%%
+% Movers %
+%%%%%%%%%%
+%
+\draw[move={npshift},color = cyan] (np) to[out=west,in=south west] node[left]{np} (tnp);
+\draw[move={nom},color = olive] (nom) to[out=west,in=south west] node[left]{nom} (tnom);
+\draw[move={remant},color = blue] (vp) to[out=west,in=south west] node[left]{remnant} (tvp);%
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (t)                        {1};
+\node[outdex]           at (t)                        {2};
+%
+\node[index]            at (t212221112222)           {27};
+\node[outdex]           at (t212221112222)           {29};
+%
+\node[index]            at (t2122211122221)          {29};
+\node[outdex]           at (t2122211122221)          {30};
+%
+\node[index]            at (t2122211122)             {23};
+\node[outdex]           at (t2122211122)             {25};
+%
+\node[index]            at (t212221111)              {21};
+\node[outdex]           at (t212221111)              {22};
+%
+\node[index]            at (vp)                      {12};
+\node[outdex]           at (vp)                      {13};
+%
+\node[index]            at (t211)                     {5};
+\node[outdex, boxed]    at (t211)                     {8};
+%
+\node[index]            at (bigv)                    {14};
+\node[outdex]           at (bigv)                    {15};
+%
+\node[index]            at (t21222112)               {13};
+\node[outdex]           at (t21222112)               {14};
+%
+\node[index]            at (t212221112)              {21};
+\node[outdex]           at (t212221112)              {23};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (t2122211121)             {23};
+\node[outdex]           at (t2122211121)             {24};
+%
+\node[index]            at (tvp)                      {9};
+\node[outdex]           at (tvp)                     {11};
+%
+\node[index]            at (t212221122)              {14};
+\node[outdex]           at (t212221122)              {16};
+%
+\node[index]            at (tnp)                     {11};
+\node[outdex]           at (tnp)                     {12};
+%
+\node[index]            at (t212)                     {5};
+\node[outdex]           at (t212)                     {6};
+%
+\node[index]            at (t2122211221)             {16};
+\node[outdex]           at (t2122211221)             {17};
+%
+\node[index]            at (t21222112221)            {18};
+\node[outdex]           at (t21222112221)            {19};
+%
+\node[index]            at (t21222111222)            {25};
+\node[outdex]           at (t21222111222)            {27};
+%
+\node[index]            at (t21)                      {4};
+\node[outdex]           at (t21)                      {5};
+%
+\node[index]            at (np)                      {13};
+\node[outdex, boxed]    at (np)                      {21};
+%
+\node[index]            at (t21222112222)            {18};
+\node[outdex]           at (t21222112222)            {20};
+%
+\node[index]            at (nom)                      {6};
+\node[outdex]           at (nom)                      {7};
+%
+\node[index]            at (t21221)                   {9};
+\node[outdex]           at (t21221)                  {10};
+%
+\node[index]            at (t2122)                    {6};
+\node[outdex, boxed]    at (t2122)                    {9};
+%
+\node[index]            at (t2122211122222)          {29};
+\node[outdex]           at (t2122211122222)          {31};
+%
+\node[index]            at (t2122211222)             {16};
+\node[outdex]           at (t2122211222)             {18};
+%
+\node[index]            at (tnom)                     {2};
+\node[outdex]           at (tnom)                     {4};
+%
+\node[index]            at (t21222111221)            {25};
+\node[outdex]           at (t21222111221)            {26};
+%
+\node[index]            at (t212221112221)           {27};
+\node[outdex]           at (t212221112221)           {28};
+%
+%
+\end{forest}

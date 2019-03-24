@@ -1,0 +1,26 @@
+\begin{tabular}{llll}
+\hline
+ Metric   & Filters   & eng-src-orc-prom   & chn-src-orc-prom   \\
+\hline
+ AvgS     &           & Tie                & Yes                \\
+ AvgS'    &           & Yes                & Yes                \\
+ AvgT     &           & Yes                & No                 \\
+ AvgT'    &           & Yes                & No                 \\
+ BoxT     &           & Yes                & Yes                \\
+ BoxT'    &           & Tie                & Tie                \\
+ MaxS     &           & Yes                & Yes                \\
+ MaxS'    &           & Yes                & Yes                \\
+ MaxSR    &           & Yes                & Yes                \\
+ MaxSR'   &           & Yes                & Yes                \\
+ MaxT     &           & Tie                & Tie                \\
+ MaxT'    &           & Tie                & Tie                \\
+ MaxTR    &           & Yes                & No                 \\
+ MaxTR'   &           & Yes                & No                 \\
+ Movers   &           & Yes                & Yes                \\
+ Movers'  &           & Tie                & Tie                \\
+ SumS     &           & Yes                & Yes                \\
+ SumS'    &           & Yes                & Yes                \\
+ SumT     &           & Yes                & Yes                \\
+ SumT'    &           & Yes                & No                 \\
+\hline
+\end{tabular}

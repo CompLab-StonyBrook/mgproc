@@ -1,0 +1,4 @@
+\draw[move = {DPtoTP1}] (DP)      .. controls +(120:6em) and +(220:4em) .. (TP1);
+\draw[move = {CPtoDP}] (CP)      .. controls +(220:8em) and +(220:8em) .. (DP);
+\draw[move = {mayorToTP}] (mayor)   .. controls +(180:6em) and +(200:4em) .. (TP);
+\draw[move = {whotoCP},dotted] (who) .. controls +(60:4em) and +(320:6em) .. (CP);

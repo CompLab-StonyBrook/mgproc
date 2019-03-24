@@ -1,0 +1,1 @@
+\draw[move = {nom}] (nom) to[out=west, in=south west] (tnom);

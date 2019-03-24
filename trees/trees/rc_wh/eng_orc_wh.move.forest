@@ -1,0 +1,3 @@
+\draw[move = {whoToCP2}] (WHO) .. controls +(85:11em) and +(220:2em) .. (CP2);
+\draw[move = {DP2toTP2}] (DP2) .. controls +(130:4em) and +(220:5em) .. (TP2);
+\draw[move = {DP1toTP1}] (DP1) .. controls +(120:2em) and +(220:4em) .. (TP1);

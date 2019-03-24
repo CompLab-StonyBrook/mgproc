@@ -245,7 +245,7 @@ class ComparisonSet:
         headers = ['Metric', 'Filters'] +\
                   [comp.name for comp in self.comparisons]
         table = tabulate.tabulate(sorted(self._matrix(numerical=numerical)),
-                                  tablefmt='orgtbl', headers=headers)
+                                  tablefmt='latex', headers=headers)
         if filename:
             f = open(filename, 'w')
             f.write(table)

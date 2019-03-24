@@ -1,0 +1,17 @@
+	[CP, name = ttop
+		[CP
+			[C, empty]
+			[TP, name =  tnom
+				[TP
+					[T, empty]
+					[vP
+						[John, name = nom]
+						[v'
+							[kicked]
+							[Bill,name=top]
+						]
+					]
+				]
+			]
+		]
+	]
