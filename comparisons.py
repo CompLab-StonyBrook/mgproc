@@ -173,19 +173,14 @@ class ComparisonSet:
         elif update or not self._trees:
             self._trees = self._winners + self._losers
         return self._trees
-    def rank(self, name: str, treeW: list, treeL: list):
-	values1, values2 = [], []
-	for tree in treeW:
-	    values1.append([metric.eval(tree) for metric in self.metrics])
-	for tree in treeL:
-	    values2.append([metric.eval(tree) for metric in self.metrics])
-	for i in range(len(values1)):
-	    if values1[i] < values2[i]:
-		self.success.append(self.metrics[i])
-	    if values1[i] == values2[i]:
-		self.tie.append(self.metrics[i])
-	    else:
-		self.fail.append(self.metrics[i])
+###################################################################################
+    
+    def rank(self, name: str, tree: 'IOTree', rank: int=1):
+	ranks = {}
+	for i in rank:
+	    [metric.eval(tree) for metric in self.metrics]	
+
+###################################################################################
     def add(self, comparison):
         self.comparisons.append(comparison)
 
