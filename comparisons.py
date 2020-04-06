@@ -173,7 +173,14 @@ class ComparisonSet:
         elif update or not self._trees:
             self._trees = self._winners + self._losers
         return self._trees
+###################################################################################
+    
+    def rank(self, name: str, tree: 'IOTree', rank: int=1):
+	ranks = {}
+	for i in rank:
+	    [metric.eval(tree) for metric in self.metrics]	
 
+###################################################################################
     def add(self, comparison):
         self.comparisons.append(comparison)
 

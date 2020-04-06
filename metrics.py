@@ -54,6 +54,8 @@ class BaseMetric:
         name of metric
     .eval: IOTree -> val
         compute metric value for IOTree
+    .compare: IOTree -> IOTree -> updated metric
+    	compares two IOTrees and updates the metric accordingly
     """
     def __init__(self, name: str='',
                  load_type: str='tenure', operator: 'function'=None,
@@ -66,7 +68,12 @@ class BaseMetric:
         self.filters = filters
         self.latex = latex
         self.function = function if function != '' else memory_measure
+################################################################################
 
+        self.profile = {}
+        self.viable = (True, True)
+        
+################################################################################
     def eval(self, tree: 'IOTree'):
         """Compute memory value of IOTree with respect to metric"""
         return self.function(tree,
@@ -74,7 +81,52 @@ class BaseMetric:
                              load_type=self.load_type,
                              filters=self.filters,
                              trivial=self.trivial)
+#####################can we only use these functions when needed##################
 
+    def _pair_and(self, pair1: (bool, bool), pair2: (bool, bool)):
+        """
+        Compute metric viability from two (bool, bool) pairs.
+
+        We have a three-valued generalization of the Boolean algebra 2,
+        with (True, True) > (False, True) > (False, False). The
+        component-wise meet is exactly the meet over this algebra.
+        """
+        return (pair1[0] and pair2[0], pair1[1] and pair2[1])
+
+    def _captures(self, value1: int, value2: int) -> (bool, bool):
+        """Determine viability of metric based on computed values"""
+        if value1 < value2:
+            return (True, True)
+        elif value1 == value2:
+            return (False, True)
+        else:
+            return (False, False)
+
+    def get_or_set_value(self, tree: 'MetricTree'):
+        """Retrieve or compute value of MetricTree with respect to metric"""
+        assert(isinstance(tree, MetricTree))
+
+        value = tree.profile.get(self.name, None)
+        if not value:
+            value = self.eval(tree)
+            tree.add_metric(self, value)
+        return value 
+                                   
+    def compare(self, name: str, tree1: 'IOTree', tree2: 'IOTree'):
+        """Compare two IOTrees with respect to ranked metric"""
+
+        tree1_value = self.get_or_set_value(tree1)
+        tree2_value = self.get_or_set_value(tree2)
+        viable = self._captures(tree1_value, tree2_value)
+
+        contrast = {'name': name,
+                    'desired winner': (tree1, tree1.name, tree1_value),
+                    'desired loser': (tree2, tree2.name, tree2_value),
+                    'captured': viable}
+        self.profile[name] = contrast
+        self.viable = self._pair_and(self.viable, viable)
+        
+####################how do we implement filters in the base metric#################
 
 class RankedMetric():
     """
