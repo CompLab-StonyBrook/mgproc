@@ -1,57 +1,61 @@
-[CP
-	[C,empty]
-	[TP,name = tnom
-		[TP
-			[T,empty]
-			[vP
-				[Max,name=nom]
-				[v'
-					[put]
-					[vP,name = tvp
-						[v, empty]
-						[vP,name = tnp
-							[v, empty]
-							[VP,name=vp
-								[DP,name = np
-									[all]
-									[DP
-										[the]
-										[NP
-											[boxes]
-											[PP
-												[of]
-												[NP
-													[home]
-													[furnishings]
-												]
-											]
-										]
-									]
-								]
-								[V$'$
-									[V,empty,name=bigv]
-									[PP
-										[in]
-										[DP
-											[his]
-											[NP
-												[car]
-												[rel
-													[made]
-													[PP
-														[in]
-														[Stuttgart]
-													]
-												]
-											]
-										]
-									]
-								]
-							]
-						]
-					]
-				]
-			]
-		]
-	]
+    [CP
+    [C,empty]
+    [TP,name = tnom
+        [TP
+            [T,empty]
+            [vP
+                [Max,name=nom]
+                [v'
+                    [put]
+                    [vP,name = tvp
+                        [vP
+                            [v, empty]
+                            [vP,name = tnp
+                                [vP
+                                    [v, empty]
+                                    [VP,name=vp
+                                        [DP,name = np
+                                            [all]
+                                            [DP
+                                                [the]
+                                                [NP
+                                                    [boxes]
+                                                    [PP
+                                                        [of]
+                                                        [NP
+                                                            [home]
+                                                            [furnishings]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        [V$'$
+                                            [V,empty,name=bigv]
+                                            [PP
+                                                [in]
+                                                [DP
+                                                    [his]
+                                                    [NP
+                                                        [car]
+                                                        [rel
+                                                            [made]
+                                                            [PP
+                                                                [in]
+                                                                [Stuttgart]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
 ]

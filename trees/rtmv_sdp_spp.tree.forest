@@ -1,29 +1,32 @@
-	[CP
-		[C, empty]
-		[TP, name = tnom
-			[TP
-				[T, empty]
-				[vP
-					[Max, name = nom]
-					[v'
-						[put]
-						[VP,name = tnp
-							[VP
-								[boxes, name = np]
-								[V'
-									[V, empty]
-									[PP
-										[in]
-										[DP
-											[his]
-											[car]
-										]
-									]
-								]
-							]
-						]
-					]
-				]
-			]
-		]
-	]
+        [CP
+        [C, empty]
+        [TP, name = tnom
+            [TP
+                [T, empty]
+                [vP,name = tnp
+                    [vP
+                        [Max, name = nom]
+                        [v'
+                            [put]
+                            [VP
+                                [DP, name = np
+                                    [extraposer, empty]
+                                    [boxes]
+                                ]
+                                [V'
+                                    [V, empty]
+                                    [PP
+                                        [in]
+                                        [DP
+                                            [his]
+                                            [car]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

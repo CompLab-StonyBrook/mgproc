@@ -7,7 +7,7 @@
 				[Max,name=nom]
 				[v$'$
 					[put]
-					[vP,name=tpp
+					[VP,name=tpp
 						[VP
 							[DP,name=np
 								[all]

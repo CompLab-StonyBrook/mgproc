@@ -1,0 +1,29 @@
+	[CP
+		[C, empty]
+		[TP, name = tnom
+			[TP
+				[T, empty]
+				[vP
+					[Max, name = nom]
+					[v'
+						[put]
+						[VP,name = tpp
+							[VP
+								[boxes, name = np]
+								[V'
+									[V, empty]
+									[PP,name = pp
+										[in]
+										[DP
+											[his]
+											[car]
+										]
+									]
+								]
+							]
+						]
+					]
+				]
+			]
+		]
+	]
