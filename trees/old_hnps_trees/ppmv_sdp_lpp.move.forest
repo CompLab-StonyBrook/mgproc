@@ -1,0 +1,2 @@
+	\draw[move = {nom}, olive] (nom) to[out=west, in=south west] (tnom);
+	\draw[move={ppmv},color = LimeGreen] (pp) to[out=west,in=south west] node[right]{pp movement} (tpp);

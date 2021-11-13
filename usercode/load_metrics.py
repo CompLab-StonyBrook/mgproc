@@ -28,6 +28,7 @@ def compare_heavy_np(name, metrics):
 	return result
 
 def base_compare_this(name):
+	# use with a defined string with comparison file location
 	# name = nomv_rtmv, nomv_ppmv, nomv_rmnt
 	# metrics = base, filter_u
 
@@ -44,6 +45,17 @@ def rank2_compare_this(name):
 
 	filename = f"{name}"
 	result = comparisons_from_file(inputfile = filename, directory = './trees/', metrics = rank2)
+
+	result.show()
+
+	return result
+
+def filter_compare_this(name):
+	# name = nomv_rtmv, nomv_ppmv, nomv_rmnt
+	# metrics = base, filter_u
+
+	filename = f"{name}"
+	result = comparisons_from_file(inputfile = filename, directory = './trees/', metrics = filter_u)
 
 	result.show()
 
