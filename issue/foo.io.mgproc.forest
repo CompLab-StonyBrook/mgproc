@@ -1,0 +1,62 @@
+\begin{forest}
+%
+%%%%%%%%
+% Tree %
+%%%%%%%%
+%
+[CP, name=ttop
+    [CP, name=t1
+        [C, name=t11, empty]
+        [TP, name=tnom
+            [TP, name=t121
+                [T, name=t1211, empty]
+                [vP, name=t1212
+                    [John, name=nom]
+                    [v', name=t12122
+                        [kicked, name=t121221]
+                        [Bill, name=top]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+%%%%%%%%%%%%%%%
+% Annotations %
+%%%%%%%%%%%%%%%
+%
+\node[index]            at (ttop)                     {1};
+\node[outdex]           at (ttop)                     {2};
+%
+\node[index]            at (t121)                     {4};
+\node[outdex]           at (t121)                     {5};
+%
+\node[index]            at (t121221)                  {7};
+\node[outdex, boxed]    at (t121221)                 {12};
+%
+\node[index]            at (nom)                      {6};
+\node[outdex, boxed]    at (nom)                     {10};
+%
+\node[index]            at (t1211)                    {5};
+\node[outdex, boxed]    at (t1211)                   {11};
+%
+\node[index]            at (tnom)                     {3};
+\node[outdex]           at (tnom)                     {4};
+%
+\node[index]            at (t1212)                    {5};
+\node[outdex]           at (t1212)                    {6};
+%
+\node[index]            at (t1)                       {2};
+\node[outdex]           at (t1)                       {3};
+%
+\node[index]            at (top)                      {7};
+\node[outdex]           at (top)                      {8};
+%
+\node[index]            at (t11)                      {3};
+\node[outdex, boxed]    at (t11)                      {9};
+%
+\node[index]            at (t12122)                   {6};
+\node[outdex]           at (t12122)                   {7};
+%
+%
+\end{forest}

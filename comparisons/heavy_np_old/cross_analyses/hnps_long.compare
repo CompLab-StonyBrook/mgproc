@@ -1,0 +1,7 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+PP_LONG no move >> right move ; ; vheavy_nomv ; vheavy_rightmv ;
+PP_LONG no move >> pp move ; ; vheavy_nomv ; vheavy_ppmv ;
+PP_LONG no move >> remnant move ; ; vheavy_nomv ; vheavy_remnantmv ;

@@ -1,0 +1,49 @@
+[CP
+    [C, empty]
+    [TP, name=TP1
+        [T$'$
+            [T, empty]
+            [$v$P
+                [DP, name=TP1subj
+                    [the]
+                    [NP, name=RCtarget
+                        [N$'$
+                            [who]
+                            [TP, name=TP2
+                                [T$'$
+                                    [T, empty]
+                                    [$v$P
+                                        [DP, name=TP2subj
+                                            [the]
+                                            [senator]
+                                        ]
+                                        [$v'$
+                                            [$v$, empty]
+                                            [VP
+                                                [attacked]
+                                                [DP, name=RCsource
+                                                    [D, empty]
+                                                    [reporter]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [$v'$
+                    [$v$, empty]
+                    [VP
+                        [admitted]
+                        [DP
+                            [the]
+                            [error]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]

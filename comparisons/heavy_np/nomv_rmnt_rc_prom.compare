@@ -1,0 +1,10 @@
+# General format:
+# name; LaTeX command; winner; loser
+#
+#
+sdp_spp ; ; nomv_sdp_spp ; rmnt_sdp_spp ;
+sdp_lpp ; ; nomv_sdp_lpp ; rmnt_sdp_lpp ;
+ldp_spp ; ; rmnt_ldp_spp ; nomv_ldp_spp ;
+ldp_lpp ; ; nomv_ldp_lpp ; rmnt_ldp_lpp ;
+eng-src-orc-prom ;  ; eng_src_prom ; eng_orc_prom ; 
+chn-src-orc-prom ;  ; chn_src_prom ; chn_orc_prom ; 

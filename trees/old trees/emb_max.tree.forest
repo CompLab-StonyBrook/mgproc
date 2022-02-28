@@ -1,0 +1,68 @@
+	[CP
+		[C, empty]
+		[TP, name = tnommax
+			[TP
+				[T, empty]
+				[vP
+					[vP
+						[John, name = nommax]
+						[v'
+							[said]
+							[VP, name = tnp
+							[VP
+								[VP
+									[V, empty]
+									[CP
+										[that]
+										[TP, name = tnom
+											[TP
+												[T, empty]
+												[vP
+													[Max, name=nom]
+													[v'
+														[put]
+														[VP
+															[VP
+																[DP, name = np
+																	[all]
+																	[DP
+																		[the]
+																		[NP
+																			[boxes]
+																			[PP
+																				[of]
+																				[NP
+																					[home]
+																					[furnishings]
+																				]
+																			]
+																		]
+																	]
+																]
+																[V'
+																	[V, empty]
+																	[PP
+																		[in]
+																		[DP
+																			[his]
+																			[car]
+																		]
+																	]
+																]
+															]
+														]
+													]
+												]
+											]
+										]
+									]
+								]
+								[aloud]
+							]
+							]
+						]
+					]
+				]
+			]
+		]
+	]

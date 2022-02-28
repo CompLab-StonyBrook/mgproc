@@ -1,0 +1,37 @@
+    [CP
+        [C, empty]
+        [TP, name = tnom
+            [TP
+                [T, empty]
+                [vP
+                    [Max, name = nom]
+                    [v'
+                        [put]
+                        [vP, name = tvp 
+                            [vP
+                                [v,empty]
+                                [vP,name = tnp
+                                    [vP
+                                        [v,empty]
+                                        [vP,name = vp
+                                            [boxes, name = np]
+                                            [V'
+                                                [V, empty]
+                                                [PP,name = pp
+                                                    [in]
+                                                    [DP
+                                                        [his]
+                                                        [car]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
